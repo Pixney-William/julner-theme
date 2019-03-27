@@ -100,27 +100,10 @@
         position: relative;
         z-index: 1;
 
-        // height: calc(100% + #{$headerHeight});
-        // padding-left: .5rem;
-
-        // transition: transform 150ms ease-in-out;
-        // transform: translate(0,-#{$headerHeight});
-
-        // background: darken($white, 5%);
 
         @media (min-width: $minResForStaticSidebars)
         {
             position: relative;
         }
-
-        // body.-openMenu &
-        // {
-        //     transform: translate(100%,-#{$headerHeight});
-
-        //     @media (min-width: $minResForStaticSidebars)
-        //     {
-        //         transform: translate(0,0);
-        //     }
-        // }
     }
 }
