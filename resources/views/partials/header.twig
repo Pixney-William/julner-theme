@@ -2,6 +2,11 @@
 
     {#% include "theme::partials/navigation" %#}
     This is some stuff....
+    {% if auth_check() %}
+    <a href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
+{% else %}
+    <a href="{{ url_route('anomaly.module.users::login') }}">Login</a>
+{% endif %}
 </header>
 
 {# 

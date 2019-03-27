@@ -1,9 +1,9 @@
 import whenDomReady from 'when-dom-ready';
 import login from "./src/style/login";
-import menuToggler from "./src/style/openMenu";
+import sideBarToggler from "./src/style/openSidebar";
 
 whenDomReady().then(() => {
     login.addLoadedClass()
 });
 
-menuToggler(".o-navigation__openMenu");
+sideBarToggler(".o-navigation__openSidebar");

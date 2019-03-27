@@ -6,13 +6,13 @@
     transform: translate(0,0);
 
     background: #f9f9f9;
-    body.-openMenu &
+    body.-openSidebar &
     {
         //transform: translate(220px,0);
     }
     @media (min-width: $minResForStaticSidebars)
     {
-        body.-openMenu &
+        body.-openSidebar &
         {
             transform: translate(0px,0);
         }

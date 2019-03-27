@@ -12,8 +12,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-$minResForStaticSidebars: 1440px;
+
 $headerHeight:50px;
+$minResForStaticSidebars: 2000px;
+$navigationAsideWidth:300px;
+$navigationSidebarPadding:40px;
 
 @import './colors-default';
 @import './bootstrap-reset';
