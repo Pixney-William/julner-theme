@@ -14,8 +14,9 @@
 
 
 $headerHeight:50px;
-$minResForStaticSidebars: 2000px;
+$minResForStaticSidebars: 1440px;
 $navigationAsideWidth:300px;
+$navigationAsideWidthWhenStatic:250px;
 $navigationSidebarPadding:40px;
 
 @import './colors-default';
