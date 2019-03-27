@@ -1,11 +1,20 @@
-&main 
+&main
 {
-    width:100%;
-    background:#f9f9f9;
-    transform:translate(0,0);
-    transition:transform 150ms ease-in-out;
-    body.-openMenu & 
+    width: 100%;
+
+    transition: transform 150ms ease-in-out;
+    transform: translate(0,0);
+
+    background: #f9f9f9;
+    body.-openMenu &
     {
-        transform:translate(220px,0);
+        //transform: translate(220px,0);
+    }
+    @media (min-width: $minResForStaticSidebars)
+    {
+        body.-openMenu &
+        {
+            transform: translate(0px,0);
+        }
     }
 }
