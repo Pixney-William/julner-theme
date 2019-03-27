@@ -1,0 +1,9 @@
+{
+    "name": "pixney/julner-theme",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Pixney\\JulnerTheme\\": "src/"
+        }
+    }
+}

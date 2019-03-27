@@ -1,0 +1,27 @@
+.form-control:focus
+{
+    color: #495057;
+    border-color: $black;
+    outline: 0;
+    background-color: $white;
+    box-shadow: unset;
+}
+
+.form-control
+{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    display: block;
+
+    width: 100%;
+    height: calc(3.1rem + 2px);
+    padding: .8rem .75rem;
+
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    color: $black;
+    border: 1px solid lighten($black, 80%);
+    border-radius: 0;
+}
