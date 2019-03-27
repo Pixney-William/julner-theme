@@ -6,5 +6,4 @@ whenDomReady().then(() => {
     login.addLoadedClass()
 });
 
-
 menuToggler(".o-navigation__openMenu");

@@ -1,4 +1,4 @@
-$minResForStaticSidebars: 1200px;
+
 
 &navigation
 {
@@ -6,12 +6,12 @@ $minResForStaticSidebars: 1200px;
 
     display: flex;
 
-    width: 30vw;
-    max-width: 300px;
     height: 100vh;
-    padding-top: 50px;
+    padding-top: $headerHeight;
 
     background: $white;
+
+
 
     @media (min-width: $minResForStaticSidebars)
     {
@@ -21,10 +21,19 @@ $minResForStaticSidebars: 1200px;
     &__openMenu
     {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        z-index: 2;
+        top: 0;
+        left: 0;
 
-        height: 30px;
+        width: 100%;
+        height: $headerHeight;
+
+        border: 0;
+        background: #fff;
+        &,&:focus 
+        {
+            outline:none;
+        }
         @media (min-width: $minResForStaticSidebars)
         {
             display: none;
@@ -35,13 +44,11 @@ $minResForStaticSidebars: 1200px;
     {
         z-index: 1;
 
-        width: 100%;
+        width: 220px;
+        min-width: 220px;
 
         @media (min-width: $minResForStaticSidebars)
         {
-            width: 50%;
-            min-width: 50%;
-            max-width: 50%;
         }
     }
 
@@ -70,24 +77,26 @@ $minResForStaticSidebars: 1200px;
         position: absolute;
         z-index: 1;
 
-        height: 100%;
+        height: calc(100% + #{$headerHeight});
         padding-left: .5rem;
 
-        transition: transform 300ms ease-in-out;
-        transform: translateX(0);
+        transition: transform 150ms ease-in-out;
+        transform: translate(0,-#{$headerHeight});
 
         background: darken($white, 5%);
+        
         @media (min-width: $minResForStaticSidebars)
         {
             position: relative;
         }
 
-        .o-navigation.-open &
+        body.-openMenu &
         {
-            transform: translateX(100%);
+            transform: translate(100%,-#{$headerHeight});
+
             @media (min-width: $minResForStaticSidebars)
             {
-                transform: translateX(0);
+                transform: translate(0,0);
             }
         }
     }
