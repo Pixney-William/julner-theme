@@ -15,7 +15,7 @@ tippy('[title]', {
   theme: 'pyro',
   arrow: true,
   animation: 'scale',
-  placement: 'top-start'
+  placement: 'right-start'
 });
 
 
