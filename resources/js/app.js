@@ -11,12 +11,16 @@ whenDomReady().then(() => {
 
 sideBarToggler(".o-navigation__openSidebar");
 
+
+if(document.body.classList.contains('-onlyIcons')) {
 tippy('[title]', {
   theme: 'pyro',
   arrow: true,
   animation: 'scale',
-  placement: 'right-start'
+  placement: 'right-start',
+  delay:[300,0]
 });
+}
 
 
 window.addEventListener("scroll", function (e) {
