@@ -7,7 +7,8 @@ $navigationSidebarPadding: 40px !default;
 
 $indigo: #5174ff;
 $pyro-colors: (
-  'main': $indigo
+  'main': $indigo,
+  'light': #f3f3f3
 )!default;
 
 @function pc($key: 'main')

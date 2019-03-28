@@ -4,8 +4,8 @@
     height: auto;
     min-height: 100vh;
 
-    transition: transform 150ms ease-in-out;
-    transform: translate(0,0);
+    // transition: transform 150ms ease-in-out;
+    // transform: translate(0,0);
 
     background: #fefefe;
 
@@ -17,7 +17,7 @@
     {
         body.-openSidebar &
         {
-            transform: translate(0px,0);
+            //transform: translate(0px,0);
         }
     }
 }

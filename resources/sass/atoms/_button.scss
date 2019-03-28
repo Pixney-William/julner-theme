@@ -1,0 +1,20 @@
+%buttonWithIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        margin-right: .5rem;
+
+    }
+
+    &.btn-sm i {
+        margin-right: .3rem;
+        font-size:.85rem;
+    }
+
+}
+
+button {
+    border: 0;
+}

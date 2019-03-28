@@ -1,8 +1,10 @@
 .m- {
     @import './molecules/list';
+    @import './molecules/formControls';
     
 }
 
 // Bootstrap defined components that doesnt follow ABEM structure
 @import './molecules/_card';
 @import './molecules/_form';
+@import './molecules/_nav';
