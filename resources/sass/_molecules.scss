@@ -2,3 +2,7 @@
     @import './molecules/list';
     
 }
+
+// Bootstrap defined components that doesnt follow ABEM structure
+@import './molecules/_card';
+@import './molecules/_form';

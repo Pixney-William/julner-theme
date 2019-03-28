@@ -3,11 +3,13 @@
     width: 100%;
     height: auto;
     min-height: 100vh;
+    padding-left: 1rem;
 
     transition: transform 150ms ease-in-out;
     transform: translate(0,0);
 
-    background: #f9f9f9;
+    background: #fefefe;
+
     body.-openSidebar &
     {
         //transform: translate(220px,0);

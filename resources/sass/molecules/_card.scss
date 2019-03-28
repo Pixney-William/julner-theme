@@ -1,0 +1,22 @@
+.card
+{
+    &-title
+    {
+        @extend %semi-bold;
+
+        font-size: 1.15rem;
+
+        margin: 0;
+    }
+
+    & + .card
+    {
+        margin-top: 1rem;
+    }
+
+    // When working with a light background, you might not want borders.
+    body.-cardBordersOff  &
+    {
+        border: 0;
+    }
+}

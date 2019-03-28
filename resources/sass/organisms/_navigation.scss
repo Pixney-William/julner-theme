@@ -11,6 +11,8 @@
     padding-top: $headerHeight;
 
     background: $white;
+    z-index: 2;
+    box-shadow: -5px 0px 25px 0px rgba(0,0,0,.3);
 
     @media (min-width: $minResForStaticSidebars)
     {

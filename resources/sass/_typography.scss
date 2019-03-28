@@ -1,0 +1,39 @@
+
+
+*
+{
+    font-family: 'Istok Web', sans-serif;
+
+    color: pc(main);
+    //font-family: 'Source Sans Pro', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%regular
+{
+    font-weight: 400;
+}
+%semi-bold
+{
+    font-weight: 600;
+}
+%bold
+{
+    font-weight: 700;
+}
+%extra-bold
+{
+    font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-size: 1.15rem !important;
+}
