@@ -1,7 +1,7 @@
 <ul class="m-list -lstn">
     {% for key, navigation in template.cp.navigation %}
     <li class="{{ navigation.active ? 'active' }} variant-border" data-slug="{{ navigation.slug }}">
-        <a {{ html_attributes(navigation.attributes) }} title="{{ trans(navigation.title) }}">
+        <a {{ html_attributes(navigation.attributes) }} title="{{ trans(navigation.title) }}" data-tippy-content="{{ trans(navigation.title) }}">
             <span class="icon">
                 {{ navigation.icon()|raw }}
                 

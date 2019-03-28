@@ -1,8 +1,7 @@
-&navigation {
+&navigation
+{
     position: relative;
     z-index: 2;
-
-  
 
     height: auto;
     min-height: 100vh;
@@ -11,21 +10,23 @@
     background: $white;
     box-shadow: -5px 0 25px 0 rgba(0, 0, 0, .3);
 
-    @media (min-width: $minResForStaticSidebars) {
+    @media (min-width: $minResForStaticSidebars)
+    {
         padding-top: 0;
     }
 
-    &__menuWrapper 
+    &__menuWrapper
     {
         position: sticky;
-        top:0;
-        display: flex;;
-        height:100vh;
+        top: 0;
+
+        display: flex;
+
+        height: 100vh;;
     }
 
-    &__hmm {
-
-
+    &__hmm
+    {
         //position: absolute;
         z-index: 3;
         top: 0;
@@ -39,30 +40,36 @@
         background: #fff;
     }
 
-    &__openSidebar {
+    &__openSidebar
+    {
         position: sticky;
         top: 0;
+
         border: 0;
         background: #fff;
 
         &,
-        &:focus {
+        &:focus
+        {
             outline: none;
         }
 
-        @media (min-width: $minResForStaticSidebars) {
+        @media (min-width: $minResForStaticSidebars)
+        {
             display: none;
         }
     }
 
     &__sidebar,
-    &__menu {
+    &__menu
+    {
         z-index: 1;
 
         width: $navigationAsideWidth;
         min-width: $navigationAsideWidth;
 
-        @media (min-width: $minResForStaticSidebars) {
+        @media (min-width: $minResForStaticSidebars)
+        {
             width: $navigationAsideWidthWhenStatic;
             min-width: $navigationAsideWidthWhenStatic;
         }
@@ -73,7 +80,8 @@
         This is the left of the two aside menus.
         ------------------------------------------------------------------------
     */
-    &__sidebar {
+    &__sidebar
+    {
         position: absolute;
         z-index: 2;
 
@@ -85,7 +93,8 @@
 
         background: darken($white, 9%);
 
-        @media (min-width: $minResForStaticSidebars) {
+        @media (min-width: $minResForStaticSidebars)
+        {
             position: relative;
 
             height: 100%;
@@ -94,12 +103,22 @@
             transform: translate(0%, 0);
         }
 
-        body.-openSidebar & {
+        body.-openSidebar &
+        {
             transform: translate(0%, 0);
 
-            @media (min-width: $minResForStaticSidebars) {
+            @media (min-width: $minResForStaticSidebars)
+            {
                 transform: translate(0, 0);
             }
+        }
+
+        // For people who only would like icons in the sidebar
+        body.-onlyIcons &
+        {
+            width: 75px;
+            min-width: 75px;
+            max-width: 75px;
         }
     }
 
@@ -108,20 +127,23 @@
         This is the right of the two aside menus.
         ------------------------------------------------------------------------
     */
-    &__menu {
+    &__menu
+    {
         position: relative;
         z-index: 1;
 
         padding-left: calc(#{$navigationSidebarPadding} + 15px);
 
 
-        @media (min-width: $minResForStaticSidebars) {
+        @media (min-width: $minResForStaticSidebars)
+        {
             position: relative;
 
             padding: 1rem;
         }
 
-        body.-openSidebar & {
+        body.-openSidebar &
+        {
             padding-left: 0;
         }
     }

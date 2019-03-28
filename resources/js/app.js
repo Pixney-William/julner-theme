@@ -1,5 +1,6 @@
-// require('./bootstrap-native-v4');
-var bsn = require('bootstrap.native/dist/bootstrap-native-v4');
+// // require('./bootstrap-native-v4');
+// var bsn = require('bootstrap.native/dist/bootstrap-native-v4');
+import tippy from 'tippy.js'
 import whenDomReady from 'when-dom-ready';
 import login from "./src/style/login";
 import sideBarToggler from "./src/style/openSidebar";
@@ -11,8 +12,15 @@ whenDomReady().then(() => {
 
 sideBarToggler(".o-navigation__openSidebar");
 
-const myTabs = document.querySelector('.nav-sections');
-var tab = new bsn.Tab(myTabs,{});
+tippy('[title]',{
+    theme: 'pyro',
+    arrow: true,
+    animation:'scale',
+    placement:'top-start'
+  });
+
+// const myTabs = document.querySelector('.nav-sections');
+// var tab = new bsn.Tab(myTabs,{});
 // // first, we reference the .nav component that holds all tabs
 // //var myTabs = document.getElementById('myTabs');
 // var myCarousel = new bsn.Carousel(element,options);
