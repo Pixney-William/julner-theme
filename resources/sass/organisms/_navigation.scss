@@ -1,8 +1,7 @@
-
-
 &navigation
 {
     position: relative;
+    z-index: 2;
 
     display: flex;
 
@@ -11,36 +10,45 @@
     padding-top: $headerHeight;
 
     background: $white;
-    z-index: 2;
-    box-shadow: -5px 0px 25px 0px rgba(0,0,0,.3);
+    box-shadow: -5px 0 25px 0 rgba(0, 0, 0, .3);
 
     @media (min-width: $minResForStaticSidebars)
     {
         padding-top: 0;
     }
 
-    &__openSidebar
+    &__hmm
     {
         position: absolute;
-        z-index: 2;
+        z-index: 3;
         top: 0;
         left: 0;
+
+        display: flex;
 
         width: 100%;
         height: $headerHeight;
 
+        background: #fff;
+    }
+
+    &__openSidebar
+    {
         border: 0;
         background: #fff;
+
         &,
         &:focus
         {
             outline: none;
         }
+
         @media (min-width: $minResForStaticSidebars)
         {
             display: none;
         }
     }
+
     &__sidebar,
     &__menu
     {
@@ -51,8 +59,8 @@
 
         @media (min-width: $minResForStaticSidebars)
         {
-           width: $navigationAsideWidthWhenStatic;
-           min-width: $navigationAsideWidthWhenStatic;
+            width: $navigationAsideWidthWhenStatic;
+            min-width: $navigationAsideWidthWhenStatic;
         }
     }
 
@@ -70,7 +78,7 @@
         padding: 0 .5rem;
 
         transition: transform 100ms ease-in-out;
-        transform: translate(calc(#{$navigationSidebarPadding} - #{$navigationAsideWidth}),0);
+        transform: translate(calc(#{$navigationSidebarPadding} - #{$navigationAsideWidth}), 0);
 
         background: darken($white, 9%);
 
@@ -79,18 +87,18 @@
             position: relative;
 
             height: 100%;
+            padding: 1rem;
 
-            transform: translate(0%,0);
-            padding:1rem;
+            transform: translate(0%, 0);
         }
 
         body.-openSidebar &
         {
-            transform: translate(0%,0);
+            transform: translate(0%, 0);
 
             @media (min-width: $minResForStaticSidebars)
             {
-                transform: translate(0,0);
+                transform: translate(0, 0);
             }
         }
     }
@@ -111,8 +119,10 @@
         @media (min-width: $minResForStaticSidebars)
         {
             position: relative;
-            padding:1rem;
+
+            padding: 1rem;
         }
+
         body.-openSidebar &
         {
             padding-left: 0;
