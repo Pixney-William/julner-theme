@@ -5,27 +5,44 @@ $navigationAsideWidthWhenStatic: 250px !default;
 
 // Rename this..
 $navigationSidebarPadding: 75px !default;
-$oNavigationChildPadding:1rem;
-$oNavigationListHeight:35px;
-$oNavigationListIconHeight:$oNavigationChildPadding * 2;
+$oNavigationChildPadding: 1rem;
+$oNavigationListHeight: 35px;
+$oNavigationListIconHeight: $oNavigationChildPadding * 2;
 
 // Sidebar and Menu sizes when they are set to keep open
-$sidebarWidthOnKeepOpen:240px;
-$menuWidthOnKeepOpen:225px;
-
-
+$sidebarWidthOnKeepOpen: 240px;
+$menuWidthOnKeepOpen: 225px;
 $indigo: #5174ff;
 $dark: #404040;
+
+
+$button-sizes:(
+  xs: .2rem,
+  sm: .3rem,
+  md: .4rem,
+  lg: .5rem,
+  xl: .6rem
+);
+
 $pyro-colors: (
-  'main': $indigo,
-  'light': #f3f3f3,
-  'black': $dark
-)!default;
+'main': $indigo,
+'light': #f3f3f3,
+'black': $dark,
+'primary': $indigo,
+'secondary': $indigo,
+'success': $indigo,
+'info': $indigo,
+'warning': $indigo,
+'danger': $indigo,
+'dark': $indigo
+) !default;
+
+
+
+
+
 
 @function pc($key: 'main')
 {
     @return map-get($pyro-colors, $key);
 }
-
-
-
