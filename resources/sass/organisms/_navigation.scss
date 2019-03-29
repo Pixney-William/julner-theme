@@ -22,8 +22,8 @@
 
         display: flex;
 
-        height: 100vh;;
-        height: calc(100% - #{$headerHeight});
+        height: 100vh;
+        height: calc(100% - #{$headerHeight});;
     }
 
     &__hmm
@@ -67,12 +67,45 @@
         z-index: 1;
 
         width: $navigationAsideWidth;
-        min-width: $navigationAsideWidth;
+        //@errormin-width: $navigationAsideWidth;
 
         @media (min-width: $minResForStaticSidebars)
         {
             width: $navigationAsideWidthWhenStatic;
-            min-width: $navigationAsideWidthWhenStatic;
+           // min-width: $navigationAsideWidthWhenStatic;
+        }
+    }
+
+    &__sidebar 
+    {
+        background:#fff;
+        transition: all 200ms ease-in-out;
+        body.-sidebarClosed &
+        {
+
+            height:100%;
+            width:$navigationSidebarPadding;
+            position:absolute;
+            z-index:2;
+        }
+        body.-sidebarClosed.-openSidebar &
+        {
+            width:calc(#{$navigationAsideWidthWhenStatic} + 50px);
+        }
+       
+    }
+    &__menu 
+    {
+        background:#eee;
+        padding:0 1rem;
+        body.-sidebarClosed &
+        {
+            
+            padding-left:calc(#{$navigationSidebarPadding} + 1rem);
+        }
+        body:not(.-sidebarOpen) &
+        {
+            
         }
     }
 
@@ -81,72 +114,77 @@
         This is the left of the two aside menus.
         ------------------------------------------------------------------------
     */
-    &__sidebar
-    {
-        position: absolute;
-        z-index: 2;
+    // &__sidebar
+    // {
+    //     body.-navDefault &
+    //     {
+    //         position: absolute;
+    //         z-index: 2;
 
-        height: calc(100% - #{$headerHeight});
-        padding: 0 .5rem;
+    //         height: calc(100% - #{$headerHeight});
+    //         padding: 0 .5rem;
 
-        transition: transform 100ms ease-in-out;
-        transform: translate(calc(#{$navigationSidebarPadding} - #{$navigationAsideWidth}), 0);
+    //         transition: transform 100ms ease-in-out;
+    //        // transform: translate(calc(#{$navigationSidebarPadding} - #{$navigationAsideWidth}), 0);
+    //        //transform: translate(calc(75px - #{$navigationAsideWidth}), 0);
+    //        width:75px;
+    //        min-width:75px;
 
-        background: darken($white, 9%);
+    //         background: darken($white, 9%);
 
-        @media (min-width: $minResForStaticSidebars)
-        {
-            position: relative;
+    //         @media (min-width: $minResForStaticSidebars)
+    //         {
+    //             position: relative;
 
-            height: 100%;
-            padding: 1rem;
+    //             height: 100%;
+    //             padding: 1rem;
 
-            transform: translate(0%, 0);
-        }
+    //             transform: translate(0%, 0);
+    //         }
+    //     }
 
-        body.-openSidebar &
-        {
-            transform: translate(0%, 0);
+    //     body.-navDefault.-openSidebar &
+    //     {
+    //         transform: translate(0%, 0);
 
-            @media (min-width: $minResForStaticSidebars)
-            {
-                transform: translate(0, 0);
-            }
-        }
+    //         @media (min-width: $minResForStaticSidebars)
+    //         {
+    //             transform: translate(0, 0);
+    //         }
+    //     }
 
-        // For people who only would like icons in the sidebar
-        body.-onlyIcons &
-        {
-            width: 75px;
-            min-width: 75px;
-            max-width: 75px;
-        }
-    }
+    //     // For people who only would like icons in the sidebar
+    //     // body.-onlyIcons &
+    //     // {
+    //     //     width: 75px;
+    //     //     min-width: 75px;
+    //     //     max-width: 75px;
+    //     // }
+    // }
 
     /*
         ------------------------------------------------------------------------
         This is the right of the two aside menus.
         ------------------------------------------------------------------------
     */
-    &__menu
-    {
-        position: relative;
-        z-index: 1;
+//     &__menu
+//     {
+//         position: relative;
+//         z-index: 1;
 
-        padding-left: calc(#{$navigationSidebarPadding} + 15px);
+//         padding-left: calc(#{$navigationSidebarPadding} + 15px);
 
 
-        @media (min-width: $minResForStaticSidebars)
-        {
-            position: relative;
+//         @media (min-width: $minResForStaticSidebars)
+//         {
+//             position: relative;
 
-            padding: 1rem;
-           
-        }
+//             padding: 1rem;
+//         }
 
-        body.-openSidebar &
-        {
-            padding-left: 0;
-        }
-    }
+//         body.-openSidebar &
+//         {
+//             padding-left: 0;
+//         }
+//     }
 }
