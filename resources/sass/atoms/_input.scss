@@ -1,6 +1,6 @@
 
-$aInputSize:20px;
-$ainputSvgSize:70%;
+$aInputSize: 20px;
+$ainputSvgSize: 70%;
 &input
 {
     /*
@@ -9,14 +9,14 @@ $ainputSvgSize:70%;
         ------------------------------------------------------------------------
     */
     position: relative;
-    top:-4px;
+    top: -4px;
     input
     {
         display: none;
 
         &:checked + label
         {
-            border-color:pc();
+            border-color: pc();
             //background:pc();
         }
     }
@@ -24,22 +24,21 @@ $ainputSvgSize:70%;
     label
     {
         display: flex;
-        
-        margin:0;
+
         width: $aInputSize;
         height: $aInputSize;
+        margin: 0;
 
         cursor: pointer;
         transition: all 200ms ease-in-out;
 
         border: 2px solid rgba(0, 0, 0, .1);
-        
+        border-radius: 3px;
 
         justify-content: center;
         align-items: center;
         &:hover
         {
-            
             border-color: pc();
         }
     }
@@ -54,7 +53,7 @@ $ainputSvgSize:70%;
     svg path
     {
         stroke: #fff;
-        stroke:pc();
+        stroke: pc();
         stroke-width: 2.5;
         stroke-linecap: round;
         stroke-linejoin: round;
@@ -64,10 +63,11 @@ $ainputSvgSize:70%;
     {
         position: relative;
         top: 0;
-        left: 0px;
-        width:$ainputSvgSize;
-        height:$ainputSvgSize;
-        
+        left: 0;
+
+        width: $ainputSvgSize;
+        height: $ainputSvgSize;
+
         fill: none;
     }
     /*
