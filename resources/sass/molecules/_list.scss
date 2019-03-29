@@ -1,8 +1,39 @@
-
 &list
 {
-    li
+    //  ------------------------------------------------------------------------
+    //  Global Styling
+    //  ------------------------------------------------------------------------
+
+    // Used to remove bullets, paddings and stuff.
+    &.-reset
     {
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+    }
+
+    // Styling for horizontal lists
+    &.-horizontal
+    {
+        display: flex;
+
+        li 
+        {
+            margin-left:.5rem;
+            &:first-child 
+            {
+                margin-left:0;
+            }
+        }
+    }
+
+    // Styling for vertical lists.
+    &.-vertical
+    {
+        display: flex;
+        flex-direction: column;
+        
         // Set margins top on elements but not on the first one.
         margin-top: .5rem;
 
@@ -10,8 +41,10 @@
         {
             margin-top: 0;
         }
+    }
 
-
+    li
+    {
         a:hover
         {
             text-decoration: none;
@@ -27,55 +60,57 @@
     }
 
 
-    /*
-        ------------------------------------------------------------------------
-        Global Styling for list within the sidebar and the menu.
-        ------------------------------------------------------------------------
-    */
+    //    ----------------------------------------------------------------------
+    //    Styling for list within the sidebar and the menu.
+    //    ----------------------------------------------------------------------
     body .o-navigation__sidebar &,
     body .o-navigation__menu &
     {
-        
         li a
         {
-            display: flex;
-            transition: all 200ms ease-in-out;
-            height:$oNavigationListHeight;
             line-height: $oNavigationListHeight;
+
+            display: flex;
+
+            height: $oNavigationListHeight;
+
+            transition: all 200ms ease-in-out;
         }
+
         .title
         {
-            margin-left: .5rem;
             line-height: $oNavigationListHeight;
+
+            margin-left: .5rem;
+
             color: pc('black');
         }
+
         .icon
         {
+            font-size: 25px;
+
             display: flex;
 
             width: 25px;
+            width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
             min-width: 25px; // Flex stuff.
-            width:calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
             min-width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight}); // Flex stuff.
-           
+            height: $oNavigationListHeight;
+
             justify-content: center;
             align-items: center;
-            font-size: 25px;
-            height: $oNavigationListHeight;
         }
     }
 
-    /*
-        ------------------------------------------------------------------------
-        Styling for sidebar when its set to be closed.
-        ------------------------------------------------------------------------
-    */
+    //    ----------------------------------------------------------------------
+    //    Styling for sidebar when its set to be closed.
+    //    ----------------------------------------------------------------------
     body.-keepSidebarClosed .o-navigation__sidebar &
     {
         .title
         {
             font-weight: 400;
-          
 
             position: absolute;
             left: 50px;
@@ -100,11 +135,9 @@
         }
     }
 
-    /*
-        ------------------------------------------------------------------------
-        Styling for sidebar when set to be closed, but has been toggled open.
-        ------------------------------------------------------------------------
-    */
+    //    ----------------------------------------------------------------------
+    //    Styling for sidebar when set to be closed, but has been toggled open.
+    //    ----------------------------------------------------------------------
     body.-keepSidebarClosed.-sidebarIsOpen .o-navigation__sidebar &
     {
         .title
@@ -113,11 +146,13 @@
 
             display: inline-block;
             visibility: visible;
+
             transition: all 125ms ease-in-out;
             transition-delay: 100ms;
 
             opacity: 1;
         }
+
         li a
         {
             justify-content: flex-start;

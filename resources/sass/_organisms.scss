@@ -1,6 +1,7 @@
 .o- {
-    @import './organisms/_login';
-    @import './organisms/_navigation';
-    @import './organisms/_header';
-    @import './organisms/_main';
+    @import './organisms/login';
+    @import './organisms/navigation';
+    @import './organisms/header';
+    @import './organisms/main';
+    @import './organisms/section';
 }

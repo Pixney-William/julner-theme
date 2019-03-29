@@ -34,14 +34,17 @@
 #}
 <body class="theme -cardBordersOff -keepSidebarClosed -navDefault -tableStriped">
 
-    {#% include "theme::partials/messages" %#}
+    {% include "theme::partials/messages" %}
 
     <div id="app" class="d-flex">
 
         {% include "theme::partials/navigation" %}
 
         <div class="o-main">
+            
             {% include "theme::partials/header" %}
+            {{ breadcrumb() }}
+            {% include "theme::partials/buttons" %}
             {% block content %}{% endblock %}
         </div>
 

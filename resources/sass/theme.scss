@@ -2,3 +2,12 @@
 @import "./_theme-overrides";
 // Default Theme
 @import "./_theme-default";
+
+
+h1.errorchecker
+{
+    padding:.5rem;
+    background:red;
+    color:#fff;
+    font-size:.9rem !important;
+}
