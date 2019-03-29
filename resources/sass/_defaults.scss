@@ -2,7 +2,15 @@ $headerHeight: 50px !default;
 $minResForStaticSidebars: 1440px !default;
 $navigationAsideWidth: 300px !default;
 $navigationAsideWidthWhenStatic: 250px !default;
+
+// Rename this..
 $navigationSidebarPadding: 75px !default;
+$oNavigationChildPadding:1rem;
+
+
+// Sidebar and Menu sizes when they are set to keep open
+$sidebarWidthOnKeepOpen:240px;
+$menuWidthOnKeepOpen:225px;
 
 
 $indigo: #5174ff;

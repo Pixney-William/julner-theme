@@ -16,7 +16,21 @@
     {% include "theme::partials/metadata" %}
 </head>
 
-<body class="theme -cardBordersOff -sidebarClosed -navDefault">
+{# 
+  
+    Settings:
+    -keepSidebarOpen : Side bar should be open on large devices
+    with custom handling on smaller devices.
+    -keepSidebarClosed : Sidebar should be closed, and show only icons
+    on all screens. custom handling on mobile devices.
+
+    Modifiers:
+    -sidebarIsOpen : Class added with javascript when someone has
+    interacted with the element toggling the open state for the sidebar.
+
+
+#}
+<body class="theme -cardBordersOff -keepSidebarClosed -navDefault">
 
     {#% include "theme::partials/messages" %#}
 

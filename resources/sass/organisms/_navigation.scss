@@ -1,3 +1,4 @@
+
 &navigation
 {
     position: relative;
@@ -41,149 +42,118 @@
         background: #fff;
     }
 
-    &__openSidebar
-    {
-        position: sticky;
-        top: 0;
-
-        border: 0;
-        background: #fff;
-
-        &,
-        &:focus
-        {
-            outline: none;
-        }
-
-        @media (min-width: $minResForStaticSidebars)
-        {
-            display: none;
-        }
-    }
-
-    &__sidebar,
-    &__menu
-    {
-        z-index: 1;
-
-        width: $navigationAsideWidth;
-        //@errormin-width: $navigationAsideWidth;
-
-        @media (min-width: $minResForStaticSidebars)
-        {
-            width: $navigationAsideWidthWhenStatic;
-           // min-width: $navigationAsideWidthWhenStatic;
-        }
-    }
-
-    &__sidebar 
-    {
-        background:#fff;
-        transition: all 200ms ease-in-out;
-        body.-sidebarClosed &
-        {
-
-            height:100%;
-            width:$navigationSidebarPadding;
-            position:absolute;
-            z-index:2;
-        }
-        body.-sidebarClosed.-openSidebar &
-        {
-            width:calc(#{$navigationAsideWidthWhenStatic} + 50px);
-        }
-       
-    }
-    &__menu 
-    {
-        background:lighten(pc(),32%);
-        padding:0 1rem;
-        body.-sidebarClosed &
-        {
-            padding-left:calc(#{$navigationSidebarPadding} + 1rem);
-        }
-        body:not(.-sidebarOpen) &
-        {
-            
-        }
-    }
-
-    /*
-        ------------------------------------------------------------------------
-        This is the left of the two aside menus.
-        ------------------------------------------------------------------------
-    */
-    // &__sidebar
+    // &__sidebarIsOpen
     // {
-    //     body.-navDefault &
+    //     position: sticky;
+    //     top: 0;
+
+    //     border: 0;
+    //     background: #fff;
+
+    //     &,
+    //     &:focus
     //     {
-    //         position: absolute;
-    //         z-index: 2;
-
-    //         height: calc(100% - #{$headerHeight});
-    //         padding: 0 .5rem;
-
-    //         transition: transform 100ms ease-in-out;
-    //        // transform: translate(calc(#{$navigationSidebarPadding} - #{$navigationAsideWidth}), 0);
-    //        //transform: translate(calc(75px - #{$navigationAsideWidth}), 0);
-    //        width:75px;
-    //        min-width:75px;
-
-    //         background: darken($white, 9%);
-
-    //         @media (min-width: $minResForStaticSidebars)
-    //         {
-    //             position: relative;
-
-    //             height: 100%;
-    //             padding: 1rem;
-
-    //             transform: translate(0%, 0);
-    //         }
+    //         outline: none;
     //     }
 
-    //     body.-navDefault.-openSidebar &
+    //     @media (min-width: $minResForStaticSidebars)
     //     {
-    //         transform: translate(0%, 0);
-
-    //         @media (min-width: $minResForStaticSidebars)
-    //         {
-    //             transform: translate(0, 0);
-    //         }
+    //         display: none;
     //     }
-
-    //     // For people who only would like icons in the sidebar
-    //     // body.-onlyIcons &
-    //     // {
-    //     //     width: 75px;
-    //     //     min-width: 75px;
-    //     //     max-width: 75px;
-    //     // }
     // }
 
     /*
         ------------------------------------------------------------------------
-        This is the right of the two aside menus.
+        Global settings for sidebar and menu
         ------------------------------------------------------------------------
     */
-//     &__menu
-//     {
-//         position: relative;
-//         z-index: 1;
+    &__sidebar,
+    &__menu
+    {
+        // Reset z index
+        z-index: 1;
+        // Width
 
-//         padding-left: calc(#{$navigationSidebarPadding} + 15px);
+        width: $navigationAsideWidth;
+        // Default padding
+        padding:$oNavigationChildPadding;
+    }
 
 
-//         @media (min-width: $minResForStaticSidebars)
-//         {
-//             position: relative;
+    /*
+        ------------------------------------------------------------------------
+        Sidebar
+        ------------------------------------------------------------------------
+    */
+    &__sidebar
+    {
+        transition: all 200ms ease-in-out;
 
-//             padding: 1rem;
-//         }
+        background: #fff;
 
-//         body.-openSidebar &
-//         {
-//             padding-left: 0;
-//         }
-//     }
+
+
+        /*
+            --------------------------------------------------------------------
+            Keep sideebar open
+            --------------------------------------------------------------------
+        */
+        body.-keepSidebarOpen &
+        {
+            width: $sidebarWidthOnKeepOpen;
+        }
+        /*
+            --------------------------------------------------------------------
+            Keep sidebar closed
+            --------------------------------------------------------------------
+        */
+        body.-keepSidebarClosed &
+        {
+            position: absolute;
+            z-index: 2;
+
+            width: $navigationSidebarPadding;
+            height: 100%;
+        }
+        /*
+            --------------------------------------------------------------------
+            Keep sidebarclosed but is toggled open.
+            --------------------------------------------------------------------
+        */
+        body.-keepSidebarClosed.-sidebarIsOpen &
+        {
+            width: calc(#{$navigationAsideWidthWhenStatic} + 50px);
+        }
+    }
+
+    /*
+        ----------------------------------------------------------------------------
+        Menu
+        ----------------------------------------------------------------------------
+    */
+    &__menu
+    {
+        background: lighten(pc(),32%);
+        /*
+            --------------------------------------------------------------------
+            Styling when sidebar is set to be closed.
+            --------------------------------------------------------------------
+        */
+        body.-keepSidebarClosed &
+        {
+            padding-left: calc(#{$navigationSidebarPadding} + 1rem);
+        }
+
+        /*
+            --------------------------------------------------------------------
+            Styling when sidebar is set to be open.
+            --------------------------------------------------------------------
+        */
+        body.-keepSidebarOpen & 
+        {
+            width:$menuWidthOnKeepOpen;
+        }
+    }
+
+   
 }

@@ -2,7 +2,15 @@
 {
     li
     {
-        margin: .3rem 0;
+        // Set margins top on elements but not on the first one.
+        margin-top: .5rem;
+
+        &:first-child
+        {
+            margin-top: 0;
+        }
+
+
         a:hover
         {
             text-decoration: none;
@@ -18,7 +26,53 @@
     }
 
 
-    body.-sidebarClosed .o-navigation__sidebar &
+    /*
+        ------------------------------------------------------------------------
+        Global Styling for list within the sidebar and the menu.
+        ------------------------------------------------------------------------
+    */
+    body .o-navigation__sidebar &,
+    body .o-navigation__menu &
+    {
+        li a
+        {
+            display: flex;
+
+            transition: all 200ms ease-in-out;
+        }
+        .title
+        {
+            margin-left: .5rem;
+        }
+        .icon
+        {
+            display: flex;
+
+            width: 25px;
+            min-width: 25px; // Flex stuff.
+            width:calc(#{$navigationSidebarPadding} - 2rem);
+            min-width: calc(#{$navigationSidebarPadding} - 2rem); // Flex stuff.
+            // width: 100%;
+            // min-width: 100%; // Flex stuff.
+            // Icon should be...
+
+            // icon width = $navigationSidebarPadding -$oNavigationChildPadding
+            //$oNavigationChildPadding - padding
+            //$navigationSidebarPadding - width
+            
+            
+
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    /*
+        ------------------------------------------------------------------------
+        Styling for sidebar when its set to be closed.
+        ------------------------------------------------------------------------
+    */
+    body.-keepSidebarClosed .o-navigation__sidebar &
     {
         .title
         {
@@ -35,28 +89,18 @@
             opacity: 0;
         }
 
-        li a
-        {
-            display: flex;
-            // padding-left:20px;
 
-            transition: all 200ms ease-in-out;
-        }
 
         .icon
         {
             font-size: 25px;
 
-            display: flex;
-
-            width: $navigationSidebarPadding;
+            //width: $navigationSidebarPadding;
+            //min-width: $navigationSidebarPadding; // Flex stuff.
             height: 33px;
 
             transition: transform 200ms ease-in-out;
             transform: scale(.8);
-
-            justify-content: center;
-            align-items: center;
         }
 
         .icon:hover
@@ -64,11 +108,17 @@
             transform: scale(1.2);
         }
     }
-    body.-sidebarClosed.-openSidebar .o-navigation__sidebar &
+
+    /*
+        ------------------------------------------------------------------------
+        Styling for sidebar when set to be closed, but has been toggled open.
+        ------------------------------------------------------------------------
+    */
+    body.-keepSidebarClosed.-sidebarIsOpen .o-navigation__sidebar &
     {
         .title
         {
-            left: 65px;
+            left: 57px;
 
             display: inline-block;
             visibility: visible;
@@ -80,97 +130,4 @@
             justify-content: flex-start;
         }
     }
-
-
-
-    // body.-navDefault .o-navigation__sidebar &
-    // {
-    //     li a
-    //     {
-    //         display: flex;
-    //     }
-    //     .title
-    //     {
-    //         transition: all 100ms linear;
-    //         transition-delay: 80ms;
-
-    //         opacity: 0;
-    //         @media (min-width: $minResForStaticSidebars)
-    //         {
-    //             opacity: 1;
-    //         }
-    //     }
-    //     .icon
-    //     {
-    //         display: flex;
-
-    //         width: 30px;
-    //         height: 30px;
-
-    //         transition: all 300ms ease-in-out;
-    //         transition-delay: 0;
-    //         transform: translateX(calc(#{$navigationAsideWidth} - 42px));
-
-    //         justify-content: center;
-    //         align-items: center;
-    //         @media (min-width: $minResForStaticSidebars)
-    //         {
-    //             position: relative;
-
-    //             transform: translateX(0);
-    //         }
-    //     }
-    // }
-    // body.-openSidebar.-navDefault .o-navigation__sidebar &
-    // {
-    //     .title
-    //     {
-    //         transition-delay: 100ms;
-
-    //         opacity: 1;
-    //     }
-    //     .icon
-    //     {
-    //         position: relative;
-
-    //         transition: transform 0ms linear;
-    //         transition-delay: 0ms;
-    //         transform: translateX(0);
-    //     }
-    // }
-
-    /*
-        ------------------------------------------------------------------------
-        "Normal State"
-        ------------------------------------------------------------------------
-    */
-
-    /*
-        ------------------------------------------------------------------------
-        For people who only would like icons in the sidebar
-        ------------------------------------------------------------------------
-    */
-    // body.-onlyIcons .o-navigation__sidebar &
-    // {
-    //     li a {
-    //         justify-content: center;
-    //     }
-    //     .title 
-    //     {
-    //         display:none;
-    //     }
-    //     .icon 
-    //     {
-    //         width: 33px;
-    //         height: 33px;
-    //         font-size:25px;
-    //         transform:scale(.8);
-    //         transition:transform 200ms ease-in-out;
-    //     }
-    //     .icon:hover 
-    //     {
-    //         transform:scale(1.2);
-
-    //     }
-    // }
 }

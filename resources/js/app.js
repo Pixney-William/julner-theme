@@ -11,16 +11,15 @@ whenDomReady().then(() => {
 
 sideBarToggler(".o-navigation__openSidebar");
 
-
-tippy('[data-tippy-content]', {
-  theme: 'pyro',
-  arrow: true,
-  animation: 'scale',
-  placement: 'right-start',
-  delay:[300,0]
-});
-
-
+if (!document.body.classList.contains('-keepSidebarOpen')) {
+  tippy('[data-tippy-content]', {
+    theme: 'pyro',
+    arrow: true,
+    animation: 'scale',
+    placement: 'right-start',
+    delay: [300, 0]
+  });
+}
 
 window.addEventListener("scroll", function (e) {
   const a = document.querySelector('.m-formControls.-bottom');

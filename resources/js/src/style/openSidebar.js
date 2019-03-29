@@ -6,10 +6,10 @@ export default function(elClass){
 
     menuToggleButton.addEventListener("click", function (event) {
                 
-       if(wrapper.classList.contains("-openSidebar")) {
-        wrapper.classList.remove("-openSidebar");
+       if(wrapper.classList.contains("-sidebarIsOpen")) {
+        wrapper.classList.remove("-sidebarIsOpen");
        } else {
-        wrapper.classList.add("-openSidebar");
+        wrapper.classList.add("-sidebarIsOpen");
        }
        
 
