@@ -96,11 +96,10 @@
     }
     &__menu 
     {
-        background:#eee;
+        background:lighten(pc(),32%);
         padding:0 1rem;
         body.-sidebarClosed &
         {
-            
             padding-left:calc(#{$navigationSidebarPadding} + 1rem);
         }
         body:not(.-sidebarOpen) &
