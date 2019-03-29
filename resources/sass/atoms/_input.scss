@@ -1,0 +1,94 @@
+
+$aInputSize:20px;
+$ainputSvgSize:70%;
+&input
+{
+    /*
+        ------------------------------------------------------------------------
+        General Styling
+        ------------------------------------------------------------------------
+    */
+    position: relative;
+    top:-4px;
+    input
+    {
+        display: none;
+
+        &:checked + label
+        {
+            border-color:pc();
+            //background:pc();
+        }
+    }
+
+    label
+    {
+        display: flex;
+        
+        margin:0;
+        width: $aInputSize;
+        height: $aInputSize;
+
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+
+        border: 2px solid rgba(0, 0, 0, .1);
+        
+
+        justify-content: center;
+        align-items: center;
+        &:hover
+        {
+            
+            border-color: pc();
+        }
+    }
+
+    label::before
+    {
+        display: block;
+
+        content: '';
+    }
+
+    svg path
+    {
+        stroke: #fff;
+        stroke:pc();
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    svg
+    {
+        position: relative;
+        top: 0;
+        left: 0px;
+        width:$ainputSvgSize;
+        height:$ainputSvgSize;
+        
+        fill: none;
+    }
+    /*
+        ------------------------------------------------------------------------
+        SVG Transition IN
+        ------------------------------------------------------------------------
+    */
+    input:checked + label svg
+    {
+        transition: all 150ms ease-in;
+        transform: scale(1);
+    }
+    /*
+        ------------------------------------------------------------------------
+        SVG Transition OUT
+        ------------------------------------------------------------------------
+    */
+    svg
+    {
+        transition: all 200ms cubic-bezier(.67,.15,1,.61);
+        transition-delay: 10ms;
+        transform: scale(0);
+    }
+}

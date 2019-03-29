@@ -1,0 +1,29 @@
+.table {
+    td {
+        padding:0.4rem 0.5rem .2rem;;
+        // padding: .5rem .5rem;
+        margin:0;
+        vertical-align: unset;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.-tableStriped & {
+        tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+    }
+
+    body.-tableTheadDark & {
+        th {
+
+            background-color: pc();
+            border-color: darken(pc(), 3%);
+
+            &,
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+}

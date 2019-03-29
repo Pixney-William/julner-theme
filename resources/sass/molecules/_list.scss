@@ -1,3 +1,4 @@
+
 &list
 {
     li
@@ -34,15 +35,19 @@
     body .o-navigation__sidebar &,
     body .o-navigation__menu &
     {
+        
         li a
         {
             display: flex;
-
             transition: all 200ms ease-in-out;
+            height:$oNavigationListHeight;
+            line-height: $oNavigationListHeight;
         }
         .title
         {
             margin-left: .5rem;
+            line-height: $oNavigationListHeight;
+            color: pc('black');
         }
         .icon
         {
@@ -50,20 +55,13 @@
 
             width: 25px;
             min-width: 25px; // Flex stuff.
-            width:calc(#{$navigationSidebarPadding} - 2rem);
-            min-width: calc(#{$navigationSidebarPadding} - 2rem); // Flex stuff.
-            // width: 100%;
-            // min-width: 100%; // Flex stuff.
-            // Icon should be...
-
-            // icon width = $navigationSidebarPadding -$oNavigationChildPadding
-            //$oNavigationChildPadding - padding
-            //$navigationSidebarPadding - width
-            
-            
-
+            width:calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
+            min-width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight}); // Flex stuff.
+           
             justify-content: center;
             align-items: center;
+            font-size: 25px;
+            height: $oNavigationListHeight;
         }
     }
 
@@ -76,29 +74,22 @@
     {
         .title
         {
-            font-weight: 600;
-            line-height: 33px;
+            font-weight: 400;
+          
 
             position: absolute;
             left: 50px;
 
             visibility: hidden;
 
-            transition: all 300ms ease-in-out;
+            transition: all 200ms ease-in-out;
+            transition-delay: 0ms;
 
             opacity: 0;
         }
 
-
-
         .icon
         {
-            font-size: 25px;
-
-            //width: $navigationSidebarPadding;
-            //min-width: $navigationSidebarPadding; // Flex stuff.
-            height: 33px;
-
             transition: transform 200ms ease-in-out;
             transform: scale(.8);
         }
@@ -122,6 +113,8 @@
 
             display: inline-block;
             visibility: visible;
+            transition: all 125ms ease-in-out;
+            transition-delay: 100ms;
 
             opacity: 1;
         }

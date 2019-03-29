@@ -87,7 +87,7 @@
     */
     &__sidebar
     {
-        transition: all 200ms ease-in-out;
+        transition: all 150ms ease-in-out;
 
         background: #fff;
 
@@ -123,6 +123,7 @@
         body.-keepSidebarClosed.-sidebarIsOpen &
         {
             width: calc(#{$navigationAsideWidthWhenStatic} + 50px);
+            transition: all 150ms ease-in-out;
         }
     }
 
