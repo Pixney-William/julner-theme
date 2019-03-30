@@ -41,11 +41,18 @@
         {% include "theme::partials/navigation" %}
 
         <div class="o-main">
+                
+            {% include "theme::partials/topbar" %}
+
+            <div class="o-section -breadcrumbs">
+                    {{ breadcrumb() }}  {% include "theme::partials/buttons" %}
+            </div>
+
+           
             
-            {% include "theme::partials/header" %}
-            {{ breadcrumb() }}
-            {% include "theme::partials/buttons" %}
             {% block content %}{% endblock %}
+
+            
         </div>
 
     </div>

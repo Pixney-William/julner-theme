@@ -1,13 +1,13 @@
-<header class="o-header">
+<div class="o-section -topbar">
 
     {#% include "theme::partials/navigation" %#}
     This is some stuff....
     {% if auth_check() %}
     <a href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
-{% else %}
+    {% else %}
     <a href="{{ url_route('anomaly.module.users::login') }}">Login</a>
-{% endif %}
-</header>
+    {% endif %}
+</div>
 
 {# 
 <!-- Navigation -->
@@ -56,4 +56,3 @@
     </div>
     <!-- /.container-fluid -->
 </nav> #}
-

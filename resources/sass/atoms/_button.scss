@@ -50,9 +50,9 @@ button,
     //  Types available: "goey","pipaluk"  
     //  ----------------------------------------------------------------------
     // When we want them everywhere, uncomment below
-    @include button-pipaluk();
+    //@include button-pipaluk();
     // We can specify where we want them like this.
-    .o-section.-buttons &,&[value="delete"]
+    .o-section.-buttons &,&[value="delete"]:not(:disabled)
     {
         @include button-pipaluk();
     }

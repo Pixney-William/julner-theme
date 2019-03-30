@@ -1,5 +1,11 @@
 {% if not template.cp.buttons.isEmpty() %}
-    <div class="o-section -buttons">
-        {{ buttons(template.cp.buttons) }}
-    </div>
+
+{% if template.cp.buttons|length < 2 %}
+{{ buttons(template.cp.buttons) }}
+{% else %}
+<div class="o-section -buttons">
+    {{ buttons(template.cp.buttons) }}
+</div>
+{% endif %}
+
 {% endif %}
