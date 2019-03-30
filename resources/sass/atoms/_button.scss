@@ -46,7 +46,7 @@ button,
     // We can specify where we want them like this.
     .o-section.-buttons &,&[value="delete"]
     {
-        //@include button-regular-reset();
+        @include button-regular-reset();
         @include button-goey();
     }
     
