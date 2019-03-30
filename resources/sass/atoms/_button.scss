@@ -28,26 +28,33 @@ button,
     display: inline-block;
     padding: .25rem .5rem;
     border: 0;
-    background: pc;
+    background: pc();
     color:#fff;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    
 
     &:hover
     {
         text-decoration: none;
+        cursor: pointer;
     }
 
+    //sizing
+    @include button-sizing();
+    // regular simple button styling
     @include button-regular();
+
     //  ----------------------------------------------------------------------
-    //  BUTTON TYPE STYLING
+    //  SPECIAL BUTTON TYPE STYLING
     //  Types available: "goey","pipaluk"  
     //  ----------------------------------------------------------------------
     // When we want them everywhere, uncomment below
-    //@include goey();
+    @include button-pipaluk();
     // We can specify where we want them like this.
     .o-section.-buttons &,&[value="delete"]
     {
-        @include button-regular-reset();
-        @include button-goey();
+        @include button-pipaluk();
     }
     
     

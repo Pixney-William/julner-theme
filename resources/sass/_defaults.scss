@@ -73,7 +73,24 @@ $pyro-colors: (
 'dark': $dirt
 ) !default;
 
-
+$button-sizing: (
+    xs: (
+      size:.7rem
+    ),
+    sm: (
+        size:.8rem
+    ),
+    md: (
+        size:1rem
+    ),
+    lg: (
+        size:1.1rem
+    ),
+    xl: (
+        size:1.2rem
+    )
+  );
+  
 @function pc($key: 'main')
 {
     @return map-get($pyro-colors, $key);

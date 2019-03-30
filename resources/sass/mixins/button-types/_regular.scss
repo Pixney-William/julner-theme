@@ -1,0 +1,44 @@
+
+
+@mixin button-regular()
+{
+    transition: all 150ms linear;
+    text-align: center;
+
+    border-radius: 3px;
+
+    .btn-group &
+    {
+        border-radius:0px;
+    }
+    &:hover
+    {
+        background: transparent;
+    }
+    //  ----------------------------------------------------------------------
+    //  COLORS
+    //  ----------------------------------------------------------------------
+    @each $colorName,
+    $bkgColorValue in $pyro-colors
+    {
+        &.-#{$colorName}
+        {
+            @include pyro-button-text-colors($bkgColorValue);
+
+            border: 1px solid transparent;
+            background: $bkgColorValue;
+
+            &:hover
+            {
+                @include pyro-button-text-colors(darken($bkgColorValue,5%));
+
+                background: darken($bkgColorValue,5%);
+            }
+        }
+    }
+    
+}
+
+@mixin button-regular-reset()
+{
+}

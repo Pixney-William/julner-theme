@@ -1,35 +1,19 @@
+$pipaluk-button-sizes: (xs: (min-width:60px,scaling-before:".96, 1.09, 1",scaling-after:".86, .8, 1"),
+sm: (min-width:60px,scaling-before:".96, 1.09, 1",scaling-after:".80, .8, 1"),
+md: (min-width:60px,scaling-before:".96, 1.09, 1",scaling-after:".88, .8, 1"),
+lg: (min-width:60px,scaling-before:".96, 1.09, 1",scaling-after:".86, .8, 1"),
+xl: (min-width:60px,scaling-before:".96, 1.09, 1",scaling-after:".86, .8, 1"));
 
-
-
-@mixin pipaluk($color)
-{
+@mixin button-pipaluk() {
     position: relative;
     z-index: 1;
-
-    display: inline-block;
-
-    min-width: 70px;
-    margin: 1em;
-    padding: 1.5em 3em;
-    // max-width: 250px;
-
-    text-align: center;
-
-    color: inherit;
-    color: #fff;
     border: none;
     border-radius: 200px;
     background: none;
 
-    -webkit-backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    &:hover
-    {
-        color: #fff;
-    }
+
     &::before,
-    &::after
-    {
+    &::after {
         position: absolute;
         z-index: -1;
         top: 0;
@@ -44,27 +28,84 @@
 
         border-radius: inherit;
     }
-    &::before
-    {
-        border: 1px solid $color;
-    }
 
-    &::after
-    {
-        background: $color;
-    }
-    &:hover::before
-    {
+    &:hover::before {
         transform: scale3d(.96, 1.09, 1);
     }
+
     &::before,
-    &:hover::after
-    {
+    &:hover::after {
         transform: scale3d(.86, .8, 1);
     }
 
-    &:hover::after
-    {
-        background-color: $color;
+   
+
+
+
+    //  ----------------------------------------------------------------------
+    //  COLORS
+    //  ----------------------------------------------------------------------
+    @each $colorName,
+    $bkgColorValue in $pyro-colors {
+        &.-#{$colorName} {
+
+            @include pyro-button-text-colors($bkgColorValue);
+
+            &:hover {
+                color: #fff;
+                background: #fff;
+            }
+            &:hover::after {
+                background-color: $bkgColorValue;
+            }
+            &::before {
+                border: 1px solid $bkgColorValue;
+            }
+            &::after {
+                background-color: $bkgColorValue;
+            }
+        }
+    }
+
+
+    //  ----------------------------------------------------------------------
+    //  SIZING
+    //  ----------------------------------------------------------------------
+    @each $size,
+    $map in $pipaluk-button-sizes {
+        // $padding-x: map-get($map, padding-x);
+        $pipaluk-scaling-before: map-get($map, scaling-before);
+        $pipaluk-scaling-after: map-get($map, scaling-after);
+        $pipaluk-min-width: map-get($map, min-width);
+
+
+        &.-#{$size} {
+            min-width:$pipaluk-min-width;
+
+            &:hover::before {
+                transform: scale3d(#{$pipaluk-scaling-before});
+            }
+        
+            &::before,
+            &:hover::after {
+                transform: scale3d(#{$pipaluk-scaling-after});
+            }
+        }
+        //     font-size: map-get($map, font-size);
+        //     min-width: map-get($map, min-width);
+        //     padding: map-get($map, padding-y) map-get($map, padding-x);
+
+        //     &:hover::after,
+        //     &:hover::before {
+        //         transform: scale3d(1, .9, 1);
+        //     }
+
+        //     &::before {
+        //         top: map-get($map, goey-vertical);
+        //         right: map-get($map, goey-horizontal);
+        //         bottom: map-get($map, goey-vertical);
+        //         left: map-get($map, goey-horizontal);
+        //     }
+        // }
     }
 }
