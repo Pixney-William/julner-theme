@@ -27,7 +27,7 @@
 
     font-size: 1rem !important;
     line-height: 1;
-
+color:#808080;
     margin-bottom: 0;
     & + p
     {
@@ -38,5 +38,17 @@
 .form-group 
 {
     margin-bottom: 2rem;
+    margin-bottom: 0rem;
 }
 
+.field-group 
+{
+    
+    padding: 1rem;
+    border-bottom:1px solid #eee;
+    &:nth-child(odd)
+    {
+        background: #fafafa;
+        
+    }
+}
