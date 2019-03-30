@@ -1,0 +1,167 @@
+$goey-button-sizes: (
+  xs: (
+    padding-x:.05rem,
+    padding-y:0,
+    min-width:45px,
+    font-size:.8rem,
+    goey-horizontal:-5px,
+    goey-vertical:-3px,
+  ),
+  sm: (
+    padding-x:1.2rem,
+    padding-y:.5rem,
+    min-width:45px,
+    font-size:.85rem,
+    goey-horizontal:-5px,
+    goey-vertical:-3px,
+  ),
+  md: (
+    padding-y:1rem,
+    padding-x:2rem,
+    min-width:50px,
+    font-size:1rem,
+    goey-horizontal:-5px,
+    goey-vertical:-3px,
+  ),
+  lg: (
+    padding-y:.2rem,
+    padding-x:.3rem,
+    min-width:50px,
+    font-size:.8rem,
+    goey-horizontal:-5px,
+    goey-vertical:-3px,
+  ),
+  xl: (
+    padding-y:.2rem,
+    padding-x:.3rem,
+    min-width:50px,
+    font-size:.8rem,
+    goey-horizontal:-5px,
+    goey-vertical:-3px,
+  )
+);
+
+@mixin button-goey() {
+    //  --------------------------------------------------------------------------
+    //  GENERAL STYLING
+    //  --------------------------------------------------------------------------
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+
+    min-width: 50px;
+
+    transition: color .3s;
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    text-align: center;
+
+    color: inherit;
+    color: #fff;
+    border: none;
+    border-radius: 200px;
+    background: none;
+
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+
+
+    &::before,
+    &::after {
+        position: absolute;
+        z-index: -1;
+
+        content: '';
+
+        border-radius: inherit;
+    }
+
+    &::before {
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+
+        transition: transform .3s, opacity .3s;
+        transform: scale3d(.7, 1, 1);
+
+        opacity: .2;
+    }
+
+    &::after {
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        transition: transform .3s, background-color .3s;
+        transform: scale3d(1.1, 1, 1);
+    }
+
+    &::before,
+    &::after {
+        transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        transform: scale3d(1, 1, 1);
+    }
+
+    //  ----------------------------------------------------------------------
+    //  COLORS
+    //  ----------------------------------------------------------------------
+    @each $colorName,
+    $bkgColorValue in $pyro-colors {
+        &.-#{$colorName} {
+            @include pyro-button-text-colors($bkgColorValue);
+
+            &::before,
+            &::after {
+                background: $bkgColorValue;
+            }
+
+            &:hover {
+                color: #fff;
+
+                &::after {
+                    background-color: darken($bkgColorValue, 0%);
+                }
+            }
+        }
+    }
+
+
+    //  ----------------------------------------------------------------------
+    //  SIZING
+    //  ----------------------------------------------------------------------
+    @each $size,
+    $map in $goey-button-sizes {
+        $padding-x: map-get($map, padding-x);
+        $padding-y: map-get($map, padding-x);
+
+
+        &.-#{$size} {
+            font-size: map-get($map, font-size);
+            min-width: map-get($map, min-width);
+            padding: map-get($map, padding-y) map-get($map, padding-x);
+
+            &:hover::after,
+            &:hover::before {
+                transform: scale3d(1, .9, 1);
+            }
+
+            &::before {
+                top: map-get($map, goey-vertical);
+                right: map-get($map, goey-horizontal);
+                bottom: map-get($map, goey-vertical);
+                left: map-get($map, goey-horizontal);
+            }
+        }
+    }
+}

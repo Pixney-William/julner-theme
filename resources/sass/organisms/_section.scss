@@ -1,4 +1,10 @@
-&section 
-{
-    margin-bottom:2rem;
+&section {
+    margin-bottom: 2rem;
+
+    //  ----------------------------------------------------------------------
+    //  resources/views/partials/buttons.twig
+    //  ----------------------------------------------------------------------
+    &.-buttons {
+        padding: 1rem;
+    }
 }
