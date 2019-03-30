@@ -1,40 +1,143 @@
-&section {
-    margin:1rem;
-    //margin-bottom: 2rem;
 
+&section
+{
+    margin: 1rem;
     //  ----------------------------------------------------------------------
     //  resources/views/partials/buttons.twig
     //  ----------------------------------------------------------------------
-    &.-buttons {
+    &.-buttons
+    {
         display: flex;
+
+        margin: 0;
+        padding: 1rem;
+
+        background: pc('light');
+
         justify-content: flex-end;
-        background: #f9f9f9;
-    padding: 1rem;
-        margin:0;
+
+        
+
+        //  --------------------------------------------------------------------
+        //  When the buttons are placed within breadcrumbs
+        //  --------------------------------------------------------------------
+        .o-section.-breadcrumbs &
+        {
+            padding: 0;
+            
+        }
     }
 
     //  ------------------------------------------------------------------------
     //  resources/views/partials/topbar.twig
     //  ------------------------------------------------------------------------
-    &.-topbar {
+    &.-topbar
+    {
         line-height: $headerHeight;
-        height: $headerHeight;
-        padding: 0 15px;
+
         position: sticky;
-        top: 0;
         z-index: 9;
-        background: #fff;
+        top: 0;
+
+        height: $headerHeight;
+        margin: 0;
+        padding: 0 1rem;
+
+
+
+        background: #fff
     }
 
     //  ------------------------------------------------------------------------
     //  resources/views/layouts/default.twig
     //  ------------------------------------------------------------------------
-    &.-breadcrumbs 
+    &.-breadcrumbs
     {
         display: flex;
+
+        margin: 0;
+        padding: .5rem 1rem;
+
+        background: #fbfbfb;
+        border-top:1px solid darken(#fbfbfb,5%);
+
+        align-items: center;
         justify-content: space-between;
-        background: #f3f3f3;
-    padding: 1rem;
+        
+        
+    }
+
+    //  ------------------------------------------------------------------------
+    //  resources/views/table/partials/filters.twig
+    //  ------------------------------------------------------------------------
+    &.-filters
+    {
+        margin: 0;
+        padding: 1rem 1rem;
+
+        border-top: 1px solid darken(#fbfbfb,5%);
+        border-bottom: 1px solid darken(#fbfbfb,5%);
+        background: #fbfbfb;
+        
+        form
+        {
+            display: flex;
+
+            & > div
+            {
+                max-width: 200px;
+
+                flex: 1;
+                select,
+                input
+                {
+                    width: 100%;
+                    min-width: 100%;
+
+                    border: 1px solid darken(pc('light'),11%);
+                    background: #fff;
+
+                    &[name='filter_search']
+                    {
+                        min-width: 200px;
+                    }
+                }
+            }
+            & > div.btn-group
+            {
+                //TODO: DIRTY ! FIX IT!
+                display: flex;
+
+                height: 38px;
+                margin-left: auto !important;
+                .button
+                {
+                    height: 100%;
+
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+    //  ------------------------------------------------------------------------
+    //  resources/views/table/partials/views.twig
+    //  ------------------------------------------------------------------------
+    &.-views 
+    {
+        //background: pc('background');
+        padding:0;
         margin:0;
+        border-bottom: 1px solid darken(pc('background'),10%);
+        &+.o-section 
+        {
+            margin-top:0rem;
+            border-top:0;
+            .table th 
+            {
+                border-top:0;
+            }
+        }
+
     }
 }

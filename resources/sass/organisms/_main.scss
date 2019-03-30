@@ -1,9 +1,11 @@
 &main
 {
-    width: 100%;
+    
     height: auto;
     min-height: 100vh;
-
+    z-index: 1;
+    margin-left: 300px;
+    width: calc(100vw - 300px);
     // transition: transform 150ms ease-in-out;
     // transform: translate(0,0);
 

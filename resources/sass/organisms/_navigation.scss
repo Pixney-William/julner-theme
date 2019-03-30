@@ -1,15 +1,23 @@
 
 &navigation
 {
-    position: relative;
+    position: fixed;
     z-index: 2;
-
+    top:0;
     height: auto;
     min-height: 100vh;
     padding-top: $headerHeight;
 
     background: $white;
     box-shadow: -5px 0 25px 0 rgba(0, 0, 0, .3);
+    //align-self: flex-start; // sticky fix
+
+    .kollo
+    {
+        position: static;
+        top:0;
+        width:100px;
+    }
 
     @media (min-width: $minResForStaticSidebars)
     {
@@ -134,7 +142,7 @@
     */
     &__menu
     {
-        background: lighten(pc(),32%);
+        background: pc('background');
         /*
             --------------------------------------------------------------------
             Styling when sidebar is set to be closed.

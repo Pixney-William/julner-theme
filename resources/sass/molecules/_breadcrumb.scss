@@ -7,4 +7,20 @@
     list-style: none;
     background-color:transparent;
     border-radius: 0;
+
+
+    .o-section.-breadcrumbs & 
+    {
+        li
+        {
+            color:#999;
+
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            display: inline-block;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: "→";
+        }
+    }
 }

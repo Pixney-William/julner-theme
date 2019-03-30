@@ -158,4 +158,40 @@
             justify-content: flex-start;
         }
     }
+
+    //  ------------------------------------------------------------------------
+    //  resources/views/table/partials/views.twig
+    //  ------------------------------------------------------------------------
+    .o-section.-views & 
+    {
+        background: pc('background');
+        padding:1rem 1rem 0;
+        li 
+        {
+            // display:inline-block;
+            // padding:1rem 1rem;
+            a
+            {
+                padding:.3rem 1rem .4rem;
+                display:block;
+            }
+
+        }
+        li.-active 
+        {
+            background:#fff;
+            position: relative;
+            top:1px;
+            border-top: 1px solid darken(pc('background'),10%);
+            border-left: 1px solid darken(pc('background'),10%);
+            border-right: 1px solid darken(pc('background'),10%);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        li.-active a
+        {
+            
+           
+        }
+    }
 }

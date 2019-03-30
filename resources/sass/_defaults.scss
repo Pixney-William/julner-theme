@@ -62,7 +62,9 @@ $dirt: #4e3735;
 // );
 $pyro-colors: (
 'main': $indigo,
+'background':lighten($indigo,32%),
 'light': #f3f3f3,
+'trump':#4FED13,
 'black': $dark,
 'primary': $indigo,
 'secondary': $indigo,
