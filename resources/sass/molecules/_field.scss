@@ -16,28 +16,28 @@
     //  ------------------------------------------------------------------------
     &__label 
     {
-        color:pc('dim');
+        color:pc('main');
         @extend %bold;
         margin:0;
     }
     &__instructions 
     {
-        color: lighten(pc('dim'),10%);
+        color: darken(pc('lightShades'),30%);
         font-size: .9rem;
        
     }
     &__warning 
     {
-        color:pc('warning');
+        
         font-weight: 700;
         font-size: .8rem;
         margin: .2rem 0 .8rem;
+        &,& i 
+        {
+            color:pc('lightAccent');
+        }
     }
-    &__warning i
-    {
-        color:pc('warning');
-
-    } 
+   
     &__type
     {
         margin-top:.5rem;

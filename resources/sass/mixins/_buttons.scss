@@ -19,6 +19,18 @@
     }
 }
 
+@mixin text-color($color)
+{
+    @if (lightness($color) > 60)
+    {
+        color: #000;
+    }
+    @else
+    {
+        color: #fff;
+    }
+}
+
 
 @mixin button-sizing {
     //  ----------------------------------------------------------------------

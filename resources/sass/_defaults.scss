@@ -60,8 +60,21 @@ $dirt: #4e3735;
 //     goey-vertical:-3px,
 //   )
 // );
+$mainBrand:#37ADEC;
+$lightAccent:#CA8B51;
+$darkAccent:#B33B58;
+$darkShaded:#374169;
+$darkShades:#2A3E69;
+$darkShades:#2D305E;
+$lightShades:#F4F3F2;
+
 $pyro-colors: (
-'main': $indigo,
+
+'main': $mainBrand,
+'lightShades': $lightShades,
+'darkShades': $darkShades,
+'darkAccent':$darkAccent,
+'lightAccent':$lightAccent,
 'background':lighten($indigo,32%),
 'dim':#6f6f6f,
 'light': #f3f3f3,
