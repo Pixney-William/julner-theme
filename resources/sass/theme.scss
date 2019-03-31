@@ -11,3 +11,12 @@ h1.errorchecker
     color:#fff;
     font-size:.9rem !important;
 }
+
+p 
+{
+    margin:0;
+    &+p 
+    {
+        margin-top:.5rem;
+    }
+}

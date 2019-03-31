@@ -16,39 +16,17 @@
     display: block;
 
     width: 100%;
-   
+
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
     border: 1px solid lighten($black, 80%);
     border-radius: 0;
 }
-.control-label
-{
-    @extend %bold;
 
-    font-size: 1rem !important;
-    line-height: 1;
-color:#808080;
-    margin-bottom: 0;
-    & + p
-    {
-        margin-bottom: .5rem;
-    }
-}
-
-.form-group 
+.form__section
 {
-    margin-bottom: 2rem;
-    margin-bottom: 0rem;
-}
-
-.field-group 
-{
-    
-    padding: 1rem;
-    border-bottom:1px solid #eee;
     &:nth-child(odd)
     {
-        background: #fafafa;
-        
+        background: #aaa;
     }
 }
