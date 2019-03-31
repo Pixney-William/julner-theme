@@ -1,7 +1,25 @@
 &form {
+    padding:0;
     &__section {
+       background: #fff;
+       box-shadow: 0px 1px 3px rgba(0,0,0,.1);
+        & + .o-form__section
+        {
+            //margin-top:1rem;
+            border-top:5px solid #eee;
+            
+        }
+     
         &:nth-child(odd) {
-            background: #aaa;
+            
+        }
+
+        //  --------------------------------------------------------------------
+        //  Don't show the box shadow if the form is stacked
+        //  --------------------------------------------------------------------
+        &.d-flex 
+        {
+            box-shadow: unset;
         }
     }
 

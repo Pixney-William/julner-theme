@@ -1,9 +1,15 @@
 //  ----------------------------------------------------------------------------
+//  m-field
 //  resources/views/form/partials/fields.twig
 //  ----------------------------------------------------------------------------
 &field 
 {
-    padding:1.5rem;
+    margin:0rem 1rem;
+    padding:0rem 0rem 1.5rem;
+    &:first-child
+    {
+        padding-top:1.5rem;
+    }
 
     //  ------------------------------------------------------------------------
     //  resources/views/form/partials/wrapper.twig

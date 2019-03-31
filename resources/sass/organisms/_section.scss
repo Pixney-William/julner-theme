@@ -1,7 +1,8 @@
 
 &section
 {
-    margin: 1rem;
+    margin: 1rem 0;
+    padding:0 2rem;
     //  ----------------------------------------------------------------------
     //  resources/views/partials/buttons.twig
     //  ----------------------------------------------------------------------
@@ -10,7 +11,7 @@
         display: flex;
 
         margin: 0;
-        padding: 1rem;
+        padding: 1rem 2rem;
 
         background: pc('light');
 
@@ -41,7 +42,7 @@
 
         height: $headerHeight;
         margin: 0;
-        padding: 0 1rem;
+        padding: 0 2rem;
 
 
 
@@ -56,7 +57,7 @@
         display: flex;
 
         margin: 0;
-        padding: .5rem 1rem;
+        padding: .5rem 2rem;
 
         background: #fbfbfb;
         border-top:1px solid darken(#fbfbfb,5%);
@@ -73,7 +74,7 @@
     &.-filters
     {
         margin: 0;
-        padding: 1rem 1rem;
+        padding: 1rem 2rem;
 
         border-top: 1px solid darken(#fbfbfb,5%);
         border-bottom: 1px solid darken(#fbfbfb,5%);
@@ -147,7 +148,6 @@
     &.-form 
     {
         margin:0;
-        padding:0;
         .tab-content 
         {
             width:100%;

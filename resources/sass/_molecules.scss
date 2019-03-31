@@ -3,9 +3,11 @@
     @import './molecules/formControls';
     @import './molecules/breadcrumb';
     @import './molecules/field';
+    @import './molecules/_nav';
+    @import './molecules/_tab';
     
 }
 
 // Bootstrap defined components that doesnt follow ABEM structure
-@import './molecules/_nav';
+
 @import './molecules/_table';

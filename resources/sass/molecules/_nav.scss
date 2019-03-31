@@ -1,8 +1,59 @@
-.nav 
+&nav
 {
-    &.-stacked 
+    &.-stacked
     {
-        min-width:200px;
-        background:pc('light');
+        min-width: 200px;
+
+        border: 0;
+        border-right: 1px solid #eee;
+        background: #fff;
+
+        .nav-item
+        {
+            // background:green;
+
+            &.show .nav-link,
+            & .nav-link.active
+            {
+                color: inherit;
+                border: 0;
+                background-color: #fff;
+                color:red;
+                position: relative;
+                left: 1px;
+                
+            }
+
+            .nav-link
+            {
+                border:0;
+                border-radius: 0;
+                padding:0;
+                &:hover
+                {
+                    border: 0;
+                    background: green;
+                }
+            }
+        }
+
+
+
+        // .nav-link.active,
+        // .nav-item.show .nav-link
+        // {
+        //     color: inherit;
+        //     border: 0;
+        //     background-color: green;
+        // }
+        // .nav-link
+        // {
+        //     &,
+        //     &:hover,
+        //     &.active
+        //     {
+        //         border: 0;
+        //     }
+        // }
     }
 }
