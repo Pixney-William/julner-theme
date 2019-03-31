@@ -10,18 +10,30 @@
     //  ------------------------------------------------------------------------
     &__label 
     {
-
+        color:pc('dim');
+        @extend %bold;
+        margin:0;
     }
-    &__insctructions 
+    &__instructions 
     {
-
+        color: lighten(pc('dim'),10%);
+        font-size: .9rem;
+       
     }
     &__warning 
     {
-
+        color:pc('warning');
+        font-weight: 700;
+        font-size: .8rem;
+        margin: .2rem 0 .8rem;
     }
+    &__warning i
+    {
+        color:pc('warning');
+
+    } 
     &__type
     {
-
+        margin-top:.5rem;
     }
 }

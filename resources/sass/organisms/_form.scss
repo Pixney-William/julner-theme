@@ -1,0 +1,32 @@
+&form {
+    &__section {
+        &:nth-child(odd) {
+            background: #aaa;
+        }
+    }
+
+    .form-control:focus {
+        color: #495057;
+        border-color: $black;
+        outline: 0;
+        background-color: $white;
+        box-shadow: unset;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+
+        display: block;
+
+        width: 100%;
+
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+        border: 1px solid lighten($black, 80%);
+        border-radius: 0;
+    }
+
+
+}
