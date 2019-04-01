@@ -97,7 +97,7 @@
     {
         transition: all 150ms ease-in-out;
 
-        background: #fff;
+        background: pc('darkShades');
 
 
 
@@ -142,7 +142,9 @@
     */
     &__menu
     {
-        background: pc('darkShades');
+        background: pc('lightShades');
+        ''
+        
         
         /*
             --------------------------------------------------------------------
