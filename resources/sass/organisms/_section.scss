@@ -13,7 +13,7 @@
         margin: 0;
         padding: 1rem 2rem;
 
-        background: pc('light');
+        background: pc();
 
         justify-content: flex-end;
 
@@ -64,6 +64,15 @@
 
         align-items: center;
         justify-content: space-between;
+
+        height:55px;
+        margin-bottom:1rem;
+
+        // Breadcrumbs and filter section should be connected.
+        &+.o-section.-filters 
+        {
+            margin-top:-1rem;
+        }
         
         
     }
@@ -95,7 +104,7 @@
                     width: 100%;
                     min-width: 100%;
 
-                    border: 1px solid darken(pc('light'),11%);
+                    border: 1px solid darken(pc(),11%);
                     background: #fff;
 
                     &[name='filter_search']
@@ -126,10 +135,10 @@
     //  ------------------------------------------------------------------------
     &.-views 
     {
-        //background: pc('background');
+        background: pc('sectionViews');
         padding:0;
         margin:0;
-        border-bottom: 1px solid darken(pc('background'),10%);
+        border-bottom: 1px solid darken(pc(),10%);
         &+.o-section 
         {
             margin-top:0rem;

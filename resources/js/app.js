@@ -9,7 +9,7 @@ whenDomReady().then(() => {
   login.addLoadedClass()
 });
 
-sideBarToggler(".o-navigation__openSidebar");
+sideBarToggler(".-toggleSidebar");
 
 if (!document.body.classList.contains('-keepSidebarOpen')) {
   tippy('[data-tippy-content]', {

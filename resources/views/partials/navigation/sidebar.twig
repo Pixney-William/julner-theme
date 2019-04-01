@@ -1,0 +1,14 @@
+<div class="o-navigation__sidebar">
+    <ul class="m-list -reset">
+        {% for key, navigation in template.cp.navigation %}
+        <li class="{{ navigation.active ? '-active' }} variant-border" data-slug="{{ navigation.slug }}">
+            <a {{ html_attributes(navigation.attributes) }} data-tippy-content="{{ trans(navigation.title) }}">
+                <span class="icon">
+                    {{ navigation.icon()|raw }}
+                </span>
+                <span class="title">{{ trans(navigation.title) }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

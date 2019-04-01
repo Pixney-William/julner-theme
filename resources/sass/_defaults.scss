@@ -12,83 +12,86 @@ $oNavigationListIconHeight: $oNavigationChildPadding * 2;
 // Sidebar and Menu sizes when they are set to keep open
 $sidebarWidthOnKeepOpen: 240px;
 $menuWidthOnKeepOpen: 225px;
-$indigo: #5174ff;
-$ocean: #3dab9a;
-$dark: #404040;
-$danger: #e78a45;
-$warning: #c23835;
-$dirt: #4e3735;
-// $button-sizes: (
-//   xs: (
-//     padding-x:.05rem,
-//     padding-y:0,
-//     min-width:45px,
-//     font-size:.8rem,
-//     goey-horizontal:-5px,
-//     goey-vertical:-3px,
-//   ),
-//   sm: (
-//     padding-x:1.2rem,
-//     padding-y:.5rem,
-//     min-width:45px,
-//     font-size:.85rem,
-//     goey-horizontal:-5px,
-//     goey-vertical:-3px,
-//   ),
-//   md: (
-//     padding-y:1rem,
-//     padding-x:2rem,
-//     min-width:50px,
-//     font-size:1rem,
-//     goey-horizontal:-5px,
-//     goey-vertical:-3px,
-//   ),
-//   lg: (
-//     padding-y:.2rem,
-//     padding-x:.3rem,
-//     min-width:50px,
-//     font-size:.8rem,
-//     goey-horizontal:-5px,
-//     goey-vertical:-3px,
-//   ),
-//   xl: (
-//     padding-y:.2rem,
-//     padding-x:.3rem,
-//     min-width:50px,
-//     font-size:.8rem,
-//     goey-horizontal:-5px,
-//     goey-vertical:-3px,
-//   )
-// );
-$mainBrand:#37ADEC;
-$lightAccent:#CA8B51;
-$darkAccent:#B33B58;
-$darkShaded:#374169;
-$darkShades:#2A3E69;
-$darkShades:#2D305E;
-$lightShades:#F4F3F2;
 
-$pyro-colors: (
 
-'main': $mainBrand,
-'lightShades': $lightShades,
-'darkShades': $darkShades,
-'darkAccent':$darkAccent,
-'lightAccent':$lightAccent,
-'background':lighten($indigo,32%),
-'dim':#6f6f6f,
-'light': #f3f3f3,
-'trump':#4FED13,
-'black': $dark,
-'primary': $indigo,
-'secondary': $indigo,
-'success': $ocean,
-'info': $indigo,
-'warning': $warning,
-'danger': $danger,
-'dark': $dirt
-) !default;
+//  ----------------------------------------------------------------------------
+//  COLOR VARIABLES - TODO: Cleanup
+//  ----------------------------------------------------------------------------
 
+// Must be specified to follow bootstrap..
+$primary: #5174ff;
+$secondary: #5174ff;
+$success: #5174ff;
+$info: #5174ff;
+$warning: #5174ff;
+$danger: #5174ff;
+$light: #5174ff;
+$dark: #5174ff;
+
+// Admin theme colors
+$brand          : #BD20DE;
+$shadow         : #2F2A54;
+$light          : #F5F2ED;
+$accentLight    : #BFA0C8;
+$accentDark     : #7583BA;
+$sidebar        : $shadow;
+$menu           : darken($sidebar,10%);
+$main           : $light;
+$link           : $accentLight;
+
+$brand          : #d5dcfc;
+$shadow         : darken($brand,0%);
+$light          : lighten($brand,10%);
+$accentLight    : #BFA0C8;
+$accentDark     : #7583BA;
+$sidebar        : $shadow;
+$menu           : darken($brand,3%);
+$main           : $light;
+$link           : $accentLight;
+
+//  ----------------------------------------------------------------------------
+//  Admin Theme Colors
+//  ----------------------------------------------------------------------------
+$admin-theme-colors: (
+    'main'              : $main,
+    'navigationTop'     : $sidebar,
+    'sidebar'           : $sidebar,
+    'sidebarLink'       : lighten($sidebar,50%),
+    'sidebarLinkHover'  : lighten($sidebar,80%),
+    'menu'              : $menu,
+    'menuLink'          : lighten($menu,50%),
+    'menuLinkHover'     : lighten($menu,80%),
+    'label'             : darken($brand,10%),
+    'link'              : $link,
+    'sectionViews'      : lighten($light,100%)
+  );
+
+
+//  ----------------------------------------------------------------------------
+//  We will make use of bootstraps theme color map to make sure we are
+//  not breaking things too much. But this map is only used for these elements:
+// 
+// - buttons
+// - messages
+//  ----------------------------------------------------------------------------
+// Help url: http://colormind.io/bootstrap/
+$theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark,
+  );
+
+
+
+
+//  ----------------------------------------------------------------------------
+//  Controls the button sizing
+//  ----------------------------------------------------------------------------
 $button-sizing: (
     xs: (
       size:.7rem
@@ -106,8 +109,11 @@ $button-sizing: (
         size:1.2rem
     )
   );
-  
+
+//  ----------------------------------------------------------------------------
+//  Get the color using the pc function.
+//  ----------------------------------------------------------------------------
 @function pc($key: 'main')
 {
-    @return map-get($pyro-colors, $key);
+    @return map-get($admin-theme-colors, $key);
 }

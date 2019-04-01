@@ -3,41 +3,35 @@
 {
     position: fixed;
     z-index: 2;
-    top:0;
+    top: 0;
+
     height: auto;
     min-height: 100vh;
-    padding-top: $headerHeight;
+    //padding-top: $headerHeight;
 
     background: $white;
     box-shadow: -5px 0 25px 0 rgba(0, 0, 0, .3);
     //align-self: flex-start; // sticky fix
 
-    .kollo
-    {
-        position: static;
-        top:0;
-        width:100px;
-    }
 
     @media (min-width: $minResForStaticSidebars)
     {
         padding-top: 0;
     }
 
-    &__menuWrapper
+    &__wrapper
     {
         // position: sticky;
         // top: 0;
-
         display: flex;
-
         // height: 100vh;
-    height: calc(100vh - #{$headerHeight});;
+
+        height: calc(100vh - #{$headerHeight});;
     }
 
-    &__hmm
+    &__top
     {
-        //position: absolute;
+        background:pc('navigationTop');
         z-index: 3;
         top: 0;
         left: 0;
@@ -47,28 +41,14 @@
         width: 100%;
         height: $headerHeight;
 
-        background: #fff;
+    }
+    &__toggle
+    {
+        background:pc('navigationTop');
+        color:#fff;
     }
 
-    // &__sidebarIsOpen
-    // {
-    //     position: sticky;
-    //     top: 0;
 
-    //     border: 0;
-    //     background: #fff;
-
-    //     &,
-    //     &:focus
-    //     {
-    //         outline: none;
-    //     }
-
-    //     @media (min-width: $minResForStaticSidebars)
-    //     {
-    //         display: none;
-    //     }
-    // }
 
     /*
         ------------------------------------------------------------------------
@@ -84,7 +64,7 @@
 
         width: $navigationAsideWidth;
         // Default padding
-        padding:$oNavigationChildPadding;
+        padding: $oNavigationChildPadding;
     }
 
 
@@ -97,7 +77,7 @@
     {
         transition: all 150ms ease-in-out;
 
-        background: pc('darkShades');
+        background: pc('sidebar');
 
 
 
@@ -121,6 +101,7 @@
             z-index: 2;
 
             width: $navigationSidebarPadding;
+            overflow:hidden;
             height: 100%;
         }
         /*
@@ -131,9 +112,13 @@
         body.-keepSidebarClosed.-sidebarIsOpen &
         {
             width: calc(#{$navigationAsideWidthWhenStatic} + 50px);
+
             transition: all 150ms ease-in-out;
         }
     }
+
+
+
 
     /*
         ----------------------------------------------------------------------------
@@ -142,10 +127,8 @@
     */
     &__menu
     {
-        background: pc('lightShades');
-        ''
-        
-        
+        background: pc('menu');
+
         /*
             --------------------------------------------------------------------
             Styling when sidebar is set to be closed.
@@ -161,11 +144,9 @@
             Styling when sidebar is set to be open.
             --------------------------------------------------------------------
         */
-        body.-keepSidebarOpen & 
+        body.-keepSidebarOpen &
         {
-            width:$menuWidthOnKeepOpen;
+            width: $menuWidthOnKeepOpen;
         }
     }
-
-   
 }

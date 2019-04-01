@@ -19,7 +19,7 @@
     //  COLORS
     //  ----------------------------------------------------------------------
     @each $colorName,
-    $bkgColorValue in $pyro-colors
+    $bkgColorValue in $theme-colors
     {
         &.-#{$colorName}
         {

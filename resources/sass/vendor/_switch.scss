@@ -123,7 +123,7 @@ $colors: (
     }
 }
 
-@each $color, $value in $pyro-colors {
+@each $color, $value in $theme-colors {
     .boolean-field_type .switch__checkbox.switch__checkbox--on-#{$color}:checked {
         & + .switch__label,
         & + .switch__label:before {

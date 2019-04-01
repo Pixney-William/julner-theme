@@ -1,8 +1,0 @@
-{% import "pyrocms.theme.accelerant::macros/sections.twig" as menu %}
-
-
-<ul class="m-list -lstn">
-    {% for section in template.cp.sections.root().visible() %}
-    {{ menu.sections(template.cp.sections, section) }}
-    {% endfor %}
-</ul>

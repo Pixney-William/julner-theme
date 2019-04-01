@@ -38,23 +38,23 @@
 
     <div id="app">
 
-        {% include "theme::partials/navigation" %}
+        {# Aside navigation #}
+        {% include "theme::partials//navigation/navigation" %}
 
-        <div class="o-main">
-                
+        <div class="o-main">     
+            
+            {# Top bar  #}
             {% include "theme::partials/topbar" %}
 
+            {# Breadcrumbs and buttons #}
             <div class="o-section -breadcrumbs">
-                    {{ breadcrumb() }}  {% include "theme::partials/buttons" %}
+                {{ breadcrumb() }}  {% include "theme::partials/buttons" %}
             </div>
 
-           
-            
-            {% block content %}{% endblock %}
-
-            
+            {# Main content #}
+            {% block content %}{% endblock %}            
         </div>
-
+        
     </div>
 
     {% include "theme::partials/footer" %}

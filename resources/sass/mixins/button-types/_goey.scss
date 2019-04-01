@@ -117,7 +117,7 @@ $goey-button-sizes: (
     //  COLORS
     //  ----------------------------------------------------------------------
     @each $colorName,
-    $bkgColorValue in $pyro-colors {
+    $bkgColorValue in $theme-colors {
         &.-#{$colorName} {
             @include pyro-button-text-colors($bkgColorValue);
 

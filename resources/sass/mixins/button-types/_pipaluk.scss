@@ -46,7 +46,7 @@ xl: (min-width:60px,scaling-before:".96, 1.09, 1",scaling-after:".86, .8, 1"));
     //  COLORS
     //  ----------------------------------------------------------------------
     @each $colorName,
-    $bkgColorValue in $pyro-colors {
+    $bkgColorValue in $theme-colors {
         &.-#{$colorName} {
 
             @include pyro-button-text-colors($bkgColorValue);
