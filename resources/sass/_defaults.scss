@@ -45,7 +45,7 @@ $link           : $brand;
 //  Admin Theme Colors
 //  ----------------------------------------------------------------------------
 $admin-theme-colors: (
-  'text'                    : #333,
+    'text'                  : $menu,
     'main'                  : $main,
     'topbar'                : #fff,
     'topbarMenuHoverBkg'    : $light,
@@ -63,7 +63,10 @@ $admin-theme-colors: (
     'instruction'           : #8e8e8e,
     'warning'               : $warning,
     'link'                  : $link,
-    'sectionViews'          : lighten($light,100%)
+    'sectionViews'          : lighten($light,100%),
+    'horizontalNavTabs'     : $main,
+    'horizontalNavTabsColor': darken($main,20%),
+    'horizontalNavTabsColorActive': $menu,
   );
 
 

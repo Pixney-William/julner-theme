@@ -1,9 +1,18 @@
 &nav
 {
-
+    background:pc('horizontalNavTabs');
+    padding-left:1rem;
+    padding-top:.5rem;
     .nav-link 
     {
         @extend %bold;
+        color:pc('horizontalNavTabsColor');
+        transition: all 200ms ease-in-out;
+        &.active,
+        &:hover 
+        {
+            color:pc('horizontalNavTabsColorActive');
+        }
     }
     &.-stacked
     {
@@ -38,28 +47,19 @@
                 &:hover
                 {
                     border: 0;
-                    background: green;
+                    
                 }
             }
         }
 
 
 
-        // .nav-link.active,
-        // .nav-item.show .nav-link
-        // {
-        //     color: inherit;
-        //     border: 0;
-        //     background-color: green;
-        // }
-        // .nav-link
-        // {
-        //     &,
-        //     &:hover,
-        //     &.active
-        //     {
-        //         border: 0;
-        //     }
-        // }
+    }
+
+    .o-form__section & 
+    {
+        width:calc(100% + 2rem);
+        position: relative;
+        left:-1rem;
     }
 }

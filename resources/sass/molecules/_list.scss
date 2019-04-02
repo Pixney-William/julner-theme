@@ -242,11 +242,12 @@
             // padding:1rem 1rem;
             a
             {
-
+            
                 display: block;
 
                 padding: .3rem 1rem .4rem;
-                color:darken(pc('main'),20%);
+                color:pc('horizontalNavTabsColor');
+                
                 transition: all 200ms ease-in-out;
             }
         }
