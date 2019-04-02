@@ -56,7 +56,7 @@
 
     }
 
-    .o-form__section & 
+    .o-form__section &:not(.flex-column) 
     {
         width:calc(100% + 2rem);
         position: relative;
