@@ -1,5 +1,10 @@
 &menu
 {
+
+    .dropdown-menu.show 
+    {
+        top:50px;
+    }
     &__toggle
     {
         position: relative;

@@ -2,7 +2,16 @@
 
 <div class="o-navigation__menu">
     <ul class="m-list -reset">
+
+          
+
         {% for section in template.cp.sections.root().visible() %}
+
+        
+        
+
+    
+
         {{ menu.sections(template.cp.sections, section) }}
         {% endfor %}
     </ul>
