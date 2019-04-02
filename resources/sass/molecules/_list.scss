@@ -6,15 +6,16 @@
 
     li
     {
-        margin:.2rem 0 0;
-        &:first-child 
+        margin: .2rem 0 0;
+        &:first-child
         {
-            margin-top:0;
+            margin-top: 0;
         }
         a
         {
-            color: pc('link');
             position: relative;
+
+            color: pc('link');
         }
         a:hover
         {
@@ -40,12 +41,27 @@
         li
         {
             margin-left: .5rem;
+            margin-top:0;
+            border-top: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-left: 1px solid transparent;
             &:first-child
             {
                 margin-left: 0;
             }
+            a 
+            {
+                @extend %bold;
+
+            }
+            &.-active a 
+            {
+                @extend %bold;
+            }
         }
     }
+
+    
 
     // Styling for vertical lists.
     &.-vertical
@@ -105,8 +121,6 @@
 
             justify-content: center;
             align-items: center;
-
-            
         }
     }
 
@@ -116,14 +130,13 @@
     //    ----------------------------------------------------------------------
     body.-keepSidebarClosed .o-navigation__sidebar &
     {
-        
         .title
         {
             font-weight: 400;
 
             position: absolute;
+            top: 1px;
             left: 30px;
-            top:1px;
 
             visibility: hidden;
 
@@ -153,23 +166,20 @@
 
         li
         {
-            a 
+            a
             {
-                color:pc('sidebarLink');
-                
+                color: pc('sidebarLink');
             }
             & a:hover,
             &.-active a
             {
-                color:pc('sidebarLinkHover');
-                .icon 
+                color: pc('sidebarLinkHover');
+                .icon
                 {
                     transform: scale(1);
                 }
             }
         }
-
-       
     }
 
     //  ------------------------------------------------------------------------
@@ -179,16 +189,16 @@
     {
         li
         {
-            a 
+            a
             {
-                color:pc('menuLink');
                 @extend %semi-bold;
-                
+
+                color: pc('menuLink');
             }
             & a:hover,
-            &.-active a 
+            &.-active a
             {
-                color:pc('menuLinkHover');
+                color: pc('menuLinkHover');
             }
         }
     }
@@ -199,6 +209,8 @@
     {
         .title
         {
+            @extend %bold;
+
             left: 50px;
 
             display: inline-block;
@@ -208,7 +220,6 @@
             transition-delay: 100ms;
 
             opacity: 1;
-            @extend %bold;
         }
 
         li a
@@ -226,26 +237,36 @@
         padding: 1rem 1rem 0;
         li
         {
+            
             // display:inline-block;
             // padding:1rem 1rem;
             a
             {
+
                 display: block;
-                @extend %bold;
+
                 padding: .3rem 1rem .4rem;
+                color:darken(pc('main'),20%);
+                transition: all 200ms ease-in-out;
             }
+        }
+        li a:hover,
+        li.-active a 
+        {
+            color:pc('menu');
         }
         li.-active
         {
             position: relative;
             top: 1px;
 
-            border-top: 1px solid darken(pc(),10%);
-            border-right: 1px solid darken(pc(),10%);
-            border-left: 1px solid darken(pc(),10%);
+            border-top: 1px solid darken(pc('main'),10%);
+            border-right: 1px solid darken(pc('main'),10%);
+            border-left: 1px solid darken(pc('main'),10%);
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
-            background: #fff;
+            background: #fff; 
+          
         }
     }
 
@@ -253,9 +274,4 @@
     //  Top Bar Search Result list
     //  resources/sass/molecules/_search.scss
     //  ------------------------------------------------------------------------
-
-    .m-search__results & 
-    {
-    
-    }
 }

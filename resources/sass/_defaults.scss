@@ -57,6 +57,7 @@ $admin-theme-colors: (
     'menu'                  : $menu,
     'menuLink'              : lighten($menu,50%),
     'menuLinkHover'         : lighten($menu,80%),
+    'breadcrumb'            : #8e8e8e,
     'label'                 : $menu,
     'instruction'           : #8e8e8e,
     'warning'               : $warning,

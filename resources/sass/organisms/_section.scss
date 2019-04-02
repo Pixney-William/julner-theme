@@ -135,7 +135,8 @@
     //  ------------------------------------------------------------------------
     &.-views 
     {
-        background: pc('sectionViews');
+        background: pc('main');
+     
         padding:0;
         margin:0;
         border-bottom: 1px solid darken(pc(),10%);

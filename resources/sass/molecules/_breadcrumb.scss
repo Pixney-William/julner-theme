@@ -13,8 +13,25 @@
     {
         li
         {
-            color:#999;
+            &:not(:first-child)
+            {
+                
+                
+            }
+            &,a 
+            {
+                color:darken(pc('breadcrumb'),0);
+                font-size:.92rem;
+            }
+            a 
+            {
+                color:darken(pc('breadcrumb'),20%);
+            }
+        }
 
+        &:first-child a 
+        {
+            
         }
         .breadcrumb-item + .breadcrumb-item::before {
             display: inline-block;
