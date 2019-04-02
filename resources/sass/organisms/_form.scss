@@ -5,11 +5,15 @@
     {
         background: #fff;
         box-shadow: 0 1px 3px rgba(0,0,0,.1);
-        padding: 0 1rem;
+        
         & + .o-form__section
         {
             //margin-top:1rem;
             border-top: 5px solid pc('main');
+        }
+
+        &:not(.-tabs){
+            padding: 0 1rem;
         }
 
 

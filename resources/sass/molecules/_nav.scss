@@ -2,6 +2,12 @@
 {
     @include tabs-and-list-shared-styling();
 
+    .o-form__section.-tabs &
+    {
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+
     // background:pc('horizontalNavTabs');
     // padding-left:1rem;
     // padding-top:.5rem;

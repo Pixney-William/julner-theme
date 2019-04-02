@@ -1,7 +1,12 @@
 &tab 
 {
-    &__content 
+    
+
+    .o-form__section.-tabs &
     {
-        // This elemnt shall not have padding.
-    }
+        &__content 
+        {
+            padding:0 1rem;
+        }
+    }    
 }
