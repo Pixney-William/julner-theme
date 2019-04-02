@@ -2,15 +2,16 @@
     {% if template.module.composer_json.support %}
 
     <div class="btn-group dropleft m-menu__group">
-        <button type="button" class=" dropdown-toggle m-menu__toggle" data-toggle="dropdown" aria-haspopup="true"
+        <button type="button" class="m-menu__toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             {{ icon('fa fa-life-ring') }}
         </button>
         <div class="dropdown-menu">
-            <h6 class="dropdown-header">
-                {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
-            </h6>
+            
             <ul class="m-list -reset">
+                    <li class="dropdown-header">
+                            {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
+                        </li>
                 <li class="dropdown-divider"></li>
                 {% for type, value in template.module.composer_json.support %}
                 {% if type == 'email' %}

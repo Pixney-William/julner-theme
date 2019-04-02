@@ -37,7 +37,7 @@ $accentDark     : #7583BA;
 $sidebar        : $shadow;
 $menu           : darken($sidebar,10%);
 $main           : $light;
-$link           : $accentLight;
+$link           : $brand;
 
 
 
@@ -45,20 +45,23 @@ $link           : $accentLight;
 //  Admin Theme Colors
 //  ----------------------------------------------------------------------------
 $admin-theme-colors: (
-    'main'              : $main,
-    'topbar'            : $light,
-    'navigationTop'     : $sidebar,
-    'sidebar'           : $sidebar,
-    'sidebarLink'       : lighten($sidebar,50%),
-    'sidebarLinkHover'  : lighten($sidebar,80%),
-    'menu'              : $menu,
-    'menuLink'          : lighten($menu,50%),
-    'menuLinkHover'     : lighten($menu,80%),
-    'label'             : $menu,
-    'instruction'       : #8e8e8e,
-    'warning'           : $warning,
-    'link'              : $link,
-    'sectionViews'      : lighten($light,100%)
+    'main'                  : $main,
+    'topbar'                : #fff,
+    'topbarMenuHoverBkg'    : $light,
+    'topbarMenuColor'       : #000,
+    'topbarMenuColorHover'  : #000,
+    'navigationTop'         : $sidebar,
+    'sidebar'               : $sidebar,
+    'sidebarLink'           : lighten($sidebar,50%),
+    'sidebarLinkHover'      : lighten($sidebar,80%),
+    'menu'                  : $menu,
+    'menuLink'              : lighten($menu,50%),
+    'menuLinkHover'         : lighten($menu,80%),
+    'label'                 : $menu,
+    'instruction'           : #8e8e8e,
+    'warning'               : $warning,
+    'link'                  : $link,
+    'sectionViews'          : lighten($light,100%)
   );
 
 
