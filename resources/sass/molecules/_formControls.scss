@@ -1,45 +1,39 @@
 &formControls
 {
-    // position:sticky;
-    // z-index:10;
-    // top:$headerHeight;
-    //top:0;
-    display:flex;
-    background:#fefefe;
-    border-bottom:1px solid #eee;
-margin-top:1rem;
+    display: flex;
+
     width: 100%;
+    margin-top: 1rem;
+
+    border-bottom: 1px solid #eee;
+    background: #fefefe;
 
     justify-content: flex-end;
     align-items: center;
 
     &__actions
     {
-        display:flex;
+        display: flex;
     }
 
-    button 
+    button
     {
         @extend %buttonWithIcon;
     }
 
-    &.-bottom 
+    &.-bottom
     {
-        position:sticky;
-        
-        display:flex;
-        //position: fixed;
-        bottom: 0px;
+        position: sticky;
         z-index: 1;
-        right: 0px;
-        padding:1rem;
-        width: 100%;
-        background:#fff;
-        border-top:1px solid #eee;
-        // &.-show 
-        // {
-        //     display:flex;
-        // }
-    }
+        right: 0;
+        bottom: 0;
 
+        display: flex;
+
+        width: 100%;
+        padding: 1rem;
+
+        border-top: 1px solid #eee;
+        background: #fff;
+    }
 }
