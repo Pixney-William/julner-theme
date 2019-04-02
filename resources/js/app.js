@@ -26,6 +26,32 @@ sideBarToggler(".-toggleSidebar");
 // });
 
 
+const menubutton = document.querySelector('.m-menu__open');
+const menu = document.querySelector('.m-menu');
+
+// menu.addEventListener("click", function (event) {
+//   document.body.classList.remove("-sidebarIsOpen");
+
+// }, false);
+
+menubutton.addEventListener("click", function (event) {
+  
+  if(menu.classList.contains("-close"))
+  {
+    menu.classList.remove("-close");
+  } else 
+  {
+    menu.classList.add("-close");
+  }
+}, false);
+
+// menu.forEach(function (elem, index) {
+//   elem.addEventListener("click", function (event) {
+//     document.body.classList.add("-sidebarIsOpen");
+//   }, false);
+// });
+
+
 
 
 if (!document.body.classList.contains('-keepSidebarOpen')) {

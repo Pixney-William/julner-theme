@@ -28,85 +28,83 @@
 
         </div>
         <div class="col-sm">
-                <ul class="nav navbar-nav navbar-left">
-                        {% for shortcut in template.cp.shortcuts %}
-                        <li class="nav-item shortcut {#dropdown#}">
-                            <a {{ html_attributes(shortcut.attributes) }} {#data-toggle="dropdown"#}>
-                                {#<span class="tag tag-danger">{{ icon(shortcut.icon) }} 2</span>#}
-                                {{ icon(shortcut.icon) }}
+
+            {% for shortcut in template.cp.shortcuts %}
+
+            <a {{ html_attributes(shortcut.attributes) }}>
+                {{ icon(shortcut.icon) }}
+            </a>
+
+
+            {% endfor %}
+        </div>
+        <div class="col-sm">
+            {% if template.module.composer_json.support %}
+
+            <div class="btn-group dropleft m-menu">
+                <button type="button" class=" dropdown-toggle m-menu__toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ icon('fa fa-life-ring') }}
+                </button>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">
+                        {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
+                    </h6>
+                    <ul class="m-list -reset">
+                        <li class="dropdown-divider"></li>
+                        {% for type, value in template.module.composer_json.support %}
+                        {% if type == 'email' %}
+                        <li class="dropdown-item">
+                            <a href="mailto:{{ value }}">
+                                {{ value }}
                             </a>
-                            {#<ul class="dropdown-menu-right dropdown-menu">#}
-                            {#<li class="dropdown-item">#}
-                            {#<a href="/" target="_blank">#}
-                            {#<i class="fa fa-external-link"></i>#}
-                            {#{{ trans('theme::control_panel.view_site') }}#}
-                            {#</a>#}
-                            {#</li>#}
-                            {#<li class="dropdown-item">#}
-                            {#<a href="/admin/logout">#}
-                            {#<i class="fa fa-power-off"></i>#}
-                            {#{{ trans('theme::control_panel.logout') }}#}
-                            {#</a>#}
-                            {#</li>#}
-                            {#</ul>#}
                         </li>
-                        {% endfor %}
-        
-                        {% if template.module.composer_json.support %}
-                        <li class="nav-item shortcut dropdown">
-                            <a href="#" data-toggle="dropdown">
-                                {{ icon('fa fa-life-ring') }}
+                        {% else %}
+                        <li class="dropdown-item">
+                            <a href="{{ value }}" target="_blank">
+                                {{ trans('streams::support.' ~ type) }}
                             </a>
-        
-                            <ul class="dropdown-menu-right dropdown-menu">
-                                <li class="dropdown-header">
-                                    {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
-                                </li>
-                                <li class="dropdown-divider"></li>
-                                {% for type, value in template.module.composer_json.support %}
-                                {% if type == 'email' %}
-                                <li class="dropdown-item">
-                                    <a href="mailto:{{ value }}">
-                                        {{ value }}
-                                    </a>
-                                </li>
-                                {% else %}
-                                <li class="dropdown-item">
-                                    <a href="{{ value }}" target="_blank">
-                                        {{ trans('streams::support.' ~ type) }}
-                                    </a>
-                                </li>
-                                {% endif %}
-                                {% endfor %}
-                                <li class="dropdown-divider"></li>
-                                <li class="dropdown-item">
-                                    <a href="#" data-toggle="modal" data-target="#modal-help">
-                                        {{ trans('streams::support.more') }}
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         {% endif %}
-                        <li class="nav-item dropdown">
-                            <a href="javascript:void(0);" data-toggle="dropdown">
-                                <img src="{{ user().gravatar.path }}" width="36" class="rounded-circle">
+                        {% endfor %}
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item">
+                            <a href="#" data-toggle="modal" data-target="#modal-help">
+                                {{ trans('streams::support.more') }}
                             </a>
-                            <ul class="dropdown-menu-right dropdown-menu">
-                                <li class="dropdown-item">
-                                    <a href="/" target="_blank">
-                                        <i class="fa fa-external-link"></i>
-                                        {{ trans('theme::control_panel.view_site') }}
-                                    </a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="/admin/logout">
-                                        <i class="fa fa-power-off"></i>
-                                        {{ trans('theme::control_panel.logout') }}
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
+                </div>
+            </div>
+
+
+            {% endif %}
+        </div>
+
+        <div class="col-sm">
+            <div class="btn-group dropleft m-menu">
+                <button type="button" class=" dropdown-toggle m-menu__toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-astronaut"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">User</h6>
+                    <ul class="m-list -reset">
+                        <li class="dropdown-item">
+                            <a href="/" target="_blank">
+                                <i class="fa fa-external-link"></i>
+                                {{ trans('theme::control_panel.view_site') }}
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="/admin/logout">
+                                <i class="fa fa-power-off"></i>
+                                {{ trans('theme::control_panel.logout') }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     {#% include "theme::partials/navigation" %#}
