@@ -3,17 +3,43 @@
     padding: 0;
     &__section
     {
+        padding: 0 1rem;
+
         background: #fff;
         box-shadow: 0 1px 3px rgba(0,0,0,.1);
-        
+
         & + .o-form__section
         {
             //margin-top:1rem;
             border-top: 5px solid pc('main');
+            &.-title 
+            {
+                //margin-top:1rem;
+            }
         }
 
-        &:not(.-tabs){
-            padding: 0 1rem;
+        &.-tabs,
+        &.-title
+        {
+            padding-left: 0rem;
+                padding-right: 0rem;
+            & > *
+            {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        &.-title
+        {
+            
+            h5
+            {
+                padding: .5rem 2rem;
+                margin-bottom:1rem;
+
+                background: pc('main');
+            }
         }
 
 
@@ -27,7 +53,7 @@
         }
     }
 
-    .form-control 
+    .form-control
     {
         @include form-control();
     }

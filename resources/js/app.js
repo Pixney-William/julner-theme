@@ -34,16 +34,16 @@ const menu = document.querySelector('.m-menu');
 
 // }, false);
 
-menubutton.addEventListener("click", function (event) {
+// menubutton.addEventListener("click", function (event) {
   
-  if(menu.classList.contains("-close"))
-  {
-    menu.classList.remove("-close");
-  } else 
-  {
-    menu.classList.add("-close");
-  }
-}, false);
+//   if(menu.classList.contains("-close"))
+//   {
+//     menu.classList.remove("-close");
+//   } else 
+//   {
+//     menu.classList.add("-close");
+//   }
+// }, false);
 
 // menu.forEach(function (elem, index) {
 //   elem.addEventListener("click", function (event) {
