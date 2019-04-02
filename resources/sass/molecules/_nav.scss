@@ -1,5 +1,10 @@
 &nav
 {
+
+    .nav-link 
+    {
+        @extend %bold;
+    }
     &.-stacked
     {
         min-width: 200px;
@@ -29,6 +34,7 @@
                 border:0;
                 border-radius: 0;
                 padding:0;
+                @extend %bold;
                 &:hover
                 {
                     border: 0;

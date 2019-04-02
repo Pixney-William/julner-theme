@@ -11,6 +11,23 @@ whenDomReady().then(() => {
 
 sideBarToggler(".-toggleSidebar");
 
+// let elems = document.querySelectorAll('.o-navigation__sidebar .m-list .icon');
+// let alle = document.querySelector(".o-navigation__sidebar .m-list");
+
+// alle.addEventListener("mouseleave", function (event) {
+//   document.body.classList.remove("-sidebarIsOpen");
+
+// }, false);
+
+// elems.forEach(function (elem, index) {
+//   elem.addEventListener("mouseenter", function (event) {
+//     document.body.classList.add("-sidebarIsOpen");
+//   }, false);
+// });
+
+
+
+
 if (!document.body.classList.contains('-keepSidebarOpen')) {
   tippy('[data-tippy-content]', {
     theme: 'pyro',

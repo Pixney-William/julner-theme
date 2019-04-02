@@ -1,7 +1,8 @@
 .o- {
-    @import './organisms/login';
-    @import './organisms/navigation';
     @import './organisms/main';
+    @import './organisms/navigation';
+    @import './organisms/topbar';
+    @import './organisms/login';
     @import './organisms/section';
     @import './organisms/form';
 }

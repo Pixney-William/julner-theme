@@ -18,9 +18,8 @@
     {
         @extend %bold;
 
-        font-size: 1.2rem;
-        font-weight: 300;
-
+        font-size: .92rem;
+        
         margin: 0;
         margin-bottom: .2rem;
 
@@ -28,20 +27,20 @@
     }
     &__instructions
     {
-        font-size: .9rem;
+        font-size: .92rem;
 
-        color: darken(pc(),30%);
+        color: pc('instruction');
     }
     &__warning
     {
         font-size: .8rem;
-        font-weight: 700;
+        @extend %semi-bold;
 
         margin: .2rem 0 .8rem;
         &,
         & i
         {
-            color: pc('lightAccent');
+            color: pc('warning');
         }
     }
 
@@ -49,4 +48,6 @@
     {
         margin-top: .5rem;
     }
+
+    
 }

@@ -2,10 +2,11 @@
 
 *
 {
-    font-family: 'Istok Web', sans-serif;
+    //font-family: 'Istok Web', sans-serif;
 
     color: pc(main);
-    //font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Muli', sans-serif;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,10 +16,13 @@
 {
     font-weight: 400;
 }
-
+%semi-bold
+{
+    font-weight: 700;
+}
 %bold
 {
-    font-weight: 600;
+    font-weight: 800;
 }
 
 h1,
