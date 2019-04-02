@@ -4,12 +4,13 @@
 {
     //font-family: 'Istok Web', sans-serif;
 
-    color: pc(main);
+    color: pc('text');
     font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Muli', sans-serif;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+   
 }
 
 %regular
@@ -25,6 +26,10 @@
     font-weight: 800;
 }
 
+strong,* strong 
+{
+@extend %semi-bold;
+}
 h1,
 h2,
 h3,
