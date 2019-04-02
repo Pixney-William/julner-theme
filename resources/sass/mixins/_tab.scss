@@ -1,0 +1,62 @@
+@mixin tabs-and-list-shared-styling()
+{
+    padding-top: .5rem;
+
+    background: $main;
+
+    li a 
+    {
+        @extend %bold;
+        color: pc('horizontalNavTabsColor');
+        transition: all 200ms ease-in-out;
+        padding: .3rem 1rem .4rem;
+        display: block;
+    }
+
+    // Hover and Active
+    li.-active a,
+    li a:hover,
+    li a.nav-link:hover,
+    li a.nav-link.active
+    {
+        color: pc('menu');
+    }
+}
+@mixin make-tabs-of-list()
+{
+    @include tabs-and-list-shared-styling();
+
+    display: flex;
+
+    li
+    {
+        margin-top: 0;
+        margin-left: .5rem;
+
+        border-top: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-left: 1px solid transparent;
+
+
+        &.-active
+        {
+            position: relative;
+            top: 1px;
+
+            border-top: 1px solid darken(pc('main'), 10%);
+            border-right: 1px solid darken(pc('main'), 10%);
+            border-left: 1px solid darken(pc('main'), 10%);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            background: #fff;
+        }
+
+        &:first-child
+        {
+            margin-left: 0;
+        }
+
+        
+       
+    }
+}

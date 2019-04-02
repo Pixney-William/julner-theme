@@ -1,12 +1,26 @@
 &list
 {
     //  ------------------------------------------------------------------------
+    //  Reset list styling.
+    //  ------------------------------------------------------------------------ 
+    &.-reset
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+    }
+
+
+
+    //  ------------------------------------------------------------------------
     //  Global Styling
     //  ------------------------------------------------------------------------
 
     li
     {
         margin: .2rem 0 0;
+
         &:first-child
         {
             margin-top: 0;
@@ -22,48 +36,22 @@
             text-decoration: none;
         }
     }
-    // Reset list styling.
-    &.-reset
-    {
-        margin: 0;
-        padding: 0;
 
-        list-style-type: none;
+
+
+    //  ------------------------------------------------------------------------
+    //  Horizontal lists acting as tabs
+    //  ------------------------------------------------------------------------
+    &.-horizontal.-tabs
+    {
+        @include make-tabs-of-list();
     }
 
 
 
-    // Styling for horizontal lists
-    &.-horizontal
-    {
-        display: flex;
-
-        li
-        {
-            margin-left: .5rem;
-            margin-top:0;
-            border-top: 1px solid transparent;
-            border-right: 1px solid transparent;
-            border-left: 1px solid transparent;
-            &:first-child
-            {
-                margin-left: 0;
-            }
-            a 
-            {
-                @extend %bold;
-
-            }
-            &.-active a 
-            {
-                @extend %bold;
-            }
-        }
-    }
-
-    
-
-    // Styling for vertical lists.
+    //  ------------------------------------------------------------------------
+    //  Styling for vertical lists.
+    //  ------------------------------------------------------------------------
     &.-vertical
     {
         display: flex;
@@ -233,42 +221,7 @@
     //  ------------------------------------------------------------------------
     .o-section.-views &
     {
-        //background: pc('darkShades');
-        padding: 1rem 1rem 0;
-        li
-        {
-            
-            // display:inline-block;
-            // padding:1rem 1rem;
-            a
-            {
-            
-                display: block;
-
-                padding: .3rem 1rem .4rem;
-                color:pc('horizontalNavTabsColor');
-                
-                transition: all 200ms ease-in-out;
-            }
-        }
-        li a:hover,
-        li.-active a 
-        {
-            color:pc('menu');
-        }
-        li.-active
-        {
-            position: relative;
-            top: 1px;
-
-            border-top: 1px solid darken(pc('main'),10%);
-            border-right: 1px solid darken(pc('main'),10%);
-            border-left: 1px solid darken(pc('main'),10%);
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            background: #fff; 
-          
-        }
+        //
     }
 
     //  ------------------------------------------------------------------------
