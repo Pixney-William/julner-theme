@@ -1,4 +1,9 @@
 &topbar
 {
-    
+
+    &__menus 
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
 }

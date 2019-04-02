@@ -1,0 +1,10 @@
+<div class="m-menu">
+    {% for shortcut in template.cp.shortcuts %}
+
+    <a {{ html_attributes(shortcut.attributes) }}>
+        {{ icon(shortcut.icon) }}
+    </a>
+
+
+    {% endfor %}
+</div>

@@ -1,11 +1,12 @@
 &menu 
 {
-    background:yellow;
-    width:100%;
-    &__toggle
+    &__group 
     {
-        background:#fff;width:100%;
-        color: #000;
+        
+    }
+    &__toggle 
+    {
+        color:#000;
     }
 }
   

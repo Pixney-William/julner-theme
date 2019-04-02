@@ -1,0 +1,42 @@
+<div class="m-menu">
+    {% if template.module.composer_json.support %}
+
+    <div class="btn-group dropleft m-menu__group">
+        <button type="button" class=" dropdown-toggle m-menu__toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            {{ icon('fa fa-life-ring') }}
+        </button>
+        <div class="dropdown-menu">
+            <h6 class="dropdown-header">
+                {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
+            </h6>
+            <ul class="m-list -reset">
+                <li class="dropdown-divider"></li>
+                {% for type, value in template.module.composer_json.support %}
+                {% if type == 'email' %}
+                <li class="dropdown-item">
+                    <a href="mailto:{{ value }}">
+                        {{ value }}
+                    </a>
+                </li>
+                {% else %}
+                <li class="dropdown-item">
+                    <a href="{{ value }}" target="_blank">
+                        {{ trans('streams::support.' ~ type) }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item">
+                    <a href="#" data-toggle="modal" data-target="#modal-help">
+                        {{ trans('streams::support.more') }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    {% endif %}
+</div>

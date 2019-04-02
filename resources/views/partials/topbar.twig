@@ -28,84 +28,14 @@
 
         </div>
         <div class="col-sm">
-
-            {% for shortcut in template.cp.shortcuts %}
-
-            <a {{ html_attributes(shortcut.attributes) }}>
-                {{ icon(shortcut.icon) }}
-            </a>
-
-
-            {% endfor %}
-        </div>
-        <div class="col-sm">
-            {% if template.module.composer_json.support %}
-
-            <div class="btn-group dropleft m-menu">
-                <button type="button" class=" dropdown-toggle m-menu__toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    {{ icon('fa fa-life-ring') }}
-                </button>
-                <div class="dropdown-menu">
-                    <h6 class="dropdown-header">
-                        {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
-                    </h6>
-                    <ul class="m-list -reset">
-                        <li class="dropdown-divider"></li>
-                        {% for type, value in template.module.composer_json.support %}
-                        {% if type == 'email' %}
-                        <li class="dropdown-item">
-                            <a href="mailto:{{ value }}">
-                                {{ value }}
-                            </a>
-                        </li>
-                        {% else %}
-                        <li class="dropdown-item">
-                            <a href="{{ value }}" target="_blank">
-                                {{ trans('streams::support.' ~ type) }}
-                            </a>
-                        </li>
-                        {% endif %}
-                        {% endfor %}
-                        <li class="dropdown-divider"></li>
-                        <li class="dropdown-item">
-                            <a href="#" data-toggle="modal" data-target="#modal-help">
-                                {{ trans('streams::support.more') }}
-                            </a>
-                        </li>
-                    </ul>
+                <div class="o-topbar__menus">
+                        {% include "theme::partials/topbar/shortcuts" %}
+                        {% include "theme::partials/topbar/support" %}    
+                        {% include "theme::partials/topbar/profile" %}
                 </div>
-            </div>
 
-
-            {% endif %}
         </div>
-
-        <div class="col-sm">
-            <div class="btn-group dropleft m-menu">
-                <button type="button" class=" dropdown-toggle m-menu__toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user-astronaut"></i>
-                </button>
-                <div class="dropdown-menu">
-                    <h6 class="dropdown-header">User</h6>
-                    <ul class="m-list -reset">
-                        <li class="dropdown-item">
-                            <a href="/" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                {{ trans('theme::control_panel.view_site') }}
-                            </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="/admin/logout">
-                                <i class="fa fa-power-off"></i>
-                                {{ trans('theme::control_panel.logout') }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+       
     </div>
     {#% include "theme::partials/navigation" %#}
     {# This is some stuff.... #}
