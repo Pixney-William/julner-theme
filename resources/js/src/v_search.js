@@ -7,6 +7,7 @@
 
     const _input = d.getElementById('jsSearchInput');
     const _isOnId = (path, id) => path.some(element => element.id === id);
+    
     let selected = false;
 
     function _setElementSelected(item) {
@@ -25,23 +26,11 @@
         _setElementSelected(_resultsListItems[index]);
     }
 
-    function _resetList() {
-        const selectedListItem = _resultsList.querySelector('li.selected')
-        if (selectedListItem) {
-            selectedListItem.classList.remove('selected');
-        }
-        for (let index = 0; index < _resultsListItemAnchors.length; index++) {
-            _resultsListItemAnchors[index].parentNode.classList.remove('-hide');
-        }
-        _input.value = "";
-        _input.blur;
-        _results.classList.remove('-open');
-
-    }
+    
 
     function _toggleResults(path) {
         if (!_isOnId(path, 'jsSearch')) {
-            _resetList();
+            _input.blur;
         } else {
             _results.classList.add('-open');
         }
@@ -52,10 +41,14 @@
      * If no element is selected when we click, the first element will
      * be set as selected.
      */
-    function _down() {
+    function _arrowKeyDown() {
+        
         const selectedListItem = _resultsList.querySelector('li.selected')
 
-        if(!selectedListItem) _selectFirstElementInlist();
+        if(!selectedListItem) {
+            _selectFirstElementInlist();
+            return;
+        }
 
         const next = selectedListItem.nextElementSibling;
 
@@ -71,9 +64,8 @@
      * If no element is selected when we click, the first element will
      * be set as selected.
      */
-    function _up() {
+    function _arrowKeyUp() {
         const selectedListItem = _resultsList.querySelector('li.selected')
-        console.log(selectedListItem);
         if(!selectedListItem) {
             _selectLastElementInlist();
             return;
@@ -127,8 +119,8 @@
         // should follow that link..
         if (keyCode == 13 && !selected) return;
         if (keyCode == 13 && selected) followLink();
-        else if (keyCode == 40) _down();
-        else if (keyCode == 38) _up();
+        else if (keyCode == 40) _arrowKeyDown();
+        else if (keyCode == 38) _arrowKeyUp();
         else _filter();
         console.log(evt.key);
         console.log(evt.keyCode);
@@ -137,7 +129,19 @@
 
     _input.addEventListener('focus', function (focusEvent) {
         _results.classList.add('-open');
-        //_selectFirstElementInlist();
+    })
+    _input.addEventListener('blur', function (focusEvent) {
+        
+        const selectedListItem = _resultsList.querySelector('li.selected')
+        if (selectedListItem) {
+            selectedListItem.classList.remove('selected');
+        }
+        for (let index = 0; index < _resultsListItemAnchors.length; index++) {
+            _resultsListItemAnchors[index].parentNode.classList.remove('-hide');
+        }
+        _input.value = "";
+        _input.blur;
+        _results.classList.remove('-open');
     })
 
 
