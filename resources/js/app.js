@@ -5,6 +5,9 @@ import login from "./src/style/login";
 import sideBarToggler from "./src/style/openSidebar";
 import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 import 'simplebar/dist/simplebar.css';
+import search from './src/search';
+search();
+
 whenDomReady().then(() => {
   login.addLoadedClass()
 });
