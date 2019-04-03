@@ -26,8 +26,6 @@
         _setElementSelected(_resultsListItems[index]);
     }
 
-    
-
     function _toggleResults(path) {
         if (!_isOnId(path, 'jsSearch')) {
             _input.blur;
@@ -70,6 +68,8 @@
             _selectLastElementInlist();
             return;
         }
+
+        // get all items in n array and lopp sht bakwards
         
         const previous = selectedListItem.previousElementSibling;
 
