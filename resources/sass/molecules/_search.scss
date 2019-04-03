@@ -16,6 +16,26 @@
     {
         display: none;
         background:#FFF;
+        &.-open 
+        {
+            display:block;
+        }
+    }
+   
+    li 
+    {
+        line-height:1;
+        opacity:1;
+        transition: all 30ms ease-in-out;
+    }
+    li.-hide 
+    {
+        display:none;
+        opacity:0;
+    }
+    li.selected 
+    {
+        background:green
     }
 
 }

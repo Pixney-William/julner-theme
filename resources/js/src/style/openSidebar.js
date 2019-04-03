@@ -6,6 +6,8 @@ export default function(elClass){
     // const wrapper = document.querySelector(".o-navigation");
     const wrapper = document.body;
 
+    if(!wrapper || menuToggleButton) return false;
+
     menuToggleButton.addEventListener("click", function (event) {
                 
        if(wrapper.classList.contains("-sidebarIsOpen")) {
