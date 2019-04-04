@@ -10,17 +10,29 @@
     
     let selected = false;
 
+    
     function _setElementSelected(item) {
-        item.classList.add('selected')
+        console.log('Setting Start');
+        console.log('Setting Item >>');
+        console.log(item);
+        console.log('=====');
+        item.classList.add('selected');
+        selected = item;
+        
+        
     }
 
     function _unsetElementSelected(item) {
+        console.log('Unsetting Start');
+        console.log('Unsetting item >>');
+        console.log(item);
+        console.log('===');
         item.classList.remove('selected')
+        selected=false;
     }
 
-    function _selectFirstElementInlist() {
-        _setElementSelected(_resultsListItems[0]);
-    }
+    
+
     function _selectLastElementInlist() {
         const index = _resultsListItems.length - 1;
         _setElementSelected(_resultsListItems[index]);
@@ -43,16 +55,18 @@
         
         const selectedListItem = _resultsList.querySelector('li.selected')
 
+        // Set the first list element unless we already have an element set
         if(!selectedListItem) {
-            _selectFirstElementInlist();
+            _setElementSelected(_resultsListItems[0]);
             return;
         }
 
+        // If we have a selected element, unselect it, and select the next one.
         const next = selectedListItem.nextElementSibling;
 
         if (next) {
-            _setElementSelected(next);
             _unsetElementSelected(selectedListItem);
+            _setElementSelected(next);
         }
 
     }
