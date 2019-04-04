@@ -102,14 +102,6 @@
 
     if (!_input || !_results) return;
 
-    d.addEventListener('click', function (mouseEvent) {
-        _toggleResults(mouseEvent.path);
-    })
-
-    _input.addEventListener('submit', function (evt) {
-        evt.preventDefault();
-    })
-
     _input.addEventListener('keyup', function (evt) {
         const key = evt.key;
         const keyCode = evt.keyCode;
@@ -118,7 +110,8 @@
         // if an item is selected, and enter key is clicked. We 
         // should follow that link..
         if (keyCode == 13 && !selected) return;
-        if (keyCode == 13 && selected) followLink();
+        else if(keyCode==27) _input.blur;
+        else if (keyCode == 13 && selected) followLink();
         else if (keyCode == 40) _arrowKeyDown();
         else if (keyCode == 38) _arrowKeyUp();
         else _filter();
@@ -126,6 +119,18 @@
         console.log(evt.keyCode);
         console.log(jsSearchInputValue);
     })
+
+
+
+    d.addEventListener('click', function (mouseEvent) {
+        _toggleResults(mouseEvent.path);
+    })
+
+    _input.addEventListener('submit', function (evt) {
+        evt.preventDefault();
+    })
+
+    
 
     _input.addEventListener('focus', function (focusEvent) {
         _results.classList.add('-open');

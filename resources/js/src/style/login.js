@@ -1,11 +1,17 @@
-export default  {
-    delay:100,
-    loaded:"loaded",
+(function (w, d) {
 
-    addLoadedClass:function(){
-        
+    function callback() {
         setTimeout(() => {
-            document.body.classList.add(this.loaded);
-        }, this.delay);
+            d.body.classList.add('-loaded');
+        }, 100);
     }
-}
+    if (
+        d.readyState === "complete" ||
+        (d.readyState !== "loading" && !d.documentElement.doScroll)
+    ) {
+        callback();
+    } else {
+        d.addEventListener("DOMContentLoaded", callback);
+    }
+
+})(window, document);
