@@ -1,4 +1,8 @@
-$headerHeight: 50px !default;
+$topbar-height: 50px !default;
+$breadcrumb-height: 50px !default;
+$navigation-top-height : calc((#{$breadcrumb-height} + #{$topbar-height}) / 2) !default;
+
+
 $minResForStaticSidebars: 1440px !default;
 $navigationAsideWidth: 300px !default;
 $navigationAsideWidthWhenStatic: 250px !default;
@@ -50,39 +54,53 @@ $dark: rgba(22, 25, 37, 1);
 // $alink           : $brand;
 
 
+$primary              : #D06EF4;
+$primary-dark         : #221228;
+
 
 //  ----------------------------------------------------------------------------
 //  Admin Theme Colors
 //  ----------------------------------------------------------------------------
 $admin-theme-colors: (
-    'background'                    : $light,
-    'shadow'                        : $light-shadow,
+
+  'brand' : #000,
+  'sidebar'                           : $primary,
+  'navigationTop'                     : $primary-dark,
+
+  'label'                         : $primary-dark,
+  'instruction'                   : $primary-dark,
+  'warning'                       : $primary-dark,
+  'warningIcon'                   : $primary-dark,
+
+  'breadcrumb'      : #000,
+  'breadcrumb-link' : #000,
+
+
+    'background'                    : #000,
+    'shadow'                        : #000,
 
    
-    'main'                          : $primary,
-    'topbar'                        : $light,
-    'topbarMenuHoverBkg'            : darken(desaturate($light,100%),4%),
-    'topbarMenuColor'               : $primary,
-    'topbarMenuColorHover'          : $primary,
-    'navigationTop'                 : $primary,
-    'sidebar'                       : $primary,
-    'sidebarLink'                   : $light,
-    'sidebarLinkHover'              : $light,
-    'menu'                          : darken($primary,2%),
-    'menuLink'                      : $light,
-    'menuLinkHover'                 : $primary,
-    'breadcrumb'                    : $primary,
-    'label'                         : $primary,
-    'instruction'                   : $light-darkest,
-    'warning'                       : #CCAB92,
-    'warningIcon'                   : $accent,
-    'link'                          : $primary,
-    'sectionViews'                  : $primary,
-    'horizontalNavTabs'             : $primary,
-    'horizontalNavTabsColor'        : $primary,
-    'horizontalNavTabsColorActive'  : $primary,
-    'sectionTitleBackgroundColor': $light,
-    'sectionTitleColor': $dark,
+    'main'                          : #000,
+    'topbar'                        : #000,
+    'topbarMenuHoverBkg'            : #000,
+    'topbarMenuColor'               : #000,
+    'topbarMenuColorHover'          : #000,
+    
+    
+    'sidebarLink'                   : #000,
+    'sidebarLinkHover'              : #000,
+    'menu'                          : #000,
+    'menuLink'                      : #000,
+    'menuLinkHover'                 : #000,
+    
+
+    'link'                          : #000,
+    'sectionViews'                  : #000,
+    'horizontalNavTabs'             : #000,
+    'horizontalNavTabsColor'        : #000,
+    'horizontalNavTabsColorActive'  : #000,
+    'sectionTitleBackgroundColor': #000,
+    'sectionTitleColor': #000,
     
   );
 
@@ -133,7 +151,7 @@ $button-sizing: (
 //  ----------------------------------------------------------------------------
 //  Get the color using the pc function.
 //  ----------------------------------------------------------------------------
-@function pc($key: 'main')
+@function pc($key: 'brand')
 {
     @return map-get($admin-theme-colors, $key);
 }

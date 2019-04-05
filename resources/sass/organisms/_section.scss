@@ -35,13 +35,13 @@
     //  ------------------------------------------------------------------------
     &.o-topbar
     {
-        line-height: $headerHeight;
+        line-height: $topbar-height;
 
         position: sticky;
         z-index: 9;
         top: 0;
 
-        height: $headerHeight;
+        height: $topbar-height;
         margin: 0;
         padding: 0 2rem;
 
@@ -58,7 +58,7 @@
         display: flex;
 
         margin: 0;
-        padding: .5rem 2rem;
+        padding: 0 2rem;
 
         background: #fbfbfb;
         border-top:1px solid darken(#fbfbfb,5%);
@@ -66,7 +66,8 @@
         align-items: center;
         justify-content: space-between;
 
-        height:55px;
+        height: $breadcrumb-height;
+        overflow:hidden;
        
 
         // Breadcrumbs and filter section should be connected.
