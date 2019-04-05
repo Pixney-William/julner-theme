@@ -88,27 +88,23 @@
     {
         li 
         {
-            color:pc('sidebarLink');
-            opacity:.7;
-            transition: all 200ms ease-in-out;
-            &:hover,
-            &.-active 
+            &:hover a,
+            &.-active a
             {
-                color:pc('sidebarLinkHover');
-                opacity:1;
+                color:pc('sidebar-link-color-active');
             }
         }
         li a
         {
+            color:pc('sidebar-link-color');
+            transition: all 200ms ease-in-out;
             line-height: $oNavigationListHeight;
 
             display: flex;
 
             height: $oNavigationListHeight;
 
-            transition: all 200ms ease-in-out;
-
-            color:inherit;
+          
         }
 
         .title

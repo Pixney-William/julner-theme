@@ -54,7 +54,7 @@ $dark: rgba(22, 25, 37, 1);
 // $alink           : $brand;
 
 
-$primary              : #D06EF4;
+$primary              : #AE5BCC;
 $primary-dark         : #221228;
 
 
@@ -64,7 +64,13 @@ $primary-dark         : #221228;
 $admin-theme-colors: (
 
   'brand' : #000,
-  'sidebar'                           : $primary,
+  
+  'sidebar-background-color'                           : $primary,
+  'sidebar-link-color'                : rgb(255, 255, 255,.7),
+  'sidebar-link-color-active'         : rgb(255, 255, 255,1),
+
+
+
   'navigationTop'                     : $primary-dark,
 
   'label'                         : $primary-dark,
