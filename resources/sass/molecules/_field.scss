@@ -33,14 +33,20 @@
     }
     &__warning
     {
-        font-size: .8rem;
-        @extend %semi-bold;
+        font-size: .85rem;
+        //@extend %semi-bold;
 
         margin: .2rem 0 .8rem;
-        &,
+        color: pc('warning');
+        &,& i 
+        {
+            font-style:italic;
+        }
+       
         & i
         {
-            color: pc('warning');
+            color: pc('warningIcon');
+            color: inherit;
         }
     }
 

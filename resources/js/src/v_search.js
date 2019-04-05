@@ -12,21 +12,11 @@
 
     
     function _setElementSelected(item) {
-        console.log('Setting Start');
-        console.log('Setting Item >>');
-        console.log(item);
-        console.log('=====');
         item.classList.add('selected');
         selected = item;
-        
-        
     }
 
     function _unsetElementSelected(item) {
-        console.log('Unsetting Start');
-        console.log('Unsetting item >>');
-        console.log(item);
-        console.log('===');
         item.classList.remove('selected')
         selected=false;
     }
@@ -77,7 +67,11 @@
      * be set as selected.
      */
     function _arrowKeyUp() {
+        
         const selectedListItem = _resultsList.querySelector('li.selected')
+
+        
+        
         if(!selectedListItem) {
             _selectLastElementInlist();
             return;
@@ -88,8 +82,8 @@
         const previous = selectedListItem.previousElementSibling;
 
         if (previous) {
-            _setElementSelected(previous);
             _unsetElementSelected(selectedListItem);
+            _setElementSelected(previous);
         }
     }
 
@@ -111,10 +105,12 @@
 
     function _followLink() 
     {
-
+        console.log('follow link');
     }
 
     if (!_input || !_results) return;
+
+    console.log(_resultsListItems);
 
     _input.addEventListener('keyup', function (evt) {
         const key = evt.key;
@@ -125,7 +121,7 @@
         // should follow that link..
         if (keyCode == 13 && !selected) return;
         else if(keyCode==27) _input.blur;
-        else if (keyCode == 13 && selected) followLink();
+        else if (keyCode == 13 && selected) _followLink();
         else if (keyCode == 40) _arrowKeyDown();
         else if (keyCode == 38) _arrowKeyUp();
         else _filter();
@@ -159,7 +155,7 @@
             _resultsListItemAnchors[index].parentNode.classList.remove('-hide');
         }
         _input.value = "";
-        _input.blur;
+        selected=false;
         _results.classList.remove('-open');
     })
 

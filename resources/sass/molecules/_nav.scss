@@ -8,6 +8,11 @@
         padding-right:1rem;
     }
 
+    .o-form__section.-tabs &.-stacked
+    {
+        background: pc('background');
+    }
+
     // background:pc('horizontalNavTabs');
     // padding-left:1rem;
     // padding-top:.5rem;

@@ -28,16 +28,26 @@ $danger: #5174ff;
 $light: #5174ff;
 $dark: #5174ff;
 
+
+$accent: rgba(35, 87, 137, 1);
+$light: #FCFEFF;
+$light-shadow:#EEEEF0;
+$light-dark:#D1D1D3;
+$light-darkest:#A7A7A9;
+$primary: #8CDCFF;
+$color4: rgba(241, 211, 2, 1);
+$dark: rgba(22, 25, 37, 1);
+
 // Admin theme colors
-$brand          : #BD20DE;
-$shadow         : #2F2A54;
-$light          : #F5F2ED;
-$accentLight    : #BFA0C8;
-$accentDark     : #7583BA;
-$sidebar        : $shadow;
-$menu           : darken($sidebar,10%);
-$main           : $light;
-$link           : $brand;
+// $abrand          : #BD20DE;
+// $ashadow         : #2F2A54;
+// $alight          : #F5F2ED;
+// $aaccentLight    : #BFA0C8;
+// $aaccentDark     : #7583BA;
+// $asidebar        : $shadow;
+// $amenu           : darken($sidebar,10%);
+// $aamain           : $light;
+// $alink           : $brand;
 
 
 
@@ -45,28 +55,35 @@ $link           : $brand;
 //  Admin Theme Colors
 //  ----------------------------------------------------------------------------
 $admin-theme-colors: (
-    'text'                  : $menu,
-    'main'                  : $main,
-    'topbar'                : #fff,
-    'topbarMenuHoverBkg'    : $light,
-    'topbarMenuColor'       : #000,
-    'topbarMenuColorHover'  : #000,
-    'navigationTop'         : $sidebar,
-    'sidebar'               : $sidebar,
-    'sidebarLink'           : lighten($sidebar,50%),
-    'sidebarLinkHover'      : lighten($sidebar,80%),
-    'menu'                  : $menu,
-    'menuLink'              : lighten($menu,50%),
-    'menuLinkHover'         : lighten($menu,80%),
-    'breadcrumb'            : #8e8e8e,
-    'label'                 : $menu,
-    'instruction'           : #8e8e8e,
-    'warning'               : $warning,
-    'link'                  : $link,
-    'sectionViews'          : lighten($light,100%),
-    'horizontalNavTabs'     : $main,
-    'horizontalNavTabsColor': darken($main,20%),
-    'horizontalNavTabsColorActive': $menu,
+    'background'                    : $light,
+    'shadow'                        : $light-shadow,
+
+   
+    'main'                          : $primary,
+    'topbar'                        : $light,
+    'topbarMenuHoverBkg'            : darken(desaturate($light,100%),4%),
+    'topbarMenuColor'               : $primary,
+    'topbarMenuColorHover'          : $primary,
+    'navigationTop'                 : $primary,
+    'sidebar'                       : $primary,
+    'sidebarLink'                   : $light,
+    'sidebarLinkHover'              : $light,
+    'menu'                          : darken($primary,2%),
+    'menuLink'                      : $light,
+    'menuLinkHover'                 : $primary,
+    'breadcrumb'                    : $primary,
+    'label'                         : $primary,
+    'instruction'                   : $light-darkest,
+    'warning'                       : #CCAB92,
+    'warningIcon'                   : $accent,
+    'link'                          : $primary,
+    'sectionViews'                  : $primary,
+    'horizontalNavTabs'             : $primary,
+    'horizontalNavTabsColor'        : $primary,
+    'horizontalNavTabsColorActive'  : $primary,
+    'sectionTitleBackgroundColor': $light,
+    'sectionTitleColor': $dark,
+    
   );
 
 
