@@ -68,14 +68,21 @@
 
         height: $breadcrumb-height;
         overflow:hidden;
-       
 
-        // Breadcrumbs and filter section should be connected.
-        &+.o-section.-filters,
-        &+.o-section.-table 
-        {
-           
-        }
+
+        // TODO: TESTING
+        margin: 10px;
+        border-radius: 50px;
+     
+    .button.-success 
+    {
+        
+        border-radius:200px !important;
+        background:#fff !important;
+        color: $primary !important;
+    }
+
+       
         
         
     }
@@ -137,9 +144,7 @@
     //  resources/views/table/partials/views.twig
     //  ------------------------------------------------------------------------
     &.-views 
-    {
-        background: pc('background');
-     
+    { 
         padding:0;
         margin:0;
         border-bottom: 1px solid darken(pc(),10%);
