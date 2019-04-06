@@ -75,3 +75,10 @@
 @import './molecules';
 @import './organisms';
 
+
+
+body,html 
+{
+  background-color: $background-color;
+  background: $background-color;
+}

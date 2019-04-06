@@ -2,8 +2,10 @@
 &section
 {
     margin: 0rem 0;
-    padding:0 2rem;
-    
+    padding: 0 2rem;
+
+
+
     //  ----------------------------------------------------------------------
     //  resources/views/partials/buttons.twig
     //  ----------------------------------------------------------------------
@@ -14,11 +16,9 @@
         margin: 0;
         padding: 1rem 2rem;
 
-        background: pc();
-
         justify-content: flex-end;
 
-        
+
 
         //  --------------------------------------------------------------------
         //  When the buttons are placed within breadcrumbs
@@ -26,7 +26,6 @@
         .o-section.-breadcrumbs &
         {
             padding: 0;
-            
         }
     }
 
@@ -44,10 +43,6 @@
         height: $topbar-height;
         margin: 0;
         padding: 0 2rem;
-
-
-
-        background: pc('topbar');
     }
 
     //  ------------------------------------------------------------------------
@@ -56,35 +51,14 @@
     &.-breadcrumbs
     {
         display: flex;
+        overflow: hidden;
 
+        height: $breadcrumb-height;
         margin: 0;
         padding: 0 2rem;
 
-        background: #fbfbfb;
-        border-top:1px solid darken(#fbfbfb,5%);
-
         align-items: center;
         justify-content: space-between;
-
-        height: $breadcrumb-height;
-        overflow:hidden;
-
-
-        // TODO: TESTING
-        margin: 10px;
-        border-radius: 50px;
-     
-    .button.-success 
-    {
-        
-        border-radius:200px !important;
-        background:#fff !important;
-        color: $primary !important;
-    }
-
-       
-        
-        
     }
 
     //  ------------------------------------------------------------------------
@@ -95,10 +69,6 @@
         margin: 0;
         padding: 1rem 2rem;
 
-        border-top: 1px solid darken(#fbfbfb,5%);
-        border-bottom: 1px solid darken(#fbfbfb,5%);
-        background: #fbfbfb;
-        
         form
         {
             display: flex;
@@ -143,34 +113,35 @@
     //  ------------------------------------------------------------------------
     //  resources/views/table/partials/views.twig
     //  ------------------------------------------------------------------------
-    &.-views 
-    { 
-        padding:0;
-        margin:0;
+    &.-views
+    {
+        margin: 0;
+        padding: 0;
+
         border-bottom: 1px solid darken(pc(),10%);
-        &+.o-section 
+        & + .o-section
         {
-            margin-top:0rem;
-            border-top:0;
-            .table th 
+            margin-top: 0rem;
+
+            border-top: 0;
+            .table th
             {
-                border-top:0;
+                border-top: 0;
             }
         }
-
     }
 
     //  ------------------------------------------------------------------------
     //  resources/views/form/form.twig
     //  ------------------------------------------------------------------------
-    &.-form 
+    &.-form
     {
-        margin:0;
+        margin: 0;
         padding: 0;
-        background: transparent;
-        .tab-content 
+
+        .tab-content
         {
-            width:100%;
+            width: 100%;
         }
     }
 
@@ -180,19 +151,20 @@
     //  ------------------------------------------------------------------------
     &.-empty
     {
-        background:#fff;
-        min-height:300px;
-        margin-top:0;
-        &>div 
+        min-height: 300px;
+        margin-top: 0;
+
+
+        & > div
         {
-            color:pc('link');
-            padding:2rem 0
+            padding: 2rem 0;
+
+            color: pc('link');;
         }
     }
 
-    &.-table 
+    &.-table
     {
-        padding:0;
-        background: #FFF;
+        padding: 0;
     }
 }

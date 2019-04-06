@@ -50,7 +50,7 @@ $admin-theme-colors: (
 
   'brand' : #000,
 
-  'background' : #F9F9FC,
+  'background' : #E6E6F7,
   
   // Sidebar - Navigation to the very left
   'sidebar-background-color'          : $primary,
@@ -168,7 +168,9 @@ $navigationAsideWidth: 300px !default;
 $navigationAsideWidthWhenStatic: 250px !default;
 
 // Main background
-$background-color: linear-gradient(180deg, darken(pc('background')) 0%, #fff 100%);
+$background-color: linear-gradient(180deg, darken(pc('background'),0) 0%, #fff 100%);
+$background-color:pc('background');
+$background-color:#f1f1f1;
 
 // Sidebar
 $sidebar-background:pc('sidebar-background-color');
@@ -194,9 +196,3 @@ $menuWidthOnKeepOpen: 225px;
 $menu-background:linear-gradient(90deg, pc('menu-background-color') 0%, pc('sidebar-background-color') 100%);
 
 
-
-body,html 
-{
-  background-color: transparent;
-  background: $background-color;
-}

@@ -4,18 +4,9 @@
     &__section
     {
         padding: 0 1rem;
-
-        background: #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,.1);
-
         & + .o-form__section
         {
             margin-top:1rem;
-           // border-top: 5px solid pc('border');
-            &.-title 
-            {
-                //margin-top:1rem;
-            }
         }
 
         &.-tabs,

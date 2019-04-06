@@ -1,27 +1,8 @@
 &main
 {
-    
     height: auto;
     min-height: 100vh;
     z-index: 1;
     margin-left: 300px;
     width: calc(100vw - 300px);
-    // transition: transform 150ms ease-in-out;
-    // transform: translate(0,0);
-
-    // TODO: TESTING
-    padding: 0 30px;
-    
-
-    body.-openSidebar &
-    {
-        //transform: translate(220px,0);
-    }
-    @media (min-width: $minResForStaticSidebars)
-    {
-        body.-openSidebar &
-        {
-            //transform: translate(0px,0);
-        }
-    }
 }
