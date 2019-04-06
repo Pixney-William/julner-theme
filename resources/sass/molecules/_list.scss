@@ -158,6 +158,12 @@
     //    Styling for sidebar when set to be closed, but has been toggled open.
     //    ----------------------------------------------------------------------
     body.-keepSidebarClosed.-sidebarIsOpen .o-navigation__sidebar & {
+        
+        // When open, don't display the circle.
+        li a .icon::after {
+            background: rgba(255, 255, 255, 0);
+            
+        }
         .title {
             left: 0;
 

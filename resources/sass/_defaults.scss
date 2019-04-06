@@ -1,24 +1,3 @@
-$topbar-height: 50px !default;
-$breadcrumb-height: 50px !default;
-$navigation-top-height : calc((#{$breadcrumb-height} + #{$topbar-height}) / 2) !default;
-
-
-$minResForStaticSidebars: 1440px !default;
-$navigationAsideWidth: 300px !default;
-$navigationAsideWidthWhenStatic: 250px !default;
-
-// Sidebar
-$sidebar-width-closed: 72px !default;
-$sidebar-item-height:30px !default;
-$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (2 * 1rem)) !default; // Width - padding
-
-$oNavigationChildPadding: 1rem;
-$oNavigationListHeight: 35px;
-$oNavigationListIconHeight: $oNavigationChildPadding * 2;
-
-// Sidebar and Menu sizes when they are set to keep open
-$sidebarWidthOnKeepOpen: 240px;
-$menuWidthOnKeepOpen: 225px;
 
 
 //  ----------------------------------------------------------------------------
@@ -57,7 +36,10 @@ $dark: rgba(22, 25, 37, 1);
 // $alink           : $brand;
 
 
-$primary              : #AE5BCC;
+$primary              : #B8B8FF;
+$primary:#F55D3E;
+
+
 $primary-dark         : #221228;
 
 
@@ -70,11 +52,11 @@ $admin-theme-colors: (
   
   // Sidebar - Navigation to the very left
   'sidebar-background-color'          : $primary,
-  'sidebar-link-color'                : rgb(255, 255, 255,.7),
+  'sidebar-link-color'                : rgb(255, 255, 255,.9),
   'sidebar-link-color-hover'         : rgb(255, 255, 255,1),
 
   // Menu - Sub navigation
-  'menu-background-color'          : darken($primary,10%),
+  'menu-background-color'          : darken($primary,5%),
   'menu-link-color'                : rgb(255, 255, 255,.7),
   'menu-link-color-hover'         : rgb(255, 255, 255,1),
 
@@ -170,3 +152,34 @@ $button-sizing: (
 {
     @return map-get($admin-theme-colors, $key);
 }
+
+
+$topbar-height: 50px !default;
+$breadcrumb-height: 50px !default;
+$navigation-top-height : calc((#{$breadcrumb-height} + #{$topbar-height}) / 2) !default;
+
+
+$minResForStaticSidebars: 1440px !default;
+$navigationAsideWidth: 300px !default;
+$navigationAsideWidthWhenStatic: 250px !default;
+
+// Sidebar
+$sidebar-background:pc('sidebar-background-color');
+$sidebar-width-closed: 72px !default;
+$sidebar-item-height:30px !default;
+$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (2 * 1rem)) !default; // Width - padding
+
+
+
+$oNavigationChildPadding: 1rem;
+$oNavigationListHeight: 35px;
+$oNavigationListIconHeight: $oNavigationChildPadding * 2;
+
+// Sidebar and Menu sizes when they are set to keep open
+$sidebarWidthOnKeepOpen: 240px;
+$menuWidthOnKeepOpen: 225px;
+
+
+
+// Menu
+$menu-background:linear-gradient(90deg, pc('menu-background-color') 0%, pc('sidebar-background-color') 100%);
