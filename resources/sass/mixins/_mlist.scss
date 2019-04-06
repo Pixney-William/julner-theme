@@ -2,9 +2,9 @@
     $link-color: #000,
     $link-color-hover:#fff,
     $transition-time:250ms,
+    $transition:false
     )
 {
-
     //  ------------------------------------------------------------------------
     //  Reset list styling.
     //  ------------------------------------------------------------------------ 
@@ -51,12 +51,13 @@
             margin-top: 0;
         }
     }
-    
+
     li
     {
         margin: .2rem 0 0;
 
-        &,.title
+        &,
+        .title
         {
             @extend %bold;
         }
@@ -71,9 +72,11 @@
         {
             position: relative;
 
-            transition: all $transition-time ease-in-out;
-
             color: $link-color;
+            @if $transition == true
+            {
+                transition: all 200ms ease-in-out;
+            }
         }
 
         // Hover state

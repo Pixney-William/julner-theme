@@ -1,81 +1,104 @@
-&list
-{
+&list {
     @include mlist();
 
     //    ----------------------------------------------------------------------
     //    Styling for list within the sidebar and the menu.
     //    ----------------------------------------------------------------------
     body .o-navigation__sidebar &,
-    body .o-navigation__menu &
-    {
-        @include mlist(pc('sidebar-link-color'),pc('sidebar-link-color-hover'));
+    body .o-navigation__menu & {
+        
+        @include mlist(pc('sidebar-link-color'), pc('sidebar-link-color-hover'));
 
         li,
-        li a
-        {
+        li a {
             // Set the height of the li element
             height: $sidebar-icon-width-height;
             line-height: $sidebar-icon-width-height;
         }
 
-        li a 
-        {
-            display:flex;
+        li a {
+            display: flex;
         }
 
         // The icon should be 1:1 to make sure we could add background effects
         // to it later if we want.
-        li a .icon
-        {
-            display:block;
+        li a .icon {
+            display: block;
             width: $sidebar-icon-width-height;
-            min-width:$sidebar-icon-width-height;
+            min-width: $sidebar-icon-width-height;
             height: $sidebar-icon-width-height;
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
-            font-size:1rem;
+            
             position: relative;
-            transform: scale(1);
-            //transition: all 200ms ease-in-out;
-
-            &::after 
+         
+            i 
             {
-                content:"";
-                width:100%;
-                height:100%;
-                display:block;
+                font-size: 1.1rem;
+                transform: scale(.95);
+                transition: all 200ms ease-in-out;
+            }
+
+            // Circle under
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
                 border-radius: 50%;
-                background: rgba(255,255,255,0);
+                background: rgba(255, 255, 255, 0.05);
                 position: absolute;
-                transform: scale(0);
-               // transition: all 200ms ease-in-out;
+                transform: scale(.5);
+                transition: all 200ms ease-in-out;
+                transition-delay: 70ms;
             }
         }
-        
-        li.-active a .icon::after,
-        li:hover a .icon::after 
-        {
-            background: rgba(255,255,255,.2);
-            transform: scale(1);
-        }
+
+        // The title behavior
         li a .title 
         {
-            height:$sidebar-icon-width-height;
+            //opacity:0;
+            transition: all 200ms ease-in-out;
+            height: $sidebar-icon-width-height;
             position: relative;
             color: inherit;
         }
 
+        //  ------------------------------------------------------------------------
+        //  Hover li states
+        //  ------------------------------------------------------------------------
+        li.-active a,
+        li:hover a {
+            
+
+            .icon i
+            {
+                transform: scale(1.2);
+            }
+
+            .icon::after {
+                background: rgba(255, 255, 255, .15);
+                transform: scale(1);
+            }
+            .title 
+            {
+             //  opacity:1;
+            }
+        }
+
+        
+
 
     }
-    body .o-navigation__sidebar &
-    {
-        @include mlist(pc('sidebar-link-color'),pc('sidebar-link-color-hover'));
-       
+
+    body .o-navigation__sidebar & {
+        @include mlist(pc('sidebar-link-color'), pc('sidebar-link-color-hover'));
+
     }
-    body .o-navigation__menu &
-    {
-        @include mlist(pc('menu-link-color'),pc('menu-link-color-hover'));
+
+    body .o-navigation__menu & {
+        @include mlist(pc('menu-link-color'), pc('menu-link-color-hover'));
     }
 
 
@@ -83,8 +106,7 @@
     //    ----------------------------------------------------------------------
     //    Styling for sidebar when its set to be closed.
     //    ----------------------------------------------------------------------
-    body.-keepSidebarClosed .o-navigation__sidebar &
-    {
+    body.-keepSidebarClosed .o-navigation__sidebar & {
         // .title
         // {
         //     left: -10px;
@@ -128,10 +150,8 @@
     //    ----------------------------------------------------------------------
     //    Styling for sidebar when set to be closed, but has been toggled open.
     //    ----------------------------------------------------------------------
-    body.-keepSidebarClosed.-sidebarIsOpen .o-navigation__sidebar &
-    {
-        .title
-        {
+    body.-keepSidebarClosed.-sidebarIsOpen .o-navigation__sidebar & {
+        .title {
             left: 0;
 
             display: inline-block;
