@@ -1,0 +1,15 @@
+@mixin section(
+    $background:transparent,
+    $padding:0,
+    $margin:0,
+    $height:auto,
+    $border-radius:0,
+    $box-shadow:none
+    ) {
+    margin: $margin;
+    padding: $padding;
+    height:$height;
+    background:$background;
+    border-radius:$border-radius;
+    box-shadow:$box-shadow;
+}

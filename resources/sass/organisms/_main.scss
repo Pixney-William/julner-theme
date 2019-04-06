@@ -1,8 +1,4 @@
 &main
 {
-    height: auto;
-    min-height: 100vh;
-    z-index: 1;
-    margin-left: 300px;
-    width: calc(100vw - 300px);
+   @include main();
 }

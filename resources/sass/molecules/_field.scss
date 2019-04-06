@@ -4,56 +4,5 @@
 //  ----------------------------------------------------------------------------
 &field
 {
-    margin: 0rem 1rem;
-    padding: 0rem 0rem 1.5rem;
-    &:first-child
-    {
-        padding-top: 1.5rem;
-    }
-
-    //  ------------------------------------------------------------------------
-    //  resources/views/form/partials/wrapper.twig
-    //  ------------------------------------------------------------------------
-    &__label
-    {
-        @extend %bold;
-
-        font-size: .92rem;
-        
-        margin: 0;
-        margin-bottom: .2rem;
-
-        color: pc('label');
-    }
-    &__instructions
-    {
-        font-size: .92rem;
-
-        color: pc('instruction');
-    }
-    &__warning
-    {
-        font-size: .85rem;
-        //@extend %semi-bold;
-
-        margin: .2rem 0 .8rem;
-        color: pc('warning');
-        &,& i 
-        {
-            font-style:italic;
-        }
-       
-        & i
-        {
-            color: pc('warningIcon');
-            color: inherit;
-        }
-    }
-
-    &__type
-    {
-        margin-top: .5rem;
-    }
-
-    
+   @include field();
 }

@@ -2,77 +2,7 @@
 {
     @include tabs-and-list-shared-styling();
 
-    .o-form__section.-tabs &
-    {
-        padding-left:1rem;
-        padding-right:1rem;
-    }
-
-    .o-form__section.-tabs &.-stacked
-    {
-        
-    }
-
-    // background:pc('horizontalNavTabs');
-    // padding-left:1rem;
-    // padding-top:.5rem;
-    // .nav-link 
-    // {
-    //     @extend %bold;
-    //     color:pc('horizontalNavTabsColor');
-    //     transition: all 200ms ease-in-out;
-    //     &.active,
-    //     &:hover 
-    //     {
-    //         color:pc('horizontalNavTabsColorActive');
-    //     }
-    // }
-    // &.-stacked
-    // {
-    //     min-width: 200px;
-
-    //     border: 0;
-    //     border-right: 1px solid #eee;
-    //     background: #fff;
-
-    //     .nav-item
-    //     {
-    //         // background:green;
-
-    //         &.show .nav-link,
-    //         & .nav-link.active
-    //         {
-    //             color: inherit;
-    //             border: 0;
-    //             background-color: #fff;
-    //             color:red;
-    //             position: relative;
-    //             left: 1px;
-                
-    //         }
-
-    //         .nav-link
-    //         {
-    //             border:0;
-    //             border-radius: 0;
-    //             padding:0;
-    //             @extend %bold;
-    //             &:hover
-    //             {
-    //                 border: 0;
-                    
-    //             }
-    //         }
-    //     }
+    
 
 
-
-    // }
-
-    // .o-form__section &:not(.flex-column) 
-    // {
-    //     width:calc(100% + 2rem);
-    //     position: relative;
-    //     left:-1rem;
-    // }
 }

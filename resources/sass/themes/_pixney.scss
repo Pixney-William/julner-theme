@@ -1,0 +1,50 @@
+$pixney-border-radius: 1rem;
+$pixney-box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1);
+
+
+html.pixney
+{
+    .o-main
+    {
+        @include main($padding: 1rem 2rem);
+    }
+
+    .o-section
+    {
+        @include section($padding: 0rem);
+
+        &.-breadcrumbs
+        {
+            @include section($padding: 1rem,
+            $margin:1rem 0 1.5rem,
+            $height:60px,
+            $border-radius:$pixney-border-radius,
+            $background:#fff,
+            $box-shadow:$pixney-box-shadow,
+            );
+        }
+    }
+
+    
+    .m-nav
+    {
+        @include tabs-and-list-shared-styling(
+        $background:#fff,
+        $padding:0 1rem);
+
+        .o-form__section.-tabs &
+        {
+            padding: 0 1rem;
+        }
+    }
+
+    .o-form__section
+    {
+        @include formsection($background: #fff,
+        $border-radius:$pixney-border-radius,
+        $sectionOnSectionMargin:1.5rem 0 0 0,
+        $box-shadow:$pixney-box-shadow,
+        $padding: 1.5rem,
+        );
+    }
+}

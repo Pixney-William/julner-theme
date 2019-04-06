@@ -1,49 +1,9 @@
 &form
 {
-    padding: 0;
+   @include form();
     &__section
     {
-        padding: 0 1rem;
-        & + .o-form__section
-        {
-            margin-top:1rem;
-        }
-
-        &.-tabs,
-        &.-title
-        {
-            padding-left: 0rem;
-                padding-right: 0rem;
-            & > *
-            {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-
-        &.-title
-        {
-            
-            h5
-            {
-                padding: .5rem 2rem;
-                margin-bottom:1rem;
-
-                background: pc('sectionTitleBackgroundColor');
-                color: pc('sectionTitleColor');
-            }
-        }
-        
-
-
-
-        //  --------------------------------------------------------------------
-        //  Don't show the box shadow if the form is stacked
-        //  --------------------------------------------------------------------
-        &.d-flex
-        {
-            box-shadow: unset;
-        }
+        @include formsection();
     }
 
     .form-control

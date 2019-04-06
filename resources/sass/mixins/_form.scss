@@ -1,3 +1,7 @@
+@mixin form()
+{
+    padding: 0;
+}
 @mixin form-control()
 {
     font-size: 1rem;
@@ -26,4 +30,62 @@
         background-color: $white;
         box-shadow: unset;
     }
+}
+
+
+@mixin formsection(
+    $padding: 0 1rem,
+    $sectionOnSectionMargin:1rem 0 0 0,
+    $titlePadding:.5rem 2rem,
+    $titleMargin:0 0 1rem,
+    $background:transparent,
+    $border-radius:0,
+    $box-shadow:none
+
+) {
+        padding:$padding;
+        background:$background;
+        border-radius: $border-radius;
+        box-shadow:$box-shadow;
+        
+        & + .o-form__section
+        {
+            margin:$sectionOnSectionMargin;
+        }
+
+        &.-tabs,
+        &.-title
+        {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            & > *:not(.m-nav)
+            {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        &.-title
+        {
+            
+            h5
+            {
+                padding: $titlePadding;
+                margin:$titleMargin;
+
+                background: pc('sectionTitleBackgroundColor');
+                color: pc('sectionTitleColor');
+            }
+        }
+        
+
+
+
+        //  --------------------------------------------------------------------
+        //  Don't show the box shadow if the form is stacked
+        //  --------------------------------------------------------------------
+        &.d-flex
+        {
+            box-shadow: unset;
+        }
 }

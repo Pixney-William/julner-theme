@@ -1,9 +1,12 @@
-@mixin tabs-and-list-shared-styling()
+@mixin tabs-and-list-shared-styling(
+    $background: linear-gradient(180deg, rgba(255,255,255,1) 0%,#f7f7f8 100%),
+    $padding:0,
+    $border-radius:0,
+)
 {
-    padding-top: .5rem;
-
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%,#f7f7f8 100%);
+    padding:$padding;
+    background: $background;
+    border-radius:$border-radius;
 
     li a 
     {
@@ -22,7 +25,10 @@
     {
         color: pc('menu');
     }
+
+    
 }
+
 @mixin make-tabs-of-list()
 {
     @include tabs-and-list-shared-styling();

@@ -1,10 +1,7 @@
 
 &section
 {
-    margin: 0rem 0;
-    padding: 0 2rem;
-
-
+    
 
     //  ----------------------------------------------------------------------
     //  resources/views/partials/buttons.twig
@@ -13,8 +10,8 @@
     {
         display: flex;
 
-        margin: 0;
-        padding: 1rem 2rem;
+       
+        @include section($padding:1rem 2rem);
 
         justify-content: flex-end;
 
@@ -25,7 +22,8 @@
         //  --------------------------------------------------------------------
         .o-section.-breadcrumbs &
         {
-            padding: 0;
+            
+            @include section($padding:0);
         }
     }
 
@@ -34,6 +32,8 @@
     //  ------------------------------------------------------------------------
     &.o-topbar
     {
+        @include section($padding:0rem 2rem);
+
         line-height: $topbar-height;
 
         position: sticky;
@@ -41,8 +41,8 @@
         top: 0;
 
         height: $topbar-height;
-        margin: 0;
-        padding: 0 2rem;
+        
+        
     }
 
     //  ------------------------------------------------------------------------
@@ -50,12 +50,12 @@
     //  ------------------------------------------------------------------------
     &.-breadcrumbs
     {
+        @include section($padding:0rem 2rem);
         display: flex;
         overflow: hidden;
 
         height: $breadcrumb-height;
-        margin: 0;
-        padding: 0 2rem;
+        
 
         align-items: center;
         justify-content: space-between;
@@ -66,8 +66,7 @@
     //  ------------------------------------------------------------------------
     &.-filters
     {
-        margin: 0;
-        padding: 1rem 2rem;
+        @include section($padding:1rem 2rem);
 
         form
         {
@@ -115,9 +114,6 @@
     //  ------------------------------------------------------------------------
     &.-views
     {
-        margin: 0;
-        padding: 0;
-
         border-bottom: 1px solid darken(pc(),10%);
         & + .o-section
         {
@@ -136,9 +132,6 @@
     //  ------------------------------------------------------------------------
     &.-form
     {
-        margin: 0;
-        padding: 0;
-
         .tab-content
         {
             width: 100%;
@@ -152,7 +145,7 @@
     &.-empty
     {
         min-height: 300px;
-        margin-top: 0;
+        
 
 
         & > div
