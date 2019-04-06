@@ -7,8 +7,10 @@ $minResForStaticSidebars: 1440px !default;
 $navigationAsideWidth: 300px !default;
 $navigationAsideWidthWhenStatic: 250px !default;
 
-// Rename this..
-$navigationSidebarPadding: 75px !default;
+// Sidebar
+$sidebar-width-closed: 72px !default;
+$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (1rem * 2)); // Width - padding
+
 $oNavigationChildPadding: 1rem;
 $oNavigationListHeight: 35px;
 $oNavigationListIconHeight: $oNavigationChildPadding * 2;

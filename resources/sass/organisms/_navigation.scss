@@ -97,7 +97,7 @@
             position: absolute;
             z-index: 2;
 
-            width: $navigationSidebarPadding;
+            width: sidebar-width-closed;
             overflow:hidden;
             height: 100%;
         }
@@ -134,7 +134,7 @@
         */
         body.-keepSidebarClosed &
         {
-            padding-left: calc(#{$navigationSidebarPadding} + 1rem);
+            padding-left: calc(#{sidebar-width-closed} + 1rem);
         }
 
         /*
