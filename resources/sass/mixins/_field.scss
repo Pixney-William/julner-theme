@@ -1,10 +1,25 @@
-@mixin field()
+@mixin field(
+    $margin: 1rem 0 0,
+    $padding: 0,
+    $first-child-padding:0,
+    $first-child-margin:0,
+    $last-child-padding:0,
+    $last-child-margin:1rem 0 0,
+)
 {
-    margin: 0rem 1rem;
-    padding: 0rem 0rem 1.5rem;
+    margin:$margin;
+    padding:$padding;
+
+    
+    &:last-child
+    {
+        padding: $last-child-padding;
+        margin: $last-child-margin;
+    }
     &:first-child
     {
-        padding-top: 1.5rem;
+        padding: $first-child-padding;
+        margin: $first-child-margin;
     }
 
     //  ------------------------------------------------------------------------

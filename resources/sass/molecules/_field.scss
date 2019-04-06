@@ -4,5 +4,12 @@
 //  ----------------------------------------------------------------------------
 &field
 {
-   @include field();
+   @include field(
+      $margin: 1rem 0 0 0,
+      $padding: 0,
+      $first-child-padding:0,
+      $first-child-margin:0,
+      $last-child-padding:0,
+      $last-child-margin:0,
+   );
 }

@@ -1,9 +1,13 @@
-$pixney-border-radius: 1rem;
+$pixney-border-radius: 0 0 0 .5rem;
 $pixney-box-shadow: 0 0 20px 1px rgba(0, 0, 0, .1);
 
 
 html.pixney
 {
+    &,body 
+    {
+        background:#f3f3f3;
+    }
     .o-main
     {
         @include main($padding: 1rem 2rem);
@@ -23,7 +27,41 @@ html.pixney
             $box-shadow:$pixney-box-shadow,
             );
         }
+        &.-filters
+        {
+            @include section(
+                $padding: 1rem,
+            $margin:1rem 0 0rem,
+            
+            $border-radius:0,
+            $background:#fff,
+            $box-shadow:$pixney-box-shadow,
+            );
+        }
+        &.-table
+        {
+            @include section(
+                $padding: 1rem,
+            $margin:0,
+            
+            $border-radius:0,
+            $background:#fff,
+            $box-shadow:$pixney-box-shadow,
+            );
+        }
+        &.-empty
+        {
+            @include section(
+            $padding: 1rem,
+            $margin:0,
+            $border-radius:0,
+            $background:#fff,
+            $box-shadow:$pixney-box-shadow,
+            );
+        }
+    
     }
+    
 
     
     .m-nav
@@ -42,9 +80,35 @@ html.pixney
     {
         @include formsection($background: #fff,
         $border-radius:$pixney-border-radius,
-        $sectionOnSectionMargin:1.5rem 0 0 0,
+        $section-on-section-margin:1.5rem 0 0 0,
         $box-shadow:$pixney-box-shadow,
         $padding: 1.5rem,
+        );
+    }
+    .o-form__section.-title
+    {
+        @include formsection($background: #fff,
+        $border-radius:$pixney-border-radius,
+        $section-on-section-margin:1.5rem 0 0 0,
+        $box-shadow:$pixney-box-shadow,
+        $padding: 0 1.5rem 1.5rem,
+        $title-background:$primary,
+        $title-color:#fff,
+        );
+
+    }
+
+
+    .m-field 
+    {
+        @include field(
+            $margin: 1.5rem 0 0,
+    $padding: 0,
+    $first-child-padding:0,
+    $first-child-margin:0,
+    $last-child-padding:0,
+    $last-child-margin:1.5rem 0 0,
+    
         );
     }
 }
