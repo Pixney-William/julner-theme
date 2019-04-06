@@ -9,7 +9,8 @@ $navigationAsideWidthWhenStatic: 250px !default;
 
 // Sidebar
 $sidebar-width-closed: 72px !default;
-$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (1rem * 2)); // Width - padding
+$sidebar-item-height:30px !default;
+$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (2 * 1rem)) !default; // Width - padding
 
 $oNavigationChildPadding: 1rem;
 $oNavigationListHeight: 35px;
