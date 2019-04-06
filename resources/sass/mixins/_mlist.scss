@@ -1,0 +1,88 @@
+@mixin mlist(
+    $link-color: #000,
+    $link-color-hover:#fff,
+    $transition-time:250ms,
+    )
+{
+
+    //  ------------------------------------------------------------------------
+    //  Reset list styling.
+    //  ------------------------------------------------------------------------ 
+    &.-reset
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+    }
+
+    //  ------------------------------------------------------------------------
+    //  Horizontal lists acting as tabs
+    //  ------------------------------------------------------------------------
+    &.-horizontal.-tabs
+    {
+        @include make-tabs-of-list();
+
+        //  --------------------------------------------------------------------
+        //  resources/views/table/partials/views.twig
+        //  --------------------------------------------------------------------
+        .o-section.-views &
+        {
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+    }
+
+
+
+    //  ------------------------------------------------------------------------
+    //  Styling for vertical lists.
+    //  ------------------------------------------------------------------------
+    &.-vertical
+    {
+        display: flex;
+        flex-direction: column;
+        // Set margins top on elements but not on the first one.
+
+        margin-top: .5rem;
+
+        &:first-child
+        {
+            margin-top: 0;
+        }
+    }
+    
+    li
+    {
+        margin: .2rem 0 0;
+
+        &,.title
+        {
+            @extend %bold;
+        }
+
+
+        &:first-child
+        {
+            margin-top: 0;
+        }
+        // Default state
+        & a
+        {
+            position: relative;
+
+            transition: all $transition-time ease-in-out;
+
+            color: $link-color;
+        }
+
+        // Hover state
+        &:hover a,
+        &.-active a
+        {
+            text-decoration: none;
+
+            color: $link-color-hover;
+        }
+    }
+}

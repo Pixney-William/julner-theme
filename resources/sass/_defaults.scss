@@ -65,9 +65,15 @@ $admin-theme-colors: (
 
   'brand' : #000,
   
-  'sidebar-background-color'                           : $primary,
+  // Sidebar - Navigation to the very left
+  'sidebar-background-color'          : $primary,
   'sidebar-link-color'                : rgb(255, 255, 255,.7),
-  'sidebar-link-color-active'         : rgb(255, 255, 255,1),
+  'sidebar-link-color-hover'         : rgb(255, 255, 255,1),
+
+  // Menu - Sub navigation
+  'menu-background-color'          : darken($primary,10%),
+  'menu-link-color'                : rgb(255, 255, 255,.7),
+  'menu-link-color-hover'         : rgb(255, 255, 255,1),
 
 
 

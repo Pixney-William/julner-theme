@@ -1,84 +1,6 @@
 &list
 {
-    //  ------------------------------------------------------------------------
-    //  Reset list styling.
-    //  ------------------------------------------------------------------------ 
-    &.-reset
-    {
-        margin: 0;
-        padding: 0;
-
-        list-style-type: none;
-    }
-
-
-
-    //  ------------------------------------------------------------------------
-    //  Global Styling
-    //  ------------------------------------------------------------------------
-
-    li
-    {
-        margin: .2rem 0 0;
-
-        &:first-child
-        {
-            margin-top: 0;
-        }
-        a
-        {
-            position: relative;
-
-            color: pc('link');
-        }
-        a:hover
-        {
-            text-decoration: none;
-        }
-    }
-
-
-
-    //  ------------------------------------------------------------------------
-    //  Horizontal lists acting as tabs
-    //  ------------------------------------------------------------------------
-    &.-horizontal.-tabs
-    {
-        @include make-tabs-of-list();
-
-        //  --------------------------------------------------------------------
-        //  resources/views/table/partials/views.twig
-        //  --------------------------------------------------------------------
-        .o-section.-views & 
-        {
-            padding-left:1rem;
-            padding-right:1rem;
-        }
-    }
-
-
-
-    //  ------------------------------------------------------------------------
-    //  Styling for vertical lists.
-    //  ------------------------------------------------------------------------
-    &.-vertical
-    {
-        display: flex;
-        flex-direction: column;
-        // Set margins top on elements but not on the first one.
-
-        margin-top: .5rem;
-
-        &:first-child
-        {
-            margin-top: 0;
-        }
-    }
-
-
-
-
-
+    @include mlist();
 
     //    ----------------------------------------------------------------------
     //    Styling for list within the sidebar and the menu.
@@ -86,51 +8,61 @@
     body .o-navigation__sidebar &,
     body .o-navigation__menu &
     {
-        li 
-        {
-            &:hover a,
-            &.-active a
-            {
-                color:pc('sidebar-link-color-active');
-            }
-        }
+        @include mlist(pc('sidebar-link-color'),pc('sidebar-link-color-hover'));
+
         li a
         {
-            color:pc('sidebar-link-color');
-            transition: all 200ms ease-in-out;
-            line-height: $oNavigationListHeight;
+            // line-height: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
 
-            display: flex;
+            // display: flex;
 
-            height: $oNavigationListHeight;
-
-          
+            // height: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
         }
 
         .title
         {
-            line-height: $oNavigationListHeight;
+           // line-height: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
+
+            position: relative;
+
             margin-left: .5rem;
-            color:inherit;
+
+            color: inherit;
         }
 
         .icon
         {
-            font-size: 25px;
+            // font-size: 25px;
 
-            display: flex;
+            // display: flex;
 
-            width: 25px;
-            width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
-            min-width: 25px; // Flex stuff.
-            min-width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight}); // Flex stuff.
-            height: $oNavigationListHeight;
+            
+            // width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
+            // //height: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight});
+            // min-width: 25px; // Flex stuff.
+            // min-width: calc(#{$navigationSidebarPadding} - #{$oNavigationListIconHeight}); // Flex stuff.
+            // height: $oNavigationListHeight;
 
-            justify-content: center;
-            align-items: center;
-            color:inherit;
+            // color: inherit;
+
+            // justify-content: center;
+            // align-items: center;
         }
     }
+    body .o-navigation__sidebar &
+    {
+        @include mlist(pc('sidebar-link-color'),pc('sidebar-link-color-hover'));
+        li.-active a 
+        {
+            background:rgba(255,255,255,.2);
+            border-radius:50%;
+        }
+    }
+    body .o-navigation__menu &
+    {
+        @include mlist(pc('menu-link-color'),pc('menu-link-color-hover'));
+    }
+
 
 
     //    ----------------------------------------------------------------------
@@ -140,23 +72,17 @@
     {
         .title
         {
-            font-weight: 400;
-
-            position: absolute;
-            top: 1px;
-            left: 30px;
+            left: -10px;
 
             visibility: hidden;
-
-            transition: all 200ms ease-in-out;
-            transition-delay: 0ms;
+            // transition: all 200ms ease-out;
 
             opacity: 0;
         }
 
         .icon
         {
-            transition: transform 200ms ease-in-out;
+            transition: transform 150ms linear;
             transform: scale(.75);
             &,
             .fa,
@@ -167,17 +93,11 @@
             }
         }
 
-        // .icon:hover
-        // {
-        //     transform: scale(1.2);
-        // }
-
         li
         {
             & a:hover,
             &.-active a
             {
-                
                 .icon
                 {
                     transform: scale(1);
@@ -189,19 +109,7 @@
     //  ------------------------------------------------------------------------
     //  Menu
     //  ------------------------------------------------------------------------
-    body .o-navigation__menu &
-    {
-        li
-        {
-            a
-            {
-                @extend %semi-bold;
 
-                
-            }
-            
-        }
-    }
     //    ----------------------------------------------------------------------
     //    Styling for sidebar when set to be closed, but has been toggled open.
     //    ----------------------------------------------------------------------
@@ -209,15 +117,10 @@
     {
         .title
         {
-            @extend %bold;
-
-            left: 50px;
+            left: 0;
 
             display: inline-block;
             visibility: visible;
-
-            transition: all 125ms ease-in-out;
-            transition-delay: 100ms;
 
             opacity: 1;
         }
@@ -228,7 +131,7 @@
         }
     }
 
-    
+
 
     //  ------------------------------------------------------------------------
     //  Top Bar Search Result list
