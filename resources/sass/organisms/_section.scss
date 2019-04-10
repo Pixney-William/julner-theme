@@ -72,7 +72,12 @@
     //  ------------------------------------------------------------------------
     &.-filters
     {
-        @include section($section-padding: 1rem 2rem);
+       
+        @include section(
+            $section-padding: 1rem 2rem,
+            $section-background-color:$breadcrumbs-background-color,
+            $section-border-top:1px solid $background
+        );
 
         form
         {
