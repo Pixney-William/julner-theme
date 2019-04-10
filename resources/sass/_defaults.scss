@@ -130,35 +130,30 @@ $tab-border-bottom:1px solid $tab-border-color;
 //  ----------------------------------------------------------------------------
 //  FILTERS
 //  ----------------------------------------------------------------------------
-$filters-background-color:#f6f6f6;
+$filters-background-color:#f6f6f6 !default;
 //  ----------------------------------------------------------------------------
 //  Views
 //  ----------------------------------------------------------------------------
-$views-section-background-color:#fff;
-// $views-tab-background-color:transparent;
-// $views-tab-active-background-color:#fff;
-
-
+$views-section-background-color:#fff !default;
+// $views-tab-background-color:transparent !default;
+// $views-tab-active-background-color:#fff !default;
 //  ------------------------------------------------------------------------
 //  TABLE
 //  ------------------------------------------------------------------------
-$table-background-color:#fff;
-
-
+$table-background-color:#fff !default;
 //  ----------------------------------------------------------------------------
 //  TOPBAR
 //  ----------------------------------------------------------------------------
-$topbar-border-bottom:1px solid #f6f6f6;
-$topbar-background-color: #fff;
-$topbar-padding:0rem 2rem;
-
+$topbar-border-bottom:1px solid #f6f6f6 !default;
+$topbar-background-color: #fff !default;
+$topbar-padding:0rem 2rem !default;
 //  ------------------------------------------------------------------------
 //  Dropdown menu in Topbar
 //  ------------------------------------------------------------------------
-$dropdownmenu-color:#000;
-$dropdownmenu-background-color:transparent;
-$dropdownmenu-hover-background-color:darken($topbar-background-color,5%);
-$dropdownmenu-hover-color:$dropdownmenu-color;
+$dropdownmenu-color:#000 !default;
+$dropdownmenu-background-color:transparent !default;
+$dropdownmenu-hover-background-color:darken($topbar-background-color,5%) !default;
+$dropdownmenu-hover-color:$dropdownmenu-color !default;
 
    
   
