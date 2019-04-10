@@ -53,7 +53,7 @@ $body-background-color:$background;
 //  ----------------------------------------------------------------------------
 //  SIDEBAR
 //  ----------------------------------------------------------------------------
-$sidebar-background-color: $background !default;
+$sidebar-background-color: darken($brand,2%) !default;
 $sidebar-link-color: rgb(255, 255, 255,.9) !default;
 $sidebar-link-color-hover: rgb(255, 255, 255,1) !default;
 
@@ -69,6 +69,15 @@ $menu-link-color-hover: rgb(255, 255, 255,1) !default;
 //  ----------------------------------------------------------------------------
 $navigation-top-background:#000;
 
+//  ----------------------------------------------------------------------------
+//  BREADCRUMBS
+//  ----------------------------------------------------------------------------
+$breadcrumbs-height: 50px !default;
+$breadcrumbs-background-color:#000;
+$breadcrumbs-color:#fff;
+$breadcrumbs-link:yellow;
+$breadcrumbs-hover:red;
+$breadcrumb: #000;
 
 
 
@@ -90,9 +99,7 @@ $navigation-top-background:#000;
   $warning: $brand-dark;
   $warningIcon: $brand-dark;
 
-  $breadcrumb: #000;
-  $breadcrumb-link: #000;
-
+ 
     $shadow: #000;
 
    
@@ -233,8 +240,8 @@ $button-sizing: (
 
 
 $topbar-height: 50px !default;
-$breadcrumb-height: 50px !default;
-$navigation-top-height : calc((#{$breadcrumb-height} + #{$topbar-height}) / 2) !default;
+
+$navigation-top-height : calc((#{$breadcrumbs-height} + #{$topbar-height}) / 2) !default;
 
 
 $minResForStaticSidebars: 1440px !default;
