@@ -116,10 +116,18 @@ $form-field-warning-font-size:.85rem !default;
 $form-field-warning-font-style:italic !default;
 
 //  ----------------------------------------------------------------------------
+//  TABS
+//  ----------------------------------------------------------------------------
+$tab-background: transparent;
+$tab-active-background:#fff;
+$tab-link-padding: .3rem 1rem .4rem;
+$tab-padding:0;
+$tab-border-radius:0;
+
+//  ----------------------------------------------------------------------------
 //  Views
 //  ----------------------------------------------------------------------------
-
-
+$views-tab-background:#fff;
 
 
 

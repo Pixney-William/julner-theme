@@ -2,7 +2,14 @@
 &section
 {
     @include section(
-        $section-padding: 0rem 2rem
+        $section-background-color:transparent,
+        $section-padding:0,
+        $section-margin:0,
+        $section-height:auto,
+        $section-border-radius:0,
+        $section-box-shadow:none,
+        $section-border-top:$section-border-top,
+        $section-border-bottom:$section-border-bottom
     );
 
     //  ----------------------------------------------------------------------
@@ -125,7 +132,11 @@
     //  ------------------------------------------------------------------------
     &.-views
     {
-        border-bottom: 1px solid $brand;
+        @include section(
+            $section-background-color:$views-tab-background
+        );
+        
+      
         & + .o-section
         {
             margin-top: 0rem;

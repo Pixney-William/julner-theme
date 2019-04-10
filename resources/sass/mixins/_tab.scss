@@ -1,20 +1,32 @@
 @mixin tabs-and-list-shared-styling(
-    $background: #fff,
-    $padding:0,
-    $border-radius:0,
+    $tab-background: $tab-background,
+    $tab-link-padding: $tab-link-padding,
+    $tab-padding:$tab-padding,
+    $tab-border-radius:$tab-border-radius,
+    $tab-active-background:$tab-active-background
 )
 {
-    padding:$padding;
-    background: $background;
-    border-radius:$border-radius;
+    padding:$tab-padding;
+    background: $tab-background;
+    border-radius:$tab-border-radius;
 
+    border-bottom: 1px solid #dee2e6;
+
+
+
+
+    li 
+    {
+        margin-bottom:0;
+    }
     li a 
     {
         @extend %bold;
         color: $horizontalNavTabsColor;
         transition: all 200ms ease-in-out;
-        padding: .3rem 1rem .4rem;
+        padding: $tab-link-padding;
         display: block;
+        background:$background;
     }
 
     // Hover and Active
@@ -24,6 +36,7 @@
     li a.nav-link.active
     {
         color: $menu;
+        background:$tab-active-background;
     }
 
     
@@ -31,35 +44,36 @@
 
 @mixin make-tabs-of-list()
 {
-    @include tabs-and-list-shared-styling();
+    
 
     display: flex;
 
+    // Clear some styling introduced for normal lists.
     li
-    {
-        margin-top: 0;
-        margin-left: .5rem;
-
-        border-top: 1px solid transparent;
-        border-right: 1px solid transparent;
-        border-left: 1px solid transparent;
+{
+        //margin:0 0 -1px;
+    }
 
 
-        &.-active
-        {
-            position: relative;
-            top: 1px;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            background: #fff;
-        }
 
-        &:first-child
-        {
-            margin-left: 0;
-        }
+    // li
+    // {
+    //     margin-top: 0;
+    //     margin-left: .5rem;
+
+    //     &.-active
+    //     {
+    //         position: relative;
+          
+            
+    //     }
+
+    //     &:first-child
+    //     {
+    //         margin-left: 0;
+    //     }
 
         
        
-    }
+    // }
 }

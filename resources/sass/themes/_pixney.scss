@@ -68,8 +68,8 @@ html.pixney
     .m-nav
     {
         @include tabs-and-list-shared-styling(
-        $background:#fff,
-        $padding:0 1rem);
+        $tab-background:#fff,
+        $tab-padding:0 1rem);
 
         .o-form__section.-tabs &
         {
