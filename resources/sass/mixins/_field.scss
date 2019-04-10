@@ -1,25 +1,37 @@
 @mixin field(
-    $margin: 1rem 0 0,
-    $padding: 0,
-    $first-child-padding:0,
-    $first-child-margin:0,
-    $last-child-padding:0,
-    $last-child-margin:1rem 0 0,
+    $form-field-padding:$form-field-padding,
+    $form-field-margin: $form-field-margin,
+    $form-field-first-child-padding:$form-field-first-child-padding,
+    $form-field-first-child-margin:$form-field-first-child-margin,
+    $form-field-last-child-padding:$form-field-last-child-padding,
+    $form-field-last-child-margin:$form-field-last-child-margin,
+    
+    $form-field-label-color:$form-field-label-color,
+    $form-field-label-font-size:$form-field-label-font-size,
+    $form-field-label-font-style:$form-field-label-font-style,
+    
+    $form-field-instructions-color:$form-field-instructions-color,
+    $form-field-instructions-font-size:$form-field-instructions-font-size,
+    $form-field-instructions-font-style:$form-field-instructions-font-style,
+    
+    $form-field-warning-color:$form-field-warning-color,
+    $form-field-warning-font-size:$form-field-warning-font-size,
+    $form-field-warning-font-style:$form-field-warning-font-style
 )
 {
-    margin:$margin;
-    padding:$padding;
+    margin:$form-field-margin;
+    padding:$form-field-padding;
 
     
     &:last-child
     {
-        padding: $last-child-padding;
-        margin: $last-child-margin;
+        padding: $form-field-last-child-padding;
+        margin: $form-field-last-child-margin;
     }
     &:first-child
     {
-        padding: $first-child-padding;
-        margin: $first-child-margin;
+        padding: $form-field-first-child-padding;
+        margin: $form-field-first-child-margin;
     }
 
     //  ------------------------------------------------------------------------
@@ -29,31 +41,33 @@
     {
         @extend %bold;
 
-        font-size: .92rem;
+        font-size: $form-field-label-font-size;
 
         margin: 0;
         margin-bottom: .2rem;
 
-        color: $label;
+        color: $form-field-label-color;
+        font-style: $form-field-label-font-style;
     }
     &__instructions
     {
-        font-size: .92rem;
+        font-size: $form-field-instructions-font-size;
 
-        color: $instruction;
+        color: $form-field-instructions-color;
+        font-style: $form-field-instructions-font-style;
     }
     &__warning
     {
-        font-size: .85rem;
+        font-size: $form-field-warning-font-size;
         //@extend %semi-bold;
 
         margin: .2rem 0 .8rem;
 
-        color: $warning;
+        color: $form-field-warning-color;
         &,
         & i
         {
-            font-style: italic;
+            font-style: $form-field-warning-font-style;
         }
 
         & i

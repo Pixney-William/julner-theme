@@ -1,13 +1,14 @@
-&form
-{
-   @include form();
-    &__section
-    {
-        @include formsection();
+&form {
+    
+    @include form();
+
+    &__section {
+        @include formsection(
+            
+        );
     }
 
-    .form-control
-    {
+    .form-control {
         @include form-control();
     }
 }

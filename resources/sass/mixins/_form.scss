@@ -13,7 +13,7 @@
     width: 100%;
     height: 38px;
     padding: 6px .5rem;
-    
+
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     border: 1px solid lighten($black, 80%);
@@ -31,60 +31,80 @@
 
 
 @mixin formsection(
-    $padding: 0 1rem,
-    $section-on-section-margin:1rem 0 0 0,
-    $title-padding:.5rem 2rem,
-    $title-margin:0 0 1rem,
-    $title-background:#fff,
-    $title-color:#000,
-    $background:transparent,
-    $border-radius:0,
-    $box-shadow:none
+    $form-section-background-color: $form-section-background-color,
+    $form-section-padding: $form-section-padding,
+    $form-section-border-radius:0,
+    $form-section-box-shadow:none,    
+    $form-section-title-padding:.5rem 2rem,
+    $form-section-title-margin:0 0 1rem,
+    $form-section-title-background:#fff,
+    $form-section-title-color:#000,
+    $form-section-remove-tabs-padding:$form-section-remove-tabs-padding,
+    $form-section-remove-title-padding:$form-section-remove-title-padding,
+    $form-section-section-on-section-margin: $form-section-section-on-section-margin,
+)
+{
+    padding: $form-section-padding;
 
-) {
-        padding:$padding;
-        background:$background;
-        border-radius: $border-radius;
-        box-shadow:$box-shadow;
-        
-        & + .o-form__section
-        {
-            margin:$section-on-section-margin;
-        }
+    border-radius: $form-section-border-radius;
+    background: $form-section-background-color;
+    box-shadow: $form-section-box-shadow;
 
-        &.-tabs,
-        &.-title
+    & + .o-form__section
+    {
+        margin: $form-section-section-on-section-margin;
+    }
+
+    @if $form-section-remove-tabs-padding == true
+    {
+        &.-tabs
         {
-                padding-left: 0rem;
-                padding-right: 0rem;
+            padding-right: 0rem;
+            padding-left: 0rem;
             & > *:not(.m-nav)
             {
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding: $form-section-padding;
             }
         }
+    }
 
+    @if $form-section-remove-title-padding == true
+    {
         &.-title
         {
-            
-            h5
+            padding-right: 0rem;
+            padding-left: 0rem;
+            & > *:not(.m-nav)
             {
-                padding: $title-padding;
-                margin:$title-margin;
-
-                background: $title-background;
-                color: $title-color;
+                padding: $form-section-padding;
             }
         }
-        
+    }
 
 
 
-        //  --------------------------------------------------------------------
-        //  Don't show the box shadow if the form is stacked
-        //  --------------------------------------------------------------------
-        &.d-flex
+
+
+    &.-title
+    {
+        h5
         {
-            box-shadow: unset;
+            margin: $form-section-title-margin;
+            padding: $form-section-title-padding;
+
+            color: $form-section-title-color;
+            background: $form-section-title-background;
         }
+    }
+
+
+
+
+    //  --------------------------------------------------------------------
+    //  Don't show the box shadow if the form is stacked
+    //  --------------------------------------------------------------------
+    &.d-flex
+    {
+        box-shadow: unset;
+    }
 }

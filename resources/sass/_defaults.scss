@@ -25,7 +25,8 @@ $brand-dark : darken($brand,5%);
 //  ADMIN COLOR SCHEME
 //  ----------------------------------------------------------------------------
 $brand: #E26D5C;
-$background: #f2f2f2;
+$background: #ddd;
+$text-color: #333;
 
 //  ----------------------------------------------------------------------------
 //  HTML / BODY
@@ -67,7 +68,40 @@ $breadcrumbs-font-weight:600 !default;
 $breadcrumbs-divider-content:'→' !default;
 $breadcrumbs-divider-color:$breadcrumbs-color !default;
 
-
+//  ----------------------------------------------------------------------------
+//  FORM
+//  ----------------------------------------------------------------------------
+$form-section-background-color:#fff !default;
+$form-section-padding:1rem 2rem !default;
+$form-section-section-on-section-margin:1rem 0 0 0 !default;
+$form-section-title-padding:.5rem 2rem !default;
+$form-section-title-margin:0 0 1rem !default;
+$form-section-title-background:#fff !default;
+$form-section-title-color:#000 !default;
+$form-section-border-radius:0 !default;
+$form-section-box-shadow:none !default;
+$form-section-remove-tabs-padding:false !default;
+$form-section-remove-title-padding:false !default;
+$form-section-tab-content-padding:1rem 0rem;
+// FIELD
+$form-field-padding:0 !default;
+$form-field-margin: 1.5rem 0 0 !default;
+$form-field-first-child-padding:0 !default;
+$form-field-first-child-margin:0 !default;
+$form-field-last-child-padding:0!default;
+$form-field-last-child-margin:$form-field-margin !default;
+// FIELD LABEL
+$form-field-label-color:$brand !default;
+$form-field-label-font-size:.92rem !default;
+$form-field-label-font-style:normal !default;
+// FIELD INSTRUCTIONS
+$form-field-instructions-color:$text-color !default;
+$form-field-instructions-font-size:.92rem !default;
+$form-field-instructions-font-style:normal !default;
+// FIELD WARNING
+$form-field-warning-color:$text-color !default;
+$form-field-warning-font-size:.85rem !default;
+$form-field-warning-font-style:italic !default;
 
 
 
