@@ -3,22 +3,16 @@
     $tab-link-padding: $tab-link-padding,
     $tab-padding:$tab-padding,
     $tab-border-radius:$tab-border-radius,
-    $tab-active-background:$tab-active-background
+    $tab-border-bottom:$tab-border-bottom,
+    $tab-link-background-color: $tab-link-background-color,
+    $tab-link-active-background:$tab-link-active-background
 )
 {
     padding:$tab-padding;
     background: $tab-background;
     border-radius:$tab-border-radius;
+    border-bottom: $tab-border-bottom;
 
-    border-bottom: 1px solid #dee2e6;
-
-
-
-
-    li 
-    {
-        margin-bottom:0;
-    }
     li a 
     {
         @extend %bold;
@@ -26,7 +20,7 @@
         transition: all 200ms ease-in-out;
         padding: $tab-link-padding;
         display: block;
-        background:$background;
+        background:$tab-link-background-color;
     }
 
     // Hover and Active
@@ -36,23 +30,36 @@
     li a.nav-link.active
     {
         color: $menu;
-        background:$tab-active-background;
+        background:$tab-link-active-background;
     }
 
     
 }
 
-@mixin make-tabs-of-list()
+@mixin make-tabs-of-list(
+    $margin: 0 0 -1px,
+    $border-color:$tab-border-color
+)
 {
     
 
     display: flex;
+    li 
+    {
+        margin:$margin;
+    }
+    li.-active a
+    {
+        border-left:1px solid $border-color;
+        border-top:1px solid $border-color;
+        border-right:1px solid $border-color;
+    }
 
     // Clear some styling introduced for normal lists.
-    li
-{
-        //margin:0 0 -1px;
-    }
+//     li
+// {
+//         //margin:0 0 -1px;
+//     }
 
 
 

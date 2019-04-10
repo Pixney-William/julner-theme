@@ -24,15 +24,24 @@
         @include tabs-and-list-shared-styling(
             $tab-padding:0rem
         );
-        @include make-tabs-of-list();
+        @include make-tabs-of-list(
+
+        );
 
         //  --------------------------------------------------------------------
         //  resources/views/table/partials/views.twig
         //  --------------------------------------------------------------------
         .o-section.-views &
         {
-            padding-right: 1rem;
-            padding-left: 1rem;
+            // padding-right: 1rem;
+            // padding-left: 1rem;
+            @include tabs-and-list-shared-styling(
+           
+
+        );
+        // $tab-padding:0rem,
+        // $tab-link-active-background:$views-tab-active-background-color,
+        // $tab-link-background-color:$views-tab-background-color
         }
     }
 

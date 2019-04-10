@@ -82,7 +82,7 @@
        
         @include section(
             $section-padding: 1rem 2rem,
-            $section-background-color:$breadcrumbs-background-color,
+            
             $section-border-top:1px solid $background
         );
 
@@ -133,7 +133,8 @@
     &.-views
     {
         @include section(
-            $section-background-color:$views-tab-background
+            $section-padding: 1rem 2rem,
+            $section-background-color:$views-section-background-color,
         );
         
       
