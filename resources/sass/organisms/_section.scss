@@ -1,12 +1,16 @@
 
 &section
 {
+    @include section(
+        $section-padding: 0rem 2rem
+    );
+
     //  ----------------------------------------------------------------------
     //  resources/views/partials/buttons.twig
     //  ----------------------------------------------------------------------
     &.-buttons
     {
-        @include section($padding: 1rem 2rem);
+        @include section($section-padding: 1rem 2rem);
 
         display: flex;
 
@@ -19,7 +23,7 @@
         //  --------------------------------------------------------------------
         .o-section.-breadcrumbs &
         {
-            @include section($padding: 0);
+            @include section($section-padding: 0);
         }
     }
 
@@ -28,7 +32,10 @@
     //  ------------------------------------------------------------------------
     &.o-topbar
     {
-        @include section($padding: 0rem 2rem);
+        @include section(
+            $section-padding: 0rem 2rem,
+            $section-background-color:$section-background-color
+            );
 
         line-height: $topbar-height;
 
@@ -45,9 +52,9 @@
     &.-breadcrumbs
     {
         @include section(
-            $padding: 0rem 2rem,
-            $height:$breadcrumbs-height,
-            $background:$breadcrumbs-background-color
+            $section-padding: 0rem 2rem,
+            $section-height:$breadcrumbs-height,
+            $section-background-color:$breadcrumbs-background-color
         );
         // This section needs to use flex since we are placing 
         // the buttons on the right side and the breadcrumbs on the left.
@@ -64,7 +71,7 @@
     //  ------------------------------------------------------------------------
     &.-filters
     {
-        @include section($padding: 1rem 2rem);
+        @include section($section-padding: 1rem 2rem);
 
         form
         {

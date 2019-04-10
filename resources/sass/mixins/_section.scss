@@ -1,15 +1,15 @@
 @mixin section(
-    $background:transparent,
-    $padding:0,
-    $margin:0,
-    $height:auto,
-    $border-radius:0,
-    $box-shadow:none
+    $section-background-color:transparent,
+    $section-padding:0,
+    $section-margin:0,
+    $section-height:auto,
+    $section-border-radius:0,
+    $section-box-shadow:none
     ) {
-    margin: $margin;
-    padding: $padding;
-    height:$height;
-    background:$background;
-    border-radius:$border-radius;
-    box-shadow:$box-shadow;
+    margin: $section-margin;
+    padding: $section-padding;
+    height:$section-height;
+    background:$section-background-color;
+    border-radius:$section-border-radius;
+    box-shadow:$section-box-shadow;
 }

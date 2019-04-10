@@ -56,6 +56,16 @@ $menu-link-color-hover: rgb(255, 255, 255,1) !default;
 $navigation-top-background:#000;
 
 //  ----------------------------------------------------------------------------
+//  SECTIONS
+//  ----------------------------------------------------------------------------
+$section-background-color:  transparent !default;
+$section-padding:           0 !default;
+$section-margin:            0 !default;
+$section-height:            auto !default;
+$section-border-radius:     0 !default;
+$section-box-shadow:        none !default;
+
+//  ----------------------------------------------------------------------------
 //  BREADCRUMBS
 //  ----------------------------------------------------------------------------
 $breadcrumbs-height: 50px !default;
