@@ -127,7 +127,10 @@ $tab-border-radius:0;
 $tab-border-color:#ddd;
 $tab-border-bottom:1px solid $tab-border-color;
 
-
+//  ----------------------------------------------------------------------------
+//  FILTERS
+//  ----------------------------------------------------------------------------
+$filters-background-color:#f6f6f6;
 //  ----------------------------------------------------------------------------
 //  Views
 //  ----------------------------------------------------------------------------
@@ -136,12 +139,28 @@ $views-section-background-color:#fff;
 // $views-tab-active-background-color:#fff;
 
 
+//  ------------------------------------------------------------------------
+//  TABLE
+//  ------------------------------------------------------------------------
+$table-background-color:#fff;
 
-  // Topbar
-  $topbar-background-color: #fff;
-    $topbarMenuHoverBkg: #000;
-    $topbarMenuColor: #000;
-    $topbarMenuColorHover: #000;
+
+//  ----------------------------------------------------------------------------
+//  TOPBAR
+//  ----------------------------------------------------------------------------
+$topbar-border-bottom:1px solid #f6f6f6;
+$topbar-background-color: #fff;
+$topbar-padding:0rem 2rem;
+
+//  ------------------------------------------------------------------------
+//  Dropdown menu in Topbar
+//  ------------------------------------------------------------------------
+$dropdownmenu-color:#000;
+$dropdownmenu-background-color:transparent;
+$dropdownmenu-hover-background-color:darken($topbar-background-color,5%);
+$dropdownmenu-hover-color:$dropdownmenu-color;
+
+   
   
 
 

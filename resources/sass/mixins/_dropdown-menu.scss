@@ -1,0 +1,66 @@
+@mixin dropdownmenu(
+    $dropdownmenu-color:$dropdownmenu-color,
+    $dropdownmenu-background-color:$dropdownmenu-background-color,
+    $dropdownmenu-hover-background-color:$dropdownmenu-hover-background-color,
+    $dropdownmenu-hover-color:$dropdownmenu-hover-color
+){
+    .dropdown-menu.show 
+    {
+        top:50px;
+    }
+    &__toggle
+    {
+        position: relative;
+
+        display: flex;
+
+        width: 40px;
+        height: 40px;
+
+        transition: color 50ms ease-in-out;
+        transition-delay: 100ms;
+        white-space: nowrap;
+
+        color: $dropdownmenu-color;
+        background: $dropdownmenu-background-color;
+
+        justify-content: center;
+        align-items: center;
+        &,
+        &:focus
+        {
+            outline: none;
+        }
+        &::before
+        {
+            position: absolute;
+            z-index: -1;
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            content: '';
+            transition: transform 200ms ease-in-out;
+            transform: scale(0);
+
+            border-radius: 50%;
+            background: $dropdownmenu-hover-background-color;
+        }
+        &:hover,
+        &:focus
+        {
+            transition: color 100ms ease-in-out;
+            transition-delay: 0ms;
+
+            
+            color: $dropdownmenu-hover-color;
+        }
+        &:hover::before,
+        .m-menu__group.show &::before
+        {
+            transform: scale(.8);
+        }
+    }
+}
