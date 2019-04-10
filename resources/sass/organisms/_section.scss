@@ -34,7 +34,8 @@
     {
         @include section(
             $section-padding: 0rem 2rem,
-            $section-background-color:$section-background-color
+            $section-background-color:$section-background-color,
+            $section-border-bottom:1px solid $background
             );
 
         line-height: $topbar-height;

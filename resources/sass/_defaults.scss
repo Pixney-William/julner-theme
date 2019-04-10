@@ -58,12 +58,14 @@ $navigation-top-background:#000;
 //  ----------------------------------------------------------------------------
 //  SECTIONS
 //  ----------------------------------------------------------------------------
-$section-background-color:  transparent !default;
+$section-background-color:  #fff !default;
 $section-padding:           0 !default;
 $section-margin:            0 !default;
 $section-height:            auto !default;
 $section-border-radius:     0 !default;
 $section-box-shadow:        none !default;
+$section-border-top:        0px solid red !default;
+$section-border-bottom:     0px solid red !default;
 
 //  ----------------------------------------------------------------------------
 //  BREADCRUMBS
