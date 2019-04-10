@@ -18,25 +18,6 @@ $brand              : $primary !default;
 $brand-dark : darken($brand,5%);
 
 
-// Sidebar
-$sidebar-background:#F7F9FC;
-$sidebar-width-closed: 72px !default;
-$sidebar-item-height:30px !default;
-$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (2 * 1rem)) !default; // Width - padding
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -50,9 +31,13 @@ $background: #f2f2f2;
 //  HTML / BODY
 //  ----------------------------------------------------------------------------
 $body-background-color:$background;
+
 //  ----------------------------------------------------------------------------
 //  SIDEBAR
 //  ----------------------------------------------------------------------------
+$sidebar-width-closed: 72px !default;
+$sidebar-item-height:30px !default;
+$sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (2 * 1rem)) !default; // Width - padding
 $sidebar-background-color: darken($brand,2%) !default;
 $sidebar-link-color: rgb(255, 255, 255,.9) !default;
 $sidebar-link-color-hover: rgb(255, 255, 255,1) !default;
@@ -79,7 +64,7 @@ $breadcrumbs-link-color:yellow !default;
 $breadcrumbs-link-hover-color:$brand !default;
 $breadcrumbs-link-active-color:darken($background,15%) !default;
 $breadcrumbs-font-weight:600 !default;
-$breadcrumbs-divider-content:'→';
+$breadcrumbs-divider-content:'→' !default;
 $breadcrumbs-divider-color:$breadcrumbs-color !default;
 
 
