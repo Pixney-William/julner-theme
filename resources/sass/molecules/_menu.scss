@@ -18,7 +18,7 @@
         transition-delay: 100ms;
         white-space: nowrap;
 
-        color: pc('topbarMenuColor');
+        color: $topbarMenuColor;
         background: transparent;
 
         justify-content: center;
@@ -43,7 +43,7 @@
             transform: scale(0);
 
             border-radius: 50%;
-            background: pc('topbarMenuHoverBkg');
+            background: $topbarMenuHoverBkg;
         }
         &:hover,
         &:focus
@@ -52,7 +52,7 @@
             transition-delay: 0ms;
 
             
-            color: pc('topbarMenuColorHover');
+            color: $topbarMenuColorHover;
         }
         &:hover::before,
         .m-menu__group.show &::before

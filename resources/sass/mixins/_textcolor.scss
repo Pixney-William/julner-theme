@@ -1,0 +1,11 @@
+@mixin set-text-color-from-background($background-color)
+{
+    @if (lightness($background-color) > 60)
+    {
+        color: #000;
+    }
+    @else
+    {
+        color: #fff;
+    }
+}

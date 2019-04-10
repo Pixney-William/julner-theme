@@ -13,6 +13,7 @@
 @import './mixins/_section';
 @import './mixins/_main.scss';
 @import './mixins/_field.scss';
+@import './mixins/_textcolor';
 @import './_variables';
 
 // Our default settings
@@ -82,6 +83,6 @@
 
 body,html 
 {
-  background-color: $background-color;
-  background: $background-color;
+  background-color: $body-background-color;
+  background: $body-background-color;
 }

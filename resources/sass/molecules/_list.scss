@@ -7,7 +7,9 @@
     body .o-navigation__sidebar &,
     body .o-navigation__menu & {
         
-        @include mlist(pc('sidebar-link-color'), pc('sidebar-link-color-hover'));
+
+        @include mlist($sidebar-link-color, $sidebar-link-color-hover);
+
 
         li,
         li a {
@@ -94,12 +96,12 @@
     }
 
     body .o-navigation__sidebar & {
-        @include mlist(pc('sidebar-link-color'), pc('sidebar-link-color-hover'));
+        @include mlist($sidebar-link-color, $sidebar-link-color-hover);
 
     }
 
     body .o-navigation__menu & {
-        @include mlist(pc('menu-link-color'), pc('menu-link-color-hover'));
+        @include mlist($menu-link-color, $menu-link-color-hover);
     }
 
 

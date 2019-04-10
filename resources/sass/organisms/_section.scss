@@ -83,7 +83,7 @@
                     width: 100%;
                     min-width: 100%;
 
-                    border: 1px solid darken(pc(),11%);
+                    border: 1px solid $brand;
                     background: #fff;
 
                     &[name='filter_search']
@@ -114,7 +114,7 @@
     //  ------------------------------------------------------------------------
     &.-views
     {
-        border-bottom: 1px solid darken(pc(),10%);
+        border-bottom: 1px solid $brand;
         & + .o-section
         {
             margin-top: 0rem;
@@ -152,7 +152,7 @@
         {
             padding: 2rem 0;
 
-            color: pc('link');;
+            color: $link;;
         }
     }
 

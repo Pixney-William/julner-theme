@@ -11,7 +11,7 @@
     li a 
     {
         @extend %bold;
-        color: pc('horizontalNavTabsColor');
+        color: $horizontalNavTabsColor;
         transition: all 200ms ease-in-out;
         padding: .3rem 1rem .4rem;
         display: block;
@@ -23,7 +23,7 @@
     li a.nav-link:hover,
     li a.nav-link.active
     {
-        color: pc('menu');
+        color: $menu;
     }
 
     
