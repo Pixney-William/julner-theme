@@ -1,0 +1,72 @@
+// used in : resources/sass/molecules/_breadcrumb.scss
+@mixin breadcrumbs(
+    $breadcrumbs-padding: 0,
+    $breadcrumbs-margin:0,
+    $breadcrumbs-font-size:.92rem,
+    $breadcrumbs-background-color:transparent,
+    $breadcrumbs-height:$breadcrumbs-height,
+    $breadcrumbs-divider-padding:0 .5rem 0 0,
+    $breadcrumbs-divider-content:'→',
+    $breadcrumbs-divider-color:$breadcrumbs-divider-color,
+    $breadcrumbs-color:$breadcrumbs-color,
+    $breadcrumbs-link-color:$breadcrumbs-link-color,
+    $breadcrumbs-link-hover-color:$breadcrumbs-link-hover-color,
+    $breadcrumbs-link-active-color:$breadcrumbs-link-active-color,
+    $breadcrumbs-font-weight:$breadcrumbs-font-weight
+)
+{
+    line-height: $breadcrumbs-height;
+
+    display: flex;
+
+    margin-bottom: $breadcrumbs-margin;
+    padding: $breadcrumbs-padding;
+
+    list-style: none;
+
+    border-radius: 0;
+    background-color: $breadcrumbs-background-color;
+
+    flex-wrap: wrap;
+
+
+    .o-section.-breadcrumbs &
+    {
+        li.breadcrumb-item
+        {
+            &,
+            a,
+            a:hover,
+            a:focus
+            {
+                font-size: $breadcrumbs-font-size;
+                font-weight: $breadcrumbs-font-weight;
+
+                transition: all 200ms ease-in-out;
+                text-decoration: none;
+
+                color: $breadcrumbs-color;
+            }
+
+            a:hover
+            {
+                color: $breadcrumbs-link-hover-color;
+            }
+
+            &.active
+            {
+                color: $breadcrumbs-link-active-color;
+            }
+        }
+
+
+        .breadcrumb-item + .breadcrumb-item::before
+        {
+            display: inline-block;
+
+            padding: $breadcrumbs-divider-padding;
+            color:  $breadcrumbs-divider-color;
+            content: $breadcrumbs-divider-content;
+        }
+    }
+}

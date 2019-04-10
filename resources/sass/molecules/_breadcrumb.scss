@@ -1,45 +1,20 @@
 
 &breadcrumb
 {
-    line-height: $breadcrumbs-height;
+    @include breadcrumbs(
+        $breadcrumbs-padding: 0,
+        $breadcrumbs-margin:0,
+        $breadcrumbs-font-size:.92rem,
+        $breadcrumbs-background-color:transparent,
+        $breadcrumbs-height:$breadcrumbs-height,
+        $breadcrumbs-divider-padding:0 .5rem 0 0,
+        $breadcrumbs-divider-content:'→',
+        $breadcrumbs-divider-color:$breadcrumbs-divider-color,
+        $breadcrumbs-color:$breadcrumbs-color,
+        $breadcrumbs-link-color:$breadcrumbs-link-color,
+        $breadcrumbs-link-hover-color:$breadcrumbs-link-hover-color,
+        $breadcrumbs-link-active-color:$breadcrumbs-link-active-color,
+        $breadcrumbs-font-weight:$breadcrumbs-font-weight
+    );
 
-    display: flex;
-
-    margin-bottom: 0;
-    padding: 0;
-
-    list-style: none;
-
-    border-radius: 0;
-    background-color: transparent;
-
-    flex-wrap: wrap;
-
-
-    .o-section.-breadcrumbs &
-    {
-        li
-        {
-            &,
-            a
-            {
-                font-size: .92rem;
-            }
-
-        }
-
-
-        .breadcrumb-item + .breadcrumb-item::before
-        {
-            display: inline-block;
-
-            padding-right: .5rem;
-
-            content: '→';
-
-        }
-    }
-
-
-    
 }

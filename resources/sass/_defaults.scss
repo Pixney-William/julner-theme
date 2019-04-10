@@ -44,7 +44,7 @@ $sidebar-icon-width-height: calc(#{$sidebar-width-closed} - (2 * 1rem)) !default
 //  ADMIN COLOR SCHEME
 //  ----------------------------------------------------------------------------
 $brand: #E26D5C;
-$background: #f3f3f3;
+$background: #f2f2f2;
 
 //  ----------------------------------------------------------------------------
 //  HTML / BODY
@@ -73,11 +73,17 @@ $navigation-top-background:#000;
 //  BREADCRUMBS
 //  ----------------------------------------------------------------------------
 $breadcrumbs-height: 50px !default;
-$breadcrumbs-background-color:#000;
-$breadcrumbs-color:#fff;
-$breadcrumbs-link:yellow;
-$breadcrumbs-hover:red;
-$breadcrumb: #000;
+$breadcrumbs-background-color:#fff !default;
+$breadcrumbs-color:darken($background,5%) !default;
+$breadcrumbs-link-color:yellow !default;
+$breadcrumbs-link-hover-color:$brand !default;
+$breadcrumbs-link-active-color:darken($background,15%) !default;
+$breadcrumbs-font-weight:600 !default;
+$breadcrumbs-divider-content:'→';
+$breadcrumbs-divider-color:$breadcrumbs-color !default;
+
+
+
 
 
 
