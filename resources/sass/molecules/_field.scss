@@ -4,6 +4,23 @@
 //  ----------------------------------------------------------------------------
 &field {
    @include field(
-     
+      $form-field-padding: $form-field-padding,
+      $form-field-margin: $form-field-margin,
+      $form-field-first-child-padding:$form-field-first-child-padding,
+      $form-field-first-child-margin:$form-field-first-child-margin,
+      $form-field-last-child-padding:$form-field-last-child-padding,
+      $form-field-last-child-margin:$form-field-last-child-margin,
+
+      $form-field-label-color:$form-field-label-color,
+      $form-field-label-font-size:$form-field-label-font-size,
+      $form-field-label-font-style:$form-field-label-font-style,
+
+      $form-field-instructions-color:$form-field-instructions-color,
+      $form-field-instructions-font-size:$form-field-instructions-font-size,
+      $form-field-instructions-font-style:$form-field-instructions-font-style,
+
+      $form-field-warning-color:$form-field-warning-color,
+      $form-field-warning-font-size:$form-field-warning-font-size,
+      $form-field-warning-font-style:$form-field-warning-font-style
       )
 }
